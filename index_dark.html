@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>Landing page</title>
+        <link href="landing_dark.css" rel="stylesheet" type="text/css" media="screen"> <!--en href se pone ruta al .css de este html-->
+    </head>
+    
+
+    <body>
+        <div id="statusMessage" role="status" aria-live="polite">
+            <!-- Los mensajes de estado se actualizarán dinámicamente -->
+            <!-- destinado a contener mensajes como "Cargando resultados..." o "Carousel actualizado".
+            Este uso es útil para interfaces dinámicas donde se necesita notificar cambios sin redibujar la página. -->
+            <!-- aria-live="polite" Permite que los lectores de pantalla anuncien los mensajes cuando cambian, pero de 
+            forma no intrusiva, dejando que el usuario termine de escuchar cualquier otro contenido. -->
+        </div>
+        <div class="container">
+
+            <!--HEADER-->
+            <header>
+                <!--Logotipo-->
+                <a href="index.html"><img class="header-logo" src="Imagenes\Logo\logo-oscuro.svg" alt="logo"/></a>                    
+            
+                <!-- Contenedor de la barra de búsqueda -->
+                <div class="search-container">
+                    <label id="searchLabel" for="search">
+                    <input aria-labelledby="searchLabel" id="search" type="text" class="search-input" placeholder="Buscar..." autocomplete="on"/>
+                    <button class="search-button">
+                        <img src="Imagenes\Iconos\opcional-lupa.svg" fill="currentColor" height="100%" alt="botón para buscar"/>
+                    </button>
+                </div>
+
+
+                
+                <!--Navegador-->
+                <nav>
+                    <a href="#"><h5 class="nav-content">Contacto</h5></a>
+                    <a href="#"><h5 class="nav-content">ENG | ESP</h5></a>
+                    <a href="#"><h5 class="nav-content">Iniciar Sesión</h5></a>
+                    <a href="#">
+                        <!-- <img class="nav-content" alt="icono de carrito de la compra" src="Imagenes\Iconos\carrito.svg" height="30px"/> -->
+                        <svg class="nav-svg" width="30" fill="currentColor" viewBox="0 0 180 180" version="1.1" id="svg1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                            <defs id="defs1" />
+                            <g id="layer1">
+                              <path id="rect1" style="stroke-width:0;stroke-linecap:square;stroke-linejoin:bevel" d="m 27.037909,36.338233 c -0.547897,0.230034 -1.094995,0.463576 -1.643018,0.69463 -0.293,0.467005 -0.600899,0.925539 -0.848466,1.418944 -0.09132,0.182003 -0.160929,0.376402 -0.2412,0.564017 -0.275111,0.681959 -0.522473,1.497799 -0.624292,2.229342 -0.137677,0.989676 -0.05743,2.010008 -0.003,3.001157 0.0907,0.301236 0.129104,0.609737 0.150398,0.920235 l 28.21793,88.912552 c 0.108266,0.14894 0.224612,0.29145 0.300793,0.46013 0.147397,0.32602 0.18268,0.44468 0.215665,0.55511 0.191528,0.20835 0.388569,0.41123 0.593074,0.60556 0.742224,0.73645 1.622243,1.24272 2.5908,1.56439 0.09625,0.0349 0.192376,0.0638 0.289445,0.089 h 90.524822 c 0.68064,-0.23967 1.34937,-0.51186 2.01192,-0.80744 0.51333,-0.21183 1.00547,-0.46823 1.48977,-0.73915 0.46014,-0.49923 0.91292,-1.00681 1.3564,-1.52284 0.11358,-0.1691 0.22678,-0.33861 0.34054,-0.50762 l 27.97952,-88.149648 c 0.002,-0.03852 0.007,-0.07727 0.009,-0.115762 0.0974,-1.62748 0.2118,-3.255689 0.25256,-4.886154 -0.007,-0.01506 -0.013,-0.02966 -0.0199,-0.04454 -0.57285,-1.290171 -1.38288,-2.461893 -2.47163,-3.324722 -0.87605,-0.781642 -0.0839,-0.138415 -0.95344,-0.694629 -0.10241,-0.06555 -0.19152,-0.150907 -0.28947,-0.222637 z" />
+                              <ellipse style="stroke-width:0;stroke-linecap:square;stroke-linejoin:bevel" id="path3" cx="67.731995" cy="154.83191" rx="16.708258" ry="17.478539" />
+                              <ellipse style="stroke-width:0;stroke-linecap:square;stroke-linejoin:bevel" id="path3-1" cx="136.50365" cy="154.83191" rx="16.708258" ry="17.478539" />
+                              <rect style="stroke-width:0;stroke-linecap:square;stroke-linejoin:bevel" id="rect41" width="16.247398" height="36.787697" x="23.604698" y="7.8662615" ry="4.6820035" rx="5.0312901" />
+                              <rect style="stroke-width:0;stroke-linecap:square;stroke-linejoin:bevel" id="rect41-2" width="13.866786" height="31.711645" x="-21.541304" y="0.029057615" ry="5.2646394" rx="4.332716" transform="matrix(0.00152824,-0.99999883,0.99998175,0.00604076,0,0)" />
+                            </g>
+                          </svg>                          
+                    </a>
+                    <a href="#">
+                        <!-- <img class="nav-content" alt="icono de cuenta de usuario" src="Imagenes\Iconos\cuenta.svg" height="30px"/> -->
+                        <svg class="nav-svg" width="30" fill="currentColor" viewBox="0 0 180 180" version="1.1" id="svg1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                            <defs id="defs1" />
+                            <g id="layer1">
+                               <path id="path1" style="stroke-width:0;stroke-linecap:square;stroke-linejoin:bevel" d="M 89.866244,79.788641 A 78.720364,72.413796 0 0 0 12.081087,142.98982 c 0.0017,0.073 0.0042,0.14587 0.0059,0.21875 0.01049,0.393 0.0041,0.78672 0.01563,1.17969 0.0082,0.0161 0.01452,0.0349 0.01953,0.0566 0.0026,0.0109 0.0057,0.0222 0.0078,0.0332 0.0085,0.045 0.01279,0.0898 0.02149,0.13476 0.01776,0.0919 0.04588,0.18189 0.07226,0.27149 0.07082,0.23434 0.17249,0.45978 0.279297,0.67969 0.05888,0.12277 0.130145,0.23817 0.205079,0.35156 a 101.2119,93.103452 0 0 0 77.158171,33.18168 101.2119,93.103452 0 0 0 77.453126,-33.50586 c 0.007,-0.0134 0.0139,-0.0276 0.0215,-0.041 0.0867,-0.16279 0.17403,-0.32683 0.2793,-0.47851 0.062,-0.19483 0.12605,-0.38905 0.18164,-0.58594 0.0302,-0.20845 0.0628,-0.41657 0.0898,-0.625 0.0124,-0.12183 0.0213,-0.24325 0.0273,-0.36523 A 78.720364,72.413796 0 0 0 89.866244,79.788641 Z" />
+                               <ellipse style="stroke-width:0;stroke-linecap:square;stroke-linejoin:bevel" id="path2-8" cx="90" cy="45.639317" rx="43.43158" ry="45.28627" />
+                            </g>
+                         </svg>
+                    </a>
+                </nav>
+                <!-- Hamburguesa para pantallas móviles -->
+                <div class="hamburger">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="100%" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                    </svg>
+                </div>
+            </header>
+            
+
+
+            <!--HERO-->
+            <div class="hero"> 
+                <h1 class="h1-hero">Librería Al-Ándalus</h1>
+                <h3 class="h3-hero">Historias que inspiran,</h3> 
+                <h3 class="h3-hero">conocimiento que transforma</h3>
+            </div>
+            
+
+
+            <!--SECCIONES-->
+            <main class="secciones"> 
+
+                <!--SECCION BEST SELLER-->
+                <div class="cuerpo-bs">
+                    <hr/>
+                    <h2 class="h2-bs" tabindex="0">Best-Seller</h2>
+
+                    <div class="libros-bs">
+                        <button class="bs-flecha-izq">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                            </svg>                        
+                        </button>
+                        <div class="portadas-bs">
+                            <a href="./ficha_libro.html"><img src="Imagenes\Portada\portada-media.png" loading="lazy" alt="portada 1"/></a>
+                            <a href="./ficha_libro.html"><img src="Imagenes\Portada\portada-media.png" loading="lazy" alt="portada 2"/></a>
+                            <a href="./ficha_libro.html"><img src="Imagenes\Portada\portada-media.png" loading="lazy" alt="portada 3"/></a>
+                        </div>
+                        <button class="bs-flecha-der">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                            </svg>                        
+                        </button>
+                    </div>
+                    
+                    <hr/>
+                </div>
+
+                <!--SECCION AUTORES-->
+                <div class="cuerpo-sec"> 
+                    <h3 tabindex="0">Autores Almerienses</h3>
+                    
+                    <div class="libros-sec">
+                        <button class="sec-flecha-izq">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                            </svg>
+                        </button>
+                        <div class="portadas-sec">
+                            <div class="item-sec">
+                                <a href="./ficha_libro.html">
+                                    <img src="Imagenes\Portada\portada-pequena.jpg" loading="lazy" alt="portada 1"/>
+                                </a>
+                                <h5 tabindex="0">Título</h5>
+                                <p class="p2-reg" tabindex="0">Autor</p>
+                                <p class="p2-reg">Editorial</p>
+                            </div>
+
+                            
+                            <div class="item-sec">
+                                <a href="./ficha_libro.html">
+                                    <img src="Imagenes\Portada\portada-pequena.jpg" loading="lazy" alt="portada 2"/>
+                                </a>
+                                <h5 tabindex="0">Título</h5>
+                                <p class="p2-reg" tabindex="0">Autor</p>
+                                <p class="p2-reg">Editorial</p>
+                            </div>
+
+                            <div class="item-sec">
+                                <a href="./ficha_libro.html">
+                                    <img src="Imagenes\Portada\portada-pequena.jpg" loading="lazy" alt="portada 3"/>
+                                </a>
+                                <h5 tabindex="0">Título</h5>
+                                <p class="p2-reg" tabindex="0">Autor</p>
+                                <p class="p2-reg">Editorial</p>
+                            </div>
+
+                            <div class="item-sec">
+                                <a href="./ficha_libro.html">
+                                    <img src="Imagenes\Portada\portada-pequena.jpg" loading="lazy" alt="portada 4"/>
+                                </a>
+                                <h5 tabindex="0">Título</h5>
+                                <p class="p2-reg" tabindex="0">Autor</p>
+                                <p class="p2-reg">Editorial</p>
+                            </div>
+
+                            <div class="item-sec">
+                                <a href="./ficha_libro.html">
+                                    <img src="Imagenes\Portada\portada-pequena.jpg" loading="lazy" alt="portada 5"/>
+                                </a>   
+                                 <h5 tabindex="0">Título</h5>
+                                <p class="p2-reg" tabindex="0">Autor</p>
+                                <p class="p2-reg">Editorial</p>
+                            </div>
+                        </div>
+                        <button class="sec-flecha-der">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                            </svg>
+                        </button>
+                    </div> 
+                </div>
+
+                <!--SECCION EBOOKS-->
+                <div class="cuerpo-sec" tabindex="0">
+                    <h3>Ebooks</h3>
+                    <div class="libros-sec">
+                        <button class="sec-flecha-izq">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                            </svg>                          
+                        </button>
+                        <div class="portadas-sec">
+
+                            <div class="item-sec">
+                                <a href="./ficha_libro.html">
+                                    <img src="Imagenes\Portada\portada-pequena.jpg" loading="lazy" alt="portada 1"/>
+                                </a>
+                                <h5 tabindex="0">Título</h5>
+                                <p class="p2-reg" tabindex="0">Autor</p>
+                                <p class="p2-reg">Editorial</p>
+                            </div>
+                            
+                            <div class="item-sec">
+                                <a href="./ficha_libro.html">
+                                    <img src="Imagenes\Portada\portada-pequena.jpg" loading="lazy" alt="portada 1"/>
+                                </a>
+                                <h5 tabindex="0">Título</h5>
+                                <p class="p2-reg" tabindex="0">Autor</p>
+                                <p class="p2-reg">Editorial</p>
+                            </div>
+
+                            <div class="item-sec">
+                                <a href="./ficha_libro.html">
+                                    <img src="Imagenes\Portada\portada-pequena.jpg" loading="lazy" alt="portada 1"/>
+                                </a>
+                                <h5 tabindex="0">Título</h5>
+                                <p class="p2-reg" tabindex="0">Autor</p>
+                                <p class="p2-reg">Editorial</p>
+                            </div>
+
+                            <div class="item-sec">
+                                <a href="./ficha_libro.html">
+                                    <img src="Imagenes\Portada\portada-pequena.jpg" loading="lazy" alt="portada 1"/>
+                                </a>
+                                <h5 tabindex="0">Título</h5>
+                                <p class="p2-reg" tabindex="0">Autor</p>
+                                <p class="p2-reg">Editorial</p>
+                            </div>
+
+                            <div class="item-sec">
+                                <a href="./ficha_libro.html">
+                                    <img src="Imagenes\Portada\portada-pequena.jpg" loading="lazy" alt="portada 1"/>
+                                </a>
+                                <h5 tabindex="0">Título</h5>
+                                <p class="p2-reg" tabindex="0">Autor</p>
+                                <p class="p2-reg">Editorial</p>
+                            </div>
+                        </div>
+                        <button class="sec-flecha-der">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                            </svg>
+                        </button>
+                    </div> 
+                </div>
+
+
+
+            </main>      
+
+                            <!-- Nuevo enlace interno para optimizar una imagen -->
+                            <div class="enlace-interno">
+                                <a href="#footer-contacto">¿Tienes preguntas? Visita nuestra sección de contacto.</a>
+                            </div>
+            <!--PIE DE PÁGINA-->
+            <footer> 
+                
+                <div class="footer-superior">
+                    <div class="footer-contacto">
+                        <h6 tabindex="0">Contacto</h6>
+                        <div class="modo-contacto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                            </svg>
+                            <span class="p3" tabindex="0">Nombre de calle, nº</span>
+                        </div>
+                        
+                        <div class="modo-contacto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+                                <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671"/>
+                                <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791"/>
+                            </svg>
+                            <span class="p3" tabindex="0">correo@gmail.com</span>
+                            <br>    
+                        </div>
+                        
+                        <div class="modo-contacto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                            </svg>
+                            <span class="p3" tabindex="0">nº de teléfono</span>
+                        </div>
+                    </div>
+
+                    <a href="index.html">
+                        <img src="Imagenes\Logo\logo-oscuro.svg" alt="logo"/>
+                    </a>    
+                </div>
+
+                <div class="footer-inferior">
+                    <div class="footer-redes">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <span class="p3-light" tabindex="0">© Copyright</span>
+                </div>
+            </footer>    
+        
+        </div>
+        
+
+        <!--JAVASCRIPT-->
+        <!-- Hamburgesa en pantallas móviles -->
+        <script>
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('header nav');
+        
+            hamburger.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+        </script>
+
+        <!-- Mensaje de role="status" cuando carga la página -->
+        <script>
+            document.getElementById('statusMessage').textContent = "Cargando resultados...";
+        </script>
+        <script>
+            // Mostrar y ocultar mensajes de estado
+            function showStatusMessage(message) {
+            const statusMessage = document.getElementById('statusMessage');
+            statusMessage.textContent = message;
+            statusMessage.style.display = 'block';
+            }
+
+            function hideStatusMessage() {
+            const statusMessage = document.getElementById('statusMessage');
+            statusMessage.style.display = 'none';
+            }
+
+            // Simulación de carga
+            document.addEventListener('DOMContentLoaded', () => {
+            showStatusMessage('Cargando resultados...');
+            setTimeout(() => {
+                hideStatusMessage();
+            }, 3000); // 3 segundos
+            });
+        </script>
+
+
+    </body>
+</html>

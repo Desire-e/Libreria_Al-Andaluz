@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="opcional-lupa.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     inkscape:zoom="1.5183154"
+     inkscape:cx="29.967423"
+     inkscape:cy="121.51625"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect1"
+       style="display:none;fill:#000000;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:bevel"
+       d="M 136.74648,5.8414132e-6 C 130.41316,0.52424442 123.74319,3.0632461 118.28453,7.4907675 L 34.049313,75.813384 C 23.378255,84.468696 21.506666,96.919126 29.85298,103.73018 l 88.23749,72.00848 c 6.54513,5.3412 17.36551,5.55568 26.88007,1.23635 6.19165,-4.38041 10.39062,-13.01115 10.39062,-22.99788 V 25.999491 c 0,-13.96972 -8.21506,-25.27355085 -18.61468,-25.9994851585868 z" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:0;stroke:#000000;stroke-width:21.4;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+       id="path4"
+       cx="61.503979"
+       cy="61.525932"
+       rx="50.167305"
+       ry="50.825932" />
+    <rect
+       style="fill:#000000;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:bevel"
+       id="rect4"
+       width="26.824085"
+       height="113.40957"
+       x="-12.550633"
+       y="128.60226"
+       rx="16.649729"
+       ry="16.738565"
+       transform="matrix(0.73435153,-0.67876935,0.70564596,0.70856459,0,0)" />
+  </g>
+</svg>
