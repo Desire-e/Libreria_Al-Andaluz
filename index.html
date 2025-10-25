@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+        <!-- JAVASCRIPT HLC -->
         <!-- Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-KVM3T5HS23"></script>
         <script>
@@ -10,6 +11,7 @@
 
             gtag('config', 'G-KVM3T5HS23');
         </script>
+
         <!-- Etiquetas meta -->
         <meta charset="utf-8"/>
         <meta name="description" content="Librería Al-Ándalus página principal"/>
@@ -40,7 +42,7 @@
                 <!-- Contenedor de la barra de búsqueda -->
                 <div class="search-container">
                     <label id="searchLabel" for="search">
-                    <input aria-labelledby="searchLabel" id="search" type="text" class="search-input" placeholder="Buscar..." autocomplete="on"/>
+                    <input aria-labelledby="searchLabel" id="search" type="text" class="search-input" placeholder="Buscar..." autocomplete="off"/>
                     <button class="search-button">
                         <a href="busqueda.html">
                             <img src="Imagenes\Iconos\opcional-lupa.svg" fill="currentColor" height="100%" alt="botón para buscar"/>
@@ -335,7 +337,59 @@
             </footer>    
         
         </div>
-        
+
+        <!-- JAVASCRIPT HLC -->
+        <!-- Obtener qué se escribió en la barra de búsqueda -->
+        <script>
+            /* 'DOMContentLoaded': La función se ejecuta solo cuando navegador haya terminado de 
+                cargar todo el contenido HTML del documento (cuando el DOM esté listo) 
+            */
+            document.addEventListener("DOMContentLoaded", function() {
+                
+                
+            // Campo de búsqueda
+            const searchInput = document.getElementById('search'); 
+
+                // Cuando el usuario presione "Enter" teniendo foco en el input
+                /* 'keydown': La función se ejecuta cuando se pulse cualquier tecla mientras el searchInput tiene el foco 
+                        function(event): La función recibe un objeto event que contiene información sobre la tecla y el contexto 
+                        (por ejemplo event.key, event.code, event.ctrlKey,...).
+                */
+                searchInput.addEventListener("keydown", function(event) {
+                    
+                    // Si la tecla presionada es enter...
+                    /* event.key: La representación de la tecla ("Enter", "a", "ArrowLeft"...) */
+                    if (event.key === "Enter") {
+                        /* searchInput.value: lee el valor introducido en el input */
+                        const terminoBusqueda = searchInput.value.trim();
+                        
+                        // Si la cadena no está vacía...
+                        /* En js una cadena vacía "" o de solo espacios es falsa */
+                        if (terminoBusqueda) {
+                            /* gtag('event', 'busquedas', {...} : Llama a la función gtag para enviar un evento personalizado 
+                               a GA4. (GA4 detecta automáticamente un nuevo evento llamado busquedas y lo empezará a registrar 
+                               en los informes sin tener que crear el evento desde GA4 manualmente).
+                               * Requisito: la librería de gtag.js debe estar cargada antes (en el <head>)
+                            */
+                            /* { search_term: terminoBusqueda, method: 'enter_key' }: este objeto son los parámetros del evento.
+                                    search_term: contiene lo que escribió el usuario.
+                                    method: adicionalmente indica cómo se activó (tecla Enter). 
+                            */
+                            gtag('event', 'busquedas', 
+                                {
+                                search_term: terminoBusqueda,
+                                method: 'enter_key'
+                                }
+                            );
+                        }
+                    }
+            });
+
+
+            
+        });
+        </script>
+
 
         <!--JAVASCRIPT-->
 
