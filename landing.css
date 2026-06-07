@@ -1,0 +1,1225 @@
+
+                                                  /*FUENTE INTER*/
+
+/* inter-latin-100-normal THIN*/
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-100-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-100-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* inter-latin-200-normal EXTRA LIGHT */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-200-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-200-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* inter-latin-300-normal LIGHT */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-300-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-300-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* inter-latin-400-normal REGULAR */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* inter-latin-500-normal MEDIUM */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-500-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-500-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* inter-latin-600-normal SEMI BOLD */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-600-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-600-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* inter-latin-700-normal BOLD */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-700-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-700-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* inter-latin-800-normal EXTRA BOLD */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-800-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-800-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* inter-latin-900-normal BLACK */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-900-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-900-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+
+
+                                                  /*FUENTE ABHAYA LIBRE*/
+
+/* abhaya-libre-latin-400-normal REGULAR */
+@font-face {
+  font-family: 'Abhaya Libre';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/abhaya-libre@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/abhaya-libre@latest/latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* abhaya-libre-latin-500-normal MEDIUM */
+@font-face {
+  font-family: 'Abhaya Libre';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/abhaya-libre@latest/latin-500-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/abhaya-libre@latest/latin-500-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* abhaya-libre-latin-600-normal SEMI BOLD */
+@font-face {
+  font-family: 'Abhaya Libre';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/abhaya-libre@latest/latin-600-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/abhaya-libre@latest/latin-600-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* abhaya-libre-latin-700-normal BOLD */
+@font-face {
+  font-family: 'Abhaya Libre';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/abhaya-libre@latest/latin-700-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/abhaya-libre@latest/latin-700-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* abhaya-libre-latin-800-normal EXTRA BOLD */
+@font-face {
+  font-family: 'Abhaya Libre';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/abhaya-libre@latest/latin-800-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/abhaya-libre@latest/latin-800-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+
+
+
+  /* TÍTULOS EXTRABOLD */
+  h1 {
+    font-size: 5em; /*74px*/
+    font-family: 'Abhaya Libre';
+    font-style: normal;
+    font-weight: 800;  
+  }
+  h2 {    
+    font-size: 3em; /*48px;*/
+    font-family: 'Abhaya Libre';
+    font-style: normal;
+    font-weight: 800;
+  }
+  h3 {
+    font-size: 2.5em; /*37px*/
+    font-family: 'Abhaya Libre';
+    font-style: normal;
+    font-weight: 800;  
+  }
+  h4 {
+    font-size: 36px;
+    font-family: 'Abhaya Libre';
+    font-style: normal;
+    font-weight: 800;
+  }
+  h5 {
+    font-size: 2em;
+    font-family: 'Abhaya Libre';
+    font-style: normal;
+    font-weight: 800;
+  }
+  h6{
+    font-size: 1.7em;
+    font-family: 'Abhaya Libre';
+    font-style: normal;
+    font-weight: 800;
+  }
+
+  /* TÍTULOS REGULAR */
+  .h2-reg {
+    font-size: 48px;
+    font-family: 'Abhaya Libre';
+    font-style: normal;
+    font-weight: 400;
+  }
+  .h3-reg {
+    font-size: 40px;
+    font-family: 'Abhaya Libre';
+    font-style: normal;
+    font-weight: 400;
+  }
+  .h4-reg {
+    font-size: 36px;
+    font-family: 'Abhaya Libre';
+    font-style: normal;
+    font-weight: 400;
+  }
+  .h5-reg {
+    font-size: 32px;
+    font-family: 'Abhaya Libre';
+    font-style: normal;
+    font-weight: 400;
+  }
+  .h6-reg {
+    font-size: 24px;
+    font-family: 'Abhaya Libre';
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  /* PÁRRAFOS BOLD*/
+  .p1-bold {
+    font-size: 24px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+  }
+  .p2-bold {
+    font-size: 1.3em; /*20px;*/
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  /* PÁRRAFOS SEMIBOLD*/
+  .p1-semibold {
+    font-size: 24px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+  }
+  .p2-semibold {
+    font-size: 1.3em;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+  }
+  .p3-semibold {
+    font-size: 1em; /*16px*/
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+  }
+  
+  /* PÁRRAFOS REGULAR*/
+  .p2-reg {
+    font-size: 1.3em;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+  }
+  .p3-reg {
+    font-size: 1em;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+  /* PÁRRAFOS LIGHT*/
+  .p3-light {
+    font-size: 1em;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+  }
+
+
+
+  * {
+    margin:0px;
+    padding:0px;
+  }
+
+
+
+  body { 
+    background-color:#fff;
+    display:flex;             /*FLEXBOX*/
+    flex-direction: column;
+    justify-items: center; /*alineación de los elemento flex en el eje x*/
+    align-items:stretch;    /*alineación de los elementos hijos de un flex en el eje y (se alinean dentro del padre, 
+                              no en función de la posición normal)*/
+    
+    /*p3-reg por defecto*/
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+
+    overflow-x: hidden;  
+
+  }
+
+
+
+  #statusMessage {
+    display: none;
+    text-align: center;
+  }
+
+
+
+  /* Espaciado de letras para títulos y párrafos */
+  h1, h2, h3, h4, h5, h6, .p1-bold, .p2-bold, .p1-semibold, .p2-semibold, .p3-semibold, .p2-reg, .p3-reg, .p3-light {
+    letter-spacing: 0.05em; 
+  }
+
+
+
+
+  .container{
+    /* Ajuste del tamaño de contenedores utilizando unidades em */
+    max-width: 1196px; /* 1em ≈ 16px, equivalente a 1196px */
+    margin:auto;
+    display:flex;           
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  a:link {
+    color:#06768d;
+  }
+  a:visited {
+    color:#53068d;
+  }
+  a:hover {
+    color: #084f6f; /* Cambia a un tono más oscuro al pasar el cursor */
+  }
+  a:active {
+    color: #3a0571; /* Cambia a un tono diferente al hacer clic */
+  }
+  /*links para el header*/
+  header a:link {
+    color:#000;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  header a:visited {
+    color:#000;
+    text-decoration: none;
+  }
+  header a:hover {
+    color:#776B40;
+    text-decoration: none;
+  }
+  header a:active {
+    color:#000;
+    text-decoration: none;
+  }
+  /*links para el footer*/
+  .footer-superior a:link {
+    color:#000;
+    text-decoration: none;
+  }
+  .footer-superior a:visited {
+    color:#000;
+    text-decoration: none;
+  }
+  .footer-superior a:hover {
+    color:#000;
+    text-decoration: none;
+  }
+  .footer-superior a:active {
+    color:#000;
+    text-decoration: none;
+  }
+  .footer-inferior a:link {
+    color:#ffffff;
+    text-decoration: none;
+  }
+  .footer-inferior a:visited {
+    color:#ffffff;
+    text-decoration: none;
+  }
+  .footer-inferior a:hover {
+    color:#ffffff;
+    text-decoration: none;
+  }
+  .footer-inferior a:active {
+    color:#ffffff;
+    text-decoration: none;
+  }
+
+  .enlace-interno{
+    font-size: 0.7em;
+
+  }
+
+
+
+  /* TAREA 6: botón para hacer scroll al inicio de pg */
+  #btnSubir {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 16px;
+    /* font-size: 16px; */
+    background-color: #776B40;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+
+    display: none; /* Oculto por defecto */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); */
+    z-index: 1000; /* Asegura que esté en primer plano */
+  }
+
+  #btnSubir:hover {
+    background-color: #5f552f;
+  }
+
+
+
+  
+  /* NOTA TAREA 5: Asumí que la imagen principal era la del hero */
+  .hero {
+    min-height: 1000px;
+    width: 100%;
+    background-image: url("Imagenes/Hero/Hero.png");
+    background-repeat: no-repeat;
+    background-position: top;
+
+    animation: desvanecido-visible 2s ease-in-out;
+
+    display:grid;    
+    grid-template-columns: 60%;
+    grid-template-rows: 25% 20% auto;
+    box-sizing: border-box;
+    padding: 70px;
+    /* flex-direction: column; */
+  }
+  /*Animación*/
+    @keyframes desvanecido-visible {
+    0% {
+      opacity: 0;    
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  
+
+
+  .h1-hero {
+    grid-row-start: 1;
+  }
+  .h3-hero {
+    grid-row-start: 2;
+  }
+
+
+  .cta{
+    min-width: 200px;
+    width:200px;
+    min-height: 100px;
+    height:100px;
+    /* grid-column-start: 1; */
+    grid-row-start: 3;
+
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: #776B40;
+    color: #fff;
+    padding: 10px;
+
+    /*Animacion de escalado*/
+    animation: pulse 3s ease-in-out infinite;
+  }
+  /*Animación de escalado tipo pulse*/
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+
+  .cta:hover {
+    background-color: #fff;
+    color:#776B40;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+
+
+  @media (max-width: 1000px) {
+    .hero{
+      grid-template-columns: 100%;
+      grid-template-rows: 40% 40% auto;
+      width: 100%;
+      height: 100%;
+      padding: 60px;
+
+      background-size: cover;
+    }
+    .h1-hero {
+      font-size: 150px;/*74px en sobremesa*/
+    }
+    .h3-hero {
+      font-size: 85px;/*35px en sobremesa*/
+    }
+
+    .cta{
+      width: 450px;
+      height: 200px;
+      padding: 20px;
+      /* margin: 20px 0 0 0; */
+    }
+
+    .cta h3{
+      font-size: 85px;/*35px en sobremesa*/
+      margin:0;
+    }
+  }
+
+
+
+
+
+  /*-------------------------------------------------CABECERA-------------------------------------------------*/
+  header {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 129px;
+    /*width:100%*/   
+    width: 1196px;
+    margin: 0; 
+    background-color:#fff;
+    position:sticky;
+    top:0;
+    z-index: 10; /* Asegura que el header esté por encima del sombreado */
+  }
+  header::after { /* Gradiente de sombreado debajo del header */
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 10px; /* Ajusta la altura del sombreado */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+    pointer-events: none; /* Permite que los elementos debajo sean interactuables */
+  }
+
+  .header-logo {
+    grid-column-start: 1;
+    width: 115px;    
+  }
+
+  /*ANIMACION SVG CON HOVER (mouseover en el código del svg no me funcionaba)*/
+  .header-logo:hover {    
+    animation: rotacion 1s linear;
+  }
+  @keyframes rotacion {
+    0% {
+        transform: rotate(0);
+    }
+    33% {
+        transform: rotate(3deg);
+    }
+    66% {
+        transform: rotate(-3deg)
+    }
+    99% {
+      transform: rotate(0)
+    }
+
+}
+
+
+  /*Header responsive*/
+  @media(max-width:1000px){
+    header {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto;
+      justify-content: space-between;
+      align-items: center;
+  
+      height: 250px;/*m*/
+    }
+  
+    .header-logo {
+      grid-column-start: 1;
+      width: 200px;
+      margin: 0 0 0 10px;
+    }
+
+  }
+
+
+  /*BARRA DE BÚSQUEDA*/
+  .search-container {     /* Contenedor de la barra de búsqueda */
+    grid-column-start: 2;
+    display: flex;
+    align-items: center;
+    
+    width: 95%; /*ocupa el 95% de su padre (header)*/
+    height: 40%; /*ocupa el 40% de su padre (header)*/
+    border-radius: 27px;
+    background-color: #E4DFCE;
+  
+    padding:0 15px;
+  }
+
+  .search-input {     /* Zona del input de búsqueda */
+    flex: 1;
+    border: none;
+    outline: none;      /* elimina el contorno en algunos elementos interactivos (<input>, <button>, <a>) al estar enfocados o seleccionados.*/
+    font-size: 20px;
+    background-color: #E4DFCE;
+  }
+  .search-input::placeholder {    /*Contiene txt buscar*/
+    color: #000000;
+    opacity: 1;           /* Asegura que el color sea completamente visible */
+  }
+
+  .search-button {      /* Botón de búsqueda */
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    height: 20px;
+  }
+
+  /*Barra de búsqueda responsive*/
+  @media (max-width: 1000px) {
+
+    .search-container {     /* Contenedor de la barra de búsqueda */
+      grid-column-start: 2;
+      display: flex;
+      align-items: center;
+
+      width: 100%;
+      height: 50%;
+      border-radius: 70px;
+      padding:0 0 0 40px;
+    }
+  
+    .search-input {
+      flex: 1;
+      font-size: 50px;
+    }
+
+    .search-button {
+      height: 50px;
+    }
+  }
+
+
+  /*NAVEGADOR*/
+  header nav {
+    grid-column-start: 3;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /*centrar verticalmente, de arriba a abajo*/
+    background-color:#fff;
+  }
+
+  .nav-content {
+    margin: 0px 20px;
+  }
+
+  .nav-svg {
+    color:#000;
+    margin: 0px 10px;
+    width: 30px;
+  }
+
+  /* Navegador responsive */
+  .hamburger {
+    display: none;  /*En principio oculto*/
+    cursor: pointer;
+  }
+
+  @media (max-width: 1000px) {
+    header nav {
+        display: none;    /*en principio info navegador oculta*/
+        flex-direction: column;   /*dispuestos en columna*/
+        position: absolute;
+        top: 250px;
+        right: 0px;
+
+        padding: 50px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    header nav.active {
+        display: flex;    /*info de navegador pasa a visible (js)*/
+        gap: 60px;
+    }
+
+    .hamburger {
+        display: flex;  /*hamburguesa visible*/
+        height: 100px;
+    }
+
+    .nav-content {
+      margin: 0px 20px;
+      font-size: 4.5em;
+      margin: 0 0 50px 0;
+    }
+
+    .nav-svg{
+      width: 60px;
+    }
+  }
+
+
+  #canvas {
+    position: fixed; /* Se mantiene fijo en la pantalla */
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); /* Lo centra en la pantalla */
+    z-index: 1000; /* Lo pone por encima de otros elementos */
+    background: white; /* Asegura un fondo */
+    border: 2px solid #8B4513;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width:1000px){
+    #canvas {
+      width: 80%;
+    }
+  }
+
+
+
+
+  /*---------------------------------------------CUERPO SECCIONES---------------------------------------------*/
+  .secciones {             
+    max-width: 1196px;
+    width:100%;
+    max-height: 100%;
+    background-color: #E4DFCE;
+    margin: 300px 0 90px 0;
+    padding: 85px 0px;
+    gap: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @media(max-width:1000px){
+    .secciones{
+      height: auto;
+      margin: 80px 0 90px 0;
+    }
+  }
+
+
+
+  /* SECCIÓN BEST SELLER */
+  .cuerpo-bs {
+    /*Puedes cambiar a:
+    max-width:1099px;
+    width:100%;
+    */
+    width: 100%;
+    /* max-height: 100%; */
+    display:flex;    
+    flex-direction: column;
+    align-items: center;
+
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 2s ease;
+
+
+    /* ANIMACIÓN BASADA EN SCROLL       -- TO06: sustituído por js */
+    /* animation: desvanecidoScroll linear forwards; */
+    /*
+    linear: La velocidad de la animación es constante (sin aceleraciones ni desaceleraciones).
+    forwards: Mantiene el estado final de la animación después de que termine (evita que el elemento vuelva a su estado inicial).
+    */
+
+    /* animation-timeline: view(); */
+    /*
+    view(): Hace que la animación esté controlada por la visibilidad del elemento en la pantalla, en lugar de ejecutarse 
+    automáticamente con @keyframes como una animación tradicional.
+    */
+
+    /* animation-range: entry 10% cover 30%; */
+    /*
+    Esta propiedad define cuándo empieza y termina la animación según la visibilidad del elemento en la pantalla.
+    entry 10%: La animación comienza cuando al menos el 10% del elemento entra en el viewport.
+    cover 30%: La animación termina cuando el 30% del elemento está visible.
+    */
+  }
+  @media (max-width:1000px){
+    .cuerpo-bs{
+      margin:0 0 200px 0 ;
+    }
+  }
+
+  /*Animación scroll        -- TO06: sustituído por js*/
+  /* @keyframes desvanecidoScroll {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  } */
+  .cuerpo-bs.visible {    /* TO06: usado en js para que pase de opacidad inicial 0, a opacidad 1 */
+    opacity: 1;
+  }
+
+
+  hr {
+    width: 400px;
+    height: 4px;
+    background-color: black;
+    animation: mover 1s linear /*infinite*/, cambiaColor 1s linear /*infinite*/;
+  }
+  @media(max-width:1000px){
+    hr{
+      width: 600px;
+      height: 5px;
+    }  
+  }
+
+  /* NOTA TAREA 5: No hice la animación infinita porque en la estética de mi página no le encontraba sentido.
+  Tampoco le hice cambio de color, pero sí de opacidad. */
+  /*Animación*/
+  @keyframes mover {
+      from {
+          transform: translateX(-100%);
+      }
+      to {
+          transform: translateX(0);
+      }
+  }
+
+  @keyframes cambiaColor {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+  }
+
+
+
+
+  .h2-bs {    
+    margin:37px 0 37px 0;
+  }
+  @media(max-width:1000px){
+    .h2-bs {    
+      margin: 50px 0 50px 0;
+      font-size: 85px;
+    }
+    
+    h3{
+      font-size: 70px;/*37px en sobremesa*/
+    }
+  }
+
+
+
+
+  .libros-bs {
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+
+    background-color: #fff;
+    width: 90%;
+    /* max-height: 505px; */
+    height: 100%;
+    box-sizing: border-box;
+    padding: 30px;
+    margin: 0px 0px 50px 0px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  @media(max-width:1000px){
+    .libros-bs {
+      height: 800px;
+      width: 100%;
+    }
+  }
+
+
+  .libros-bs  button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-style: none;
+    background-color: #fff;
+    width:35px;
+    justify-self: center;
+  }
+  @media (max-width:1000px){
+    .libros-bs button{
+      width:60px;
+    } 
+  }
+
+  .contenido-bs{ /* viewport de los elementos del carrousel*/
+    width: 900px; /* para 3 elementos */
+    overflow: hidden;
+  }
+
+  .portadas-bs { /* almacena los elementos del carrusel*/ 
+    transition: transform 0.4s ease;
+    display:flex;
+
+    align-items: center;
+    justify-content: space-around;
+    gap: 54px;
+  }
+  @media(max-width:1000px){
+    .portadas-bs {
+      align-items: center;
+      justify-content: space-around;
+      gap: 40px;
+
+    }
+  }
+
+  /*NOTA TAREA 5: En lugar de cambiar fondo, hice que la portada tuviera un color más claro*/
+  /*Animación*/
+  .bs-img {
+    width: 264px;
+    transition: transform 0.3s ease, filter 0.3s ease; 
+  }
+  .bs-img:hover, .bs-img:focus{
+    transform: scale(1.2);
+    filter: brightness(1.05);
+  }
+  @media(max-width:1000px){
+    .bs-img{
+      width: 430px; 
+    }
+  }
+
+
+  
+
+
+  .item-sec-1, .item-sec-2, .item-sec-3, .item-sec-4, .item-sec-5 {
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  .item-sec-1:hover, .item-sec-2:hover, .item-sec-3:hover, .item-sec-4:hover, .item-sec-5:hover{
+    transform: scale(1.2);
+    filter: brightness(1.05);
+  }
+  .item-sec-1:focus, .item-sec-2:focus, .item-sec-3:focus, .item-sec-4:focus, .item-sec-5:focus {
+      transform: scale(1.2);
+      filter: brightness(1.05);
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+  /* OTRAS SECCIONES (AUTORES, EBOOKS) */
+  .cuerpo-sec {   /*engloba .libros-sec y el título de sección*/
+    width: 100%;
+    /* max-height: 390px; */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 0 0 80px 0; */
+  }
+
+  .cuerpo-sec h3 {
+    margin: 0 0 37px 0;
+  }
+
+  .libros-sec{/*engloba los svg y .portadas-sec*/
+    display:grid;
+    grid-template-columns: 5% 90% 5%;  
+    grid-template-rows: auto;  
+    width: 100%;
+    /* max-height: 505px; */
+    height: 100%;
+    box-sizing: border-box;
+
+    padding: 30px 0;
+    background-color: #fff;
+    align-items: center;
+    justify-content:space-between;
+  }
+  @media(max-width:1000px){
+    .libros-sec {
+      height: 620px;
+    }
+  }
+
+  .portadas-sec{    /*contiene en uno todos los recuadros de todos los libros*/
+    grid-column-start: 2;
+    display:grid;    
+    grid-template-columns: auto auto auto auto auto;    
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content:space-around;
+  }
+
+  .item-sec-1{  /*recuadro de un libro...*/
+    grid-column-start: 1;
+  }
+  .item-sec-2{
+    grid-column-start: 2;
+  }
+  .item-sec-3{
+    grid-column-start: 3;
+  }
+  .item-sec-4{
+    grid-column-start: 4;
+  }
+  .item-sec-5{
+    grid-column-start: 5;
+  }
+
+  .portadas-sec div a img{  /*tamaño de todas las img del carousel*/
+    max-width:164px;
+  }
+  .portadas-sec div h5, p{  /*aplica a todos los recuadros de todos los libros*/
+    justify-self: center;
+  }
+
+  @media(max-width:1000px){
+    .portadas-sec {
+      grid-template-columns: auto auto auto;
+    }
+
+    .item-sec-4, .item-sec-5{
+      display: none;
+    }
+
+    .portadas-sec div a img{
+      max-width: 300px;
+    }
+
+    .portadas-sec div h5{  /*aplica a todos los recuadros de todos los libros*/
+      justify-self: center;
+      font-size: 50px;
+    }
+    .portadas-sec div p{  /*aplica a todos los recuadros de todos los libros*/
+      justify-self: center;
+      font-size: 40px;
+    }
+  }
+
+
+  .sec-flecha-izq{
+    grid-column-start: 1;
+
+    width: 30px;
+    /* padding: 10px 15px; */
+    cursor: pointer;
+    /* position: absolute; */
+    border: none;
+    outline: none;
+    border-style: none;
+    background-color: #fff;
+    justify-self: center;
+
+  }
+
+  .sec-flecha-der{
+    grid-column-start: 3;
+
+    width: 30px;
+    /* padding: 10px 15px; */
+    cursor: pointer;
+    /* position: absolute; */
+    border: none;
+    outline: none;
+    border-style: none;
+    background-color: #fff;
+    justify-self: center;
+  }
+
+  .sec-flecha-der, .sec-flecha-izq svg {
+    color:#000;
+  }
+
+  @media(max-width:1000px){
+    .sec-flecha-izq, .sec-flecha-der{
+      width: 45px;
+    }
+  }
+
+  .item-sec p, h5{/*INFORMACION*//*CAMBIAR!!!!!*/
+    align-self: center;
+  }
+
+
+
+  /*--------------------------------------------------FOOTER--------------------------------------------------*/
+  footer{
+    max-width: 1196px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display:flex;    
+    flex-direction: column;
+  }
+  @media (max-width:1000px) {
+    footer{
+      height: 450px;
+    }
+    h6{   /*titulo Contacto*/
+      font-size: 50px;
+    }
+    .p3{
+      font-size: 30px;
+    }
+  }
+
+
+  .footer-superior{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    justify-content: space-between;
+    align-items: center;
+
+    max-height: 281px;
+    height:100%;
+    background-color: #fff;
+    padding: 40px 150px; 
+  }
+
+  .footer-contacto{
+    grid-column-start: 1;
+  }
+  .modo-contacto{
+    margin: 10px;
+  }
+  .modo-contacto svg{
+    margin:0 5px;
+    width:25px;
+  }
+
+  footer div img {  /*logotipo*/
+    width: 200px;
+    grid-column-start: 2;
+  }
+  @media (max-width:1000px) {
+    .footer-superior{
+      padding: 100px 100px; 
+    }
+
+    footer div img {  /*logotipo*/
+      width: 300px;
+    }
+
+    .modo-contacto{
+      margin:20px;
+    }
+    .modo-contacto svg{
+      margin:0 10px;
+      width: 30px ;
+    }  
+  }
+
+
+
+  .footer-inferior {
+    background-color: #776B40;
+    color: #fff;
+    padding: 20px 200px;
+
+    display: grid;
+    grid-template-columns: 40% auto;
+    grid-template-rows: auto;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @media (max-width:1000px) {
+    .footer-inferior {
+      padding: 50px 150px;
+    }
+    .footer-redes a svg{
+      width: 55px;
+    }
+
+    .footer-inferior span {   /*copyright*/
+      font-size: 2em ;
+    }
+  }
+
+  .footer-redes{
+    grid-column-start: 1;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .footer-redes a svg{
+    min-width: 35px;
+  }
+
+  .footer-inferior span {   /*copyright*/
+    grid-column-start: 2;
+  }
+
+
+
