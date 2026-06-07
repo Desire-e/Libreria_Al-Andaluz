@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KVM3T5HS23"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-KVM3T5HS23');
+        </script>
+
+
+        <meta charset="utf-8"/>
+        <meta name="description" content="Librería Al-Ándalus página principal"/>
+        <meta name="robots" content="index"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cesta - Librería Al-Ándalus</title>
+
+        <!-- CSS estilos -->
+        <link href="./css/carrito.css" rel="stylesheet" type="text/css" media="screen">
+        <!-- bootstrap icon  -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+        <!-- JS scripts -->
+        <script type="module" src="./js/carrito.js" defer></script>
+    </head>
+    
+
+    
+    <body>
+        <button id="btnSubir">
+            <i class="bi bi-chevron-double-up"></i>
+        </button>
+        
+        <div id="statusMessage" role="status" aria-live="polite"></div>
+        
+        <!-------- HEADER -------->
+        <header>
+            <a href="index.html"><img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo"/></a>                    
+
+            <!-- Barra de búsqueda -->
+            <form class="search-container">
+                <input id="search" name="search" type="search" placeholder="Buscar..." aria-label="Buscar libro">
+                <a class="search-button" href="busqueda.html" aria-label="Buscar">
+                    <!-- <img src="images\Iconos\opcional-lupa.svg" height="100%" alt=""/> -->
+                    <i class="bi bi-search"></i>
+
+                </a>
+            </form>
+
+            <!-- Navegador -->
+            <nav>
+                <a href="busqueda.html" aria-label="categorías">
+                    <h6 class="font-semibold">Categorías</h6>
+                </a>
+                <a href="#" class="text-lg font-bold" aria-label="iniciar sesión">
+                    <h6 class="font-semibold">Identifícate / Regístrate</h6>
+                </a>
+                <a href="#" class="text-lg font-bold" aria-label="favoritos">
+                    <h6 class="font-semibold">Favoritos</h6>
+                </a>
+                <a href="#" class="text-lg font-bold" aria-label="idioma">
+                    <h6 class="font-semibold">Idioma</h6>
+                </a>
+            </nav>
+
+            <div class="hamburger" aria-label="Menú">
+                <i class="bi bi-list"></i>
+            </div>
+            
+            <div class="usuario">
+                <a href="carrito.html" aria-label="carrito"><i class="bi bi-basket-fill text-xl"></i></a>
+                <a href="#" aria-label="cuenta"><i class="bi bi-person-circle text-xl"></i></a>
+            </div>
+
+        </header>
+
+        <!-- Navegador mobile -->
+        <nav class="nav-mobile">
+
+            <div>
+                <a href="index.html" >
+                    <img class="header-logo" 
+                    src="images\logo\logo-claro.svg" alt="Logo"/>
+                </a>
+                <button class="btn-close text-sm">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+
+
+            <a href="index.html" aria-label="categorías">
+                <i class="bi bi-house-door-fill"></i>
+                Inicio
+            </a>
+
+            <a href="busqueda.html" aria-label="categorías">
+                <i class="bi bi-tag"></i>
+                Categorías
+            </a>
+            <a href="#" aria-label="iniciar sesión">
+                <i class="bi bi-person"></i>
+                Identifícate / Regístrate
+            </a>
+            <a href="#" aria-label="idioma">
+                <i class="bi bi-globe2"></i>
+                Idioma
+            </a>
+
+            <hr/>
+            
+            <a href="#" aria-label="sobre-nosotros">
+                <i class="bi bi-file-text"></i>
+                Sobre nosotros
+            </a>
+            <a href="#" aria-label="contacto">
+                <i class="bi bi-telephone"></i>
+                Contacto
+            </a>
+
+            <a href="#" aria-label="politica-de-privacidad">
+                <i class="bi bi-shield-check"></i>
+                Política de privacidad
+            </a>
+
+            <a href="#" aria-label="preguntas-frecuentes">
+                <i class="bi bi-question-circle"></i>
+                Preguntas frecuentes
+            </a>
+        </nav>
+        
+
+        <div class="overlay"></div>
+            
+        <!-- TODO. Animación canvas de carga -->
+        <!-- <canvas id="canvas" width="400" height="300"></canvas> -->
+
+            
+        <!-------- CONTENEDOR  -------->
+        <div class="container carrito">
+
+            <!-------- SECCIONES -------->
+            <main>
+                <div class="carrito-header">
+                    <h3 tabindex="0">Cesta de compra</h3>
+                    <p tabindex="0">0 productos</p>
+                </div>
+
+                <div class="carrito-body">
+
+                    <div class="container-articulos">
+
+                        <p class="no-articles">Aún no hay artículos en su cesta</p>
+
+                        <div class="articulo">
+
+                            <div class="cover-wrapper">
+                                <a href="ficha_libro.html">
+                                    <img class="cover" src="images\Portada\portada.png" alt="portada de un artículo del carrito"/>
+                                </a>                                
+                            </div>
+                            <!-- <a href="ficha_libro.html">
+                                <img class="cover" src="images\Portada\portada.png" alt="portada de un artículo del carrito"/>
+                            </a> -->
+
+                            <!-- <div class="info"> -->
+                            <div class="desc-wrapper">
+
+                                <div class="descripcion">
+                                    <p class="text-lg font-semibold" tabindex="0">Título del libro</p>
+                                    <p class="stock agotado" tabindex="0">Agotado</p>
+                                </div>
+                                    <p class="text-lg font-semibold" tabindex="0">10,00 €</p>
+
+                                <div class="cantidad">
+                                        <button class="article-minus-btn"><i class="bi bi-dash"></i></button>
+                                        <input class="article-amount" type="text" value="1"/>
+                                        <button class="article-plus-btn"><i class="bi bi-plus"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <hr/>
+                        
+
+                        <div class="articulo">
+
+                            <div class="cover-wrapper">
+                                <a href="ficha_libro.html">
+                                    <img class="cover" src="images\Portada\portada.png" alt="portada de un artículo del carrito"/>
+                                </a>                                
+                            </div>
+                            <!-- <a href="ficha_libro.html">
+                                <img class="cover" src="images\Portada\portada.png" alt="portada de un artículo del carrito"/>
+                            </a> -->
+
+                            <!-- <div class="info"> -->
+                            <div class="desc-wrapper">
+
+                                <div class="descripcion">
+                                    <p class="text-lg font-semibold" tabindex="0">Título del libro</p>
+                                    <p class="stock agotado" tabindex="0">Agotado</p>
+                                </div>
+                                    <p class="text-lg font-semibold" tabindex="0">10,00 €</p>
+
+                                <div class="cantidad">
+                                        <button class="article-minus-btn"><i class="bi bi-dash"></i></button>
+                                        <input class="article-amount" type="text" value="1"/>
+                                        <button class="article-plus-btn"><i class="bi bi-plus"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <hr/>
+
+                        <div class="articulo">
+
+                            <div class="cover-wrapper">
+                                <a href="ficha_libro.html">
+                                    <img class="cover" src="images\Portada\portada.png" alt="portada de un artículo del carrito"/>
+                                </a>                                
+                            </div>
+                            <!-- <a href="ficha_libro.html">
+                                <img class="cover" src="images\Portada\portada.png" alt="portada de un artículo del carrito"/>
+                            </a> -->
+
+                            <!-- <div class="info"> -->
+                            <div class="desc-wrapper">
+
+                                <div class="descripcion">
+                                    <p class="text-lg font-semibold" tabindex="0">Título del libro</p>
+                                    <p class="stock agotado" tabindex="0">Agotado</p>
+                                </div>
+                                    <p class="text-lg font-semibold" tabindex="0">10,00 €</p>
+
+                                <div class="cantidad">
+                                        <button class="article-minus-btn"><i class="bi bi-dash"></i></button>
+                                        <input class="article-amount" type="text" value="1"/>
+                                        <button class="article-plus-btn"><i class="bi bi-plus"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    
+
+                    <div class="container-resumen">
+
+                        <h5 tabindex="0">Resumen</h5>
+                        
+                        <div class="ticket">
+                            
+                            <div class="desglose">
+                                <div class="titulos">
+                                    <p tabindex="0">Productos</p>
+                                    <p tabindex="0">Envío</p>
+                                    <p tabindex="0">Descuento</p>
+                                </div>
+
+                                <div class="precios">
+                                    <p tabindex="0">0,00 €</p>
+                                    <p tabindex="0">0,00 €</p>
+                                    <p tabindex="0">0,00 €</p>
+                                </div>
+                            </div>
+
+                            <p class="iva text-sm font-semibold" tabindex="0">* IVA incluído en los precios</p>
+                            
+                            <div class="code-promo">
+                                <p tabindex="0">Código promocional</p>
+                                <div class="code-wrapper">
+                                    <input type="text" placeholder="XX0000">
+                                    <button class="text-sm">Aplicar</button>    
+                                </div>
+                            </div>
+
+                            <hr/>
+
+                            <div class="total">
+                                <div class="titulos">
+                                    <p class="text-lg" tabindex="0">Total</p>
+                                </div>
+                                <div class="precios">
+                                    <p class="text-lg" tabindex="0">0.00 €</p>
+                                </div>
+                            </div>
+
+                            <button class="pay-btn">Pagar</button>
+                            
+                        </div>
+
+                    </div>
+
+
+                    <div class="container-resumen-mobile">
+
+                        <div class="code-promo">
+                            <p tabindex="0">Código promocional</p>
+
+                            <div class="code-wrapper">
+                                <input type="text" placeholder="XX0000">
+                                <button class="text-sm">Aplicar</button>    
+                            </div>
+                        </div>
+
+                        <button class="pay-btn">Tramitar pedido (24,50 €)</button>
+
+                    </div>
+
+                    
+                </div>
+
+            </main>
+        </div>
+
+        <!-------- FOOTER -------->
+        <footer> 
+            <div class="footer-top">
+                <div class="more-info">
+                    <a href="index.html"><img src="images\logo\logo-claro.svg" alt="logo"/></a>
+                    <p class="title text-xl font-semibold">Librería Al-Ándalus</h5>
+                    <div>
+                        <p class="font-light" tabindex="0">Calle de los libros, 123</p>
+                        <p class="font-light" tabindex="0">Almería, España</p>
+                    </div>
+                    <div>
+                        <p class="font-light" tabindex="0">Teléfono: +34 000 00 00 00</p>
+                        <p class="font-light" tabindex="0">Correo: correo@gmail.com</p>
+                    </div>  
+                </div>
+
+                <div class="fast-link">
+                    <p class="footer-title text-lg font-semibold">Enlaces rápidos</p>
+                    <a href="busqueda.html" class="font-light">Categorías</a>
+                    <a href="contacto.html" class="font-light">Sobre nosotros</a>
+                    <a href="contacto.html" class="font-light">Contacto</a>
+                    <a href="#" class="font-light">Trabaja con nosotros</a>
+                    <a href="#" class="font-light">Política de privacidad</a>
+                </div>
+
+                <div class="socialmedia">
+                    <p class="title text-lg font-semibold">Síguenos</p>
+                    <a href="#" class="font-light"><i class="bi bi-instagram"></i> Al-Ándalus</a>
+                    <a href="#" class="font-light"><i class="bi bi-youtube"></i> Al-Ándalus</a>
+                    <a href="#" class="font-light"><i class="bi bi-facebook"></i> Al-Ándalus</a>                        
+                </div>
+
+            </div>
+
+            <hr/>
+
+            <div class="footer-bottom">
+                <span class="font-light text-sm" tabindex="0">© 2026 · Desirée Rueda Torres</span>
+            </div>
+        </footer>
+
+
+    </body>
+
+
+</html>

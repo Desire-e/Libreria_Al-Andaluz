@@ -1,0 +1,246 @@
+@import url("global.css");
+
+main {
+  flex-direction: column;
+
+  /* separacion entre elementos */
+  gap: var(--main-gap-lg);
+
+  /* separación entre hero - main - footer */
+  padding-block: clamp(10rem, 25vh, 15rem);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  
+  gap: 3rem;
+}
+
+.hr-strong {
+  width:50%;
+  animation: mover 1.5s linear, aparece 1.5s linear;
+}
+@keyframes mover {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+@keyframes aparece {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  display: flex;
+  /* flex-start respeta la dirección del contenedor (flex-direction),
+  start respeta el modo de escritura (writing-mode) del documento.  */
+  align-items: flex-start;
+  justify-content: center;
+  align-content: center;
+
+  width: 100%;
+  min-height: 90vh;
+
+  padding-inline: clamp(1.5rem, 6vw, 8rem);
+  padding-block: 2rem;
+
+  background-image: url("../images/hero/hero-image.png");
+  background-size: cover;
+  background-position: center;
+
+  animation: aparece 2s ease-in-out;
+}
+@keyframes aparece {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  /* Ocupa el 100% del contenedor, pero nunca excederá los 600px.  
+  Cuando el contenedor sea más estrecho y el 100% sea menor a 600px, 
+  el ancho se ajustará automáticamente a ese valor porcentual. */
+  width: min(600px, 100%);
+}
+
+.hero button.cta {
+  width: clamp(12rem, 30vw, 20rem);
+  height: auto;
+
+  padding-block: 1.5rem;
+  margin: 3rem 0;
+
+  animation: pulse 3s infinite;
+}
+@keyframes pulse { 50% { transform: scale(1.05); } }
+
+
+
+/* =========================
+   CAROUSEL GENERAL
+========================= */
+
+.carousel { gap: 2em; }
+
+.carousel .prev, 
+.carousel .next {
+	font-size: 1.5rem;
+}
+
+.carousel-viewport .carousel-track { gap: 2em; }
+
+
+
+/* ===========================
+   CATEGORIAS
+=========================== */
+
+/* CONTENEDOR */
+
+section .categorias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  width: 100%;
+	padding:6em 3rem;
+
+  gap:3em;
+	
+	background-color: var(--color-bg-cream);
+}
+
+/* CARDS */
+
+.cards-container button.cta { 
+  margin-top: auto;
+  font-family: var(--font-body);
+}
+
+
+
+/* =========================
+   BEST SELLER 
+========================= */
+
+/* CONTENEDOR */
+
+section.destacada {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+.destacada.visible { opacity: 1; }
+
+
+/* CAROUSEL ITEM VARIANTE */
+
+.bs.carousel-item {  
+  /* tamaño para 3 de estas items visibles (desktop) */
+  flex: 0 0 calc((100% - 4rem) / 3);
+  /* 4rem = suma de gaps: 2rem + 2rem */
+  
+  font-family: var(--font-heading);
+  transition: transform 0.3s;
+}
+
+.bs.carousel-item:hover { transform: scale(1.02); }
+
+
+/* WRAPPER IMAGEN - cover mas grande */
+
+.bs.carousel-item .cover-wrapper{
+   aspect-ratio:2 / 3;
+   max-height:22rem;
+}
+.bs.carousel-item .cover{ object-position:50% 50%; }
+
+/* WRAPPER TEXTO */
+
+.bs.carousel-item .desc-wrapper { text-align: center; }
+
+
+
+/* =========================
+   SUSCRIPCIÓN
+========================= */
+
+.suscription-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.suscription-wrapper {
+  display: flex;
+  flex: 1;
+	background-color: var(--color-bg-cream);
+
+  /* que ocupe 90% pero nunca exceda 20rem */
+  min-width: min(90%, 20rem);
+}
+
+/* INPUT */
+
+#suscription {
+  width: 100%;
+	padding: 1em;
+	font-family: var(--font-body); 
+	font-weight: 400;
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+  .hero {
+    min-height: 90vh;
+    text-align: center;
+    justify-content: center;
+  }
+  .hero-content { align-items: center;  }
+
+
+  .suscription-container {
+    flex-direction: column;
+    gap: 1em;
+  }
+  .suscription-wrapper { width: 100%; }
+  #suscription { width: 100%; }
+
+
+  .bs.carousel-item{ flex:0 0 100%; }
+
+  .bs.carousel-item .cover-wrapper{
+    max-height:20rem;
+    width:100%
+  }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:900px) and (min-width:700px) {
+  .bs.carousel-item{ flex:0 0 calc((100% - 2rem)/2); }
+
+  .bs.carousel-item .cover-wrapper{ max-height:21rem; }
+}

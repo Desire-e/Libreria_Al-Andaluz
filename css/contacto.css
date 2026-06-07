@@ -1,0 +1,206 @@
+@import url("global.css");
+
+main {
+  flex-direction: column;
+  gap: var(--main-gap-lg);
+}
+
+.hr-accent { align-self: inherit; }
+
+
+/* =========================
+   ABOUT US
+========================= */
+
+.about-us {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3em;
+
+  /* no crece más que el tamaño de su contenido */
+  /* max-width: fit-content;   */
+  width: 90%;
+
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+.about-us .desc-wrapper{
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+
+  /* crece si sobra espacio
+  encoge si necesita espacio
+  400px base */
+  flex: 1 1 400px;
+
+  min-width: 400px;
+}
+
+.about-us .image-wrapper {
+  /* no crece si sobra espacio */
+  flex-grow:0;
+  /* encoge si se necesita espacio */
+  flex-shrink: 1;
+  min-width: 0;
+}
+.image-wrapper img{ 
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+
+
+/* =========================
+   ETICA EMPRESA
+========================= */
+
+.etica-empresa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width:100%;
+  padding: 4rem 2rem;
+  gap:1rem;
+
+  background: var(--color-bg-cream);
+}
+
+.etica-empresa .eticas{
+  display: flex;
+  justify-content: center;
+
+  width: 90%;
+  gap: 2rem;
+  margin-inline: auto;
+
+  flex-wrap: wrap;
+}
+
+.eticas .etica{
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+
+  flex: 1 1 230px;
+
+  max-width: 300px;
+  min-width: 0;
+}
+
+.eticas .etica i, 
+.eticas .etica svg {
+  font-size: 3rem;
+  width: 3rem;
+  height: 3rem;
+
+  color: var(--color-text-primary);
+
+  /* no encoge aunque no quepa */
+  flex-shrink: 0;
+}
+
+.etica .desc-wrapper h5 { color: var(--color-text-primary); }
+
+.etica .desc-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  min-width: 0;
+}
+
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contacto{
+  display:flex;
+  justify-content: space-between;
+  gap: 3rem;
+
+  width: 90%;
+  margin-inline: auto;
+  padding-inline:2rem;
+
+  align-items: center;
+}
+
+.contacto .info{
+  display: flex;
+  flex-direction: column;
+  gap:1rem;
+}
+.contacto .info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+.contacto .info .more-info{
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+
+.contacto .frames{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  flex: 1 1 60vh;
+  min-width: 0;
+}
+
+.contacto .frames iframe {
+  width: 100%;
+  min-height: 320px;
+
+  border: none;
+  flex: 1 1 300px;
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .contacto, .about-us { 
+    flex-direction: column; 
+    padding-inline: 0;
+  }
+
+  .contacto .info, .about-us .desc-wrapper{
+    min-width: 0;
+    flex: 1 1 200px;
+  }
+
+  .eticas .etica{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+

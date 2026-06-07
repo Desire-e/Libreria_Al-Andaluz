@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KVM3T5HS23"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-KVM3T5HS23');
+        </script>
+
+        <!-- Etiqueta de verificación Google Search Console -->
+        <meta name="google-site-verification" content="5DGi7i_g_fI3Xnj2H6C2jHGOVHnY_cHgNwKeU0N531g" />
+
+
+
+        <meta charset="utf-8"/>
+        <meta name="description" content="Librería Al-Ándalus página principal"/>
+        <meta name="robots" content="index"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Titulo del libro - Librería Al-Ándalus</title>
+
+        <!-- CSS estilos -->
+        <link href="./css/ficha.css" rel="stylesheet" type="text/css" media="screen">
+        <!-- bootstrap icon  -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        
+        <!-- JS scripts -->
+        <script type="module" src="./js/ficha.js" defer></script>
+    </head>
+    
+
+    <body>
+        <button id="btnSubir">
+            <i class="bi bi-chevron-double-up"></i>
+        </button>
+        
+        <div id="statusMessage" role="status" aria-live="polite"></div>
+        
+        <!-------- HEADER -------->
+        <header>
+            <a href="index.html"><img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo"/></a>                    
+
+            <!-- Barra de búsqueda -->
+            <form class="search-container">
+                <input id="search" name="search" type="search" placeholder="Buscar..." aria-label="Buscar libro">
+                <a class="search-button" href="busqueda.html" aria-label="Buscar">
+                    <!-- <img src="images\Iconos\opcional-lupa.svg" height="100%" alt=""/> -->
+                    <i class="bi bi-search"></i>
+
+                </a>
+            </form>
+
+            <!-- Navegador -->
+            <nav>
+                <a href="busqueda.html" aria-label="categorías">
+                    <h6 class="font-semibold">Categorías</h6>
+                </a>
+                <a href="#" class="text-lg font-bold" aria-label="iniciar sesión">
+                    <h6 class="font-semibold">Identifícate / Regístrate</h6>
+                </a>
+                <a href="#" class="text-lg font-bold" aria-label="favoritos">
+                    <h6 class="font-semibold">Favoritos</h6>
+                </a>
+                <a href="#" class="text-lg font-bold" aria-label="idioma">
+                    <h6 class="font-semibold">Idioma</h6>
+                </a>
+            </nav>
+
+            <div class="hamburger" aria-label="Menú">
+                <i class="bi bi-list"></i>
+            </div>
+            
+            <div class="usuario">
+                <a href="carrito.html" aria-label="carrito"><i class="bi bi-basket-fill text-xl"></i></a>
+                <a href="#" aria-label="cuenta"><i class="bi bi-person-circle text-xl"></i></a>
+            </div>
+
+        </header>
+
+        <!-- Navegador mobile -->
+        <nav class="nav-mobile">
+
+            <div>
+                <a href="index.html" >
+                    <img class="header-logo" 
+                    src="images\logo\logo-claro.svg" alt="Logo"/>
+                </a>
+                <button class="btn-close text-sm">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+
+
+            <a href="index.html" aria-label="categorías">
+                <i class="bi bi-house-door-fill"></i>
+                Inicio
+            </a>
+
+            <a href="busqueda.html" aria-label="categorías">
+                <i class="bi bi-tag"></i>
+                Categorías
+            </a>
+            <a href="#" aria-label="iniciar sesión">
+                <i class="bi bi-person"></i>
+                Identifícate / Regístrate
+            </a>
+            <a href="#" aria-label="idioma">
+                <i class="bi bi-globe2"></i>
+                Idioma
+            </a>
+
+            <hr/>
+            
+            <a href="#" aria-label="sobre-nosotros">
+                <i class="bi bi-file-text"></i>
+                Sobre nosotros
+            </a>
+            <a href="#" aria-label="contacto">
+                <i class="bi bi-telephone"></i>
+                Contacto
+            </a>
+
+            <a href="#" aria-label="politica-de-privacidad">
+                <i class="bi bi-shield-check"></i>
+                Política de privacidad
+            </a>
+
+            <a href="#" aria-label="preguntas-frecuentes">
+                <i class="bi bi-question-circle"></i>
+                Preguntas frecuentes
+            </a>
+        </nav>
+        
+
+        <div class="overlay"></div>
+
+        <!-- TODO. Animación canvas de carga -->
+        <!-- <canvas id="canvas" width="400" height="300"></canvas> -->
+
+
+        <div class="container">
+            
+            <!-------- SECCIONES -------->
+            <main>
+
+                <div class="ficha">
+                    <section class="sumario">
+                        
+                        <div class="covers">
+                            
+                            <!-- imagen principal -->
+                            <div class="cover-wrapper principal">
+                                <img class="cover principal-image" width="200" src="images\Portada\portada.png" />
+                            </div>
+                            
+                            <!-- carousel -->
+                            <div class="carousel thumbs">
+                                <button class="prev"><i class="bi bi-arrow-left"></i></button>
+                                
+                                <div class="carousel-viewport">
+                                    
+                                    <div class="carousel-track">                                        
+                                        <button class="carousel-item active">
+                                            <img src="images\Portada\portada.png" />
+                                        </button>
+                                        <button class="carousel-item">
+                                            <img src="images\Portada\portada.png" />
+                                        </button>
+                                        <button class="carousel-item">
+                                            <img src="images\Portada\portada.png" />
+                                        </button>
+                                        <button class="carousel-item">
+                                            <img src="images\Portada\portada.png" />
+                                        </button>
+                                    </div>
+
+                                </div>
+                                
+                                <button class="next"><i class="bi bi-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+
+
+                        <div class="informacion">
+                            <h6 class="categoria">Categoría del libro</h6>
+
+                            <h3 class="titulo">Titulo del libro</h3>
+
+                            <hr class="hr-accent"/>
+                            
+                            <h6 class="autor 
+                            text-lg ">Autor del libro</h6>
+
+                            <div class="puntuacion">
+
+                                <div class="estrellas">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                </div>
+
+                                <p class="text-sm">(1 opinión)</p>
+                            </div>
+                                                        
+                            <div class="detalle">
+                                <div class="paginas">
+                                    <i class="bi bi-book"></i>
+                                    <div>
+                                        <h6 class="titulo text-md">Páginas</h6>
+                                        <p class="text-sm">512</p>
+                                    </div>
+                                </div>
+
+                                <div class="idioma">
+                                    <i class="bi bi-translate"></i>
+                                    <div>
+                                        <h6 class="titulo text-md">Idioma</h6>
+                                        <p class="text-sm">Español</p>
+                                    </div>
+                                </div>
+                                <div class="publicacion">
+                                    <i class="bi bi-calendar4"></i>
+                                    <div>
+                                        <h6 class="titulo text-md">Publicación</h6>
+                                        <p class="text-sm">Diciembre 2024</p>
+                                    </div>
+                                </div>
+                                <div class="isbn">
+                                    <i class="bi bi-upc-scan"></i>
+                                    <div>
+                                        <h6 class="titulo text-md">ISBN</h6>
+                                        <p class="text-sm">000-00-000000-0-0</p>
+                                    </div>
+                                </div>    
+                            
+                            </div>
+                        </div>
+
+                    </section>
+
+
+                    <section class="contenidos">
+                        <!-- navigatorbar -->
+                        <nav>
+                            <div class="descripcion navbar"><h6>Descripción</h6></div>
+                            <div class="comentarios navbar"><h6>Comentarios (1)</h6></div>
+                        </nav>
+
+                        <!-- contenidos -->
+                        <div class="descripcion contenido">
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque 
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi 
+                                architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas 
+                                sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
+                                voluptatem sequi nesciunt.
+                            </p> 
+                            <p>
+                                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, 
+                                consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et 
+                                dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem 
+                                ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum 
+                                iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui 
+                                dolorem eum fugiat quo voluptas nulla pariatur?
+                            </p>
+                        </div>
+
+
+
+                        <div class="comentarios contenido">
+                            <div class="comentario">
+
+                                <i class="bi bi-quote"></i>
+
+                                <div class="opinion">
+                                    <div class="cuerpo">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                        </p>
+                                    </div>
+
+                                    <div class="autor text-sm"><p>— Autor del comentario</p></div>
+                                    
+                                    <div class="estrellas">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>                                        
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="comentario">
+
+                                <i class="bi bi-quote"></i>
+
+                                <div class="opinion">
+                                    <div class="cuerpo">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                        </p>
+                                    </div>
+
+                                    <div class="autor text-sm"><p>— Autor del comentario</p></div>
+                                    
+                                    <div class="estrellas">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>                                        
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </section>
+                </div>
+
+                <div class="precio">
+                    <div class="articulo">
+                        <div class="detalle">
+                            <h6 class="info-tapa">Tipo de tapa</h6>
+                            <h4 class="info-precio">24,60€</h4>
+                            <p class="info-stock stock disponible 
+                            font-semibold">En stock</p>                            
+                        </div>
+                        
+                        <div class="botones">
+                            <div class="btn-carrito">
+                                <i class="bi bi-cart2"></i>
+                                <h6>Añadir al carrito</h6>
+                            </div>
+
+                            <div class="btn-favorito">
+                                <i class="bi bi-heart"></i>
+                                <h6>Añadir a favoritos</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr/>
+
+                    <div class="envios">
+                        <div>
+                            <i class="bi bi-truck"></i>
+                            <p class="text-sm">Envío gratis a partir de 30€</p>
+                        </div>
+                        
+                        <div>
+                            <i class="bi bi-clock-history"></i>
+                            <p class="text-sm">Devoluciones en 30 días</p>
+                        </div>
+
+                        <div>
+                            <i class="bi bi-shield-check"></i>
+                            <p class="text-sm">Pago 100% seguro</p>                            
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>     
+
+        </div>
+
+
+        <!-------- FOOTER -------->
+        <!-------- FOOTER -------->
+        <footer> 
+            <div class="footer-top">
+                <div class="more-info">
+                    <a href="index.html"><img src="images\logo\logo-claro.svg" alt="logo"/></a>
+                    <p class="title text-xl font-semibold">Librería Al-Ándalus</h5>
+                    <div>
+                        <p class="font-light" tabindex="0">Calle de los libros, 123</p>
+                        <p class="font-light" tabindex="0">Almería, España</p>
+                    </div>
+                    <div>
+                        <p class="font-light" tabindex="0">Teléfono: +34 000 00 00 00</p>
+                        <p class="font-light" tabindex="0">Correo: correo@gmail.com</p>
+                    </div>  
+                </div>
+
+                <div class="fast-link">
+                    <p class="footer-title text-lg font-semibold">Enlaces rápidos</p>
+                    <a href="busqueda.html" class="font-light">Categorías</a>
+                    <a href="contacto.html" class="font-light">Sobre nosotros</a>
+                    <a href="contacto.html" class="font-light">Contacto</a>
+                    <a href="#" class="font-light">Trabaja con nosotros</a>
+                    <a href="#" class="font-light">Política de privacidad</a>
+                </div>
+
+                <div class="socialmedia">
+                    <p class="title text-lg font-semibold">Síguenos</p>
+                    <a href="#" class="font-light"><i class="bi bi-instagram"></i> Al-Ándalus</a>
+                    <a href="#" class="font-light"><i class="bi bi-youtube"></i> Al-Ándalus</a>
+                    <a href="#" class="font-light"><i class="bi bi-facebook"></i> Al-Ándalus</a>                        
+                </div>
+
+            </div>
+
+            <hr/>
+
+            <div class="footer-bottom">
+                <span class="font-light text-sm" tabindex="0">© 2026 · Desirée Rueda Torres</span>
+            </div>
+        </footer>
+        
+    </body>
+</html>

@@ -1,0 +1,419 @@
+@import url("global.css");
+
+main{ 
+  flex-direction: row;
+  gap: var(--main-gap-sm);
+
+  flex-wrap:wrap;
+  align-items:flex-start;
+}
+
+
+
+/* =========================
+   FICHA (row izquierda)
+========================= */
+
+.ficha{
+  display: flex;
+  flex-direction: column;
+  gap:3rem;
+
+  /* tamaño flexible */
+  flex:1 1 700px;
+
+  /* en hijos flex importante: los textos largos pueden provocar 
+  overflow aunque el contenedor tenga width: 100%. */
+  min-width:0;
+}
+
+.ficha .sumario{
+  display: flex;
+  gap:2rem;
+
+  align-items:flex-start;
+}
+
+
+
+/* =========================
+   CONTENEDOR DE 
+   COVER PRINCIPAL 
+   + CAROUSEL THUMBS
+========================= */
+
+.sumario .covers{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+
+  flex:0 1 320px; /* ancho fijo*/
+  min-width:0;
+}
+
+/* COVER PRINCIPAL */
+
+.cover-wrapper.principal{ max-height: unset; }
+
+/* CAROUSEL DE THUMBS */
+
+.carousel.thumbs{
+  gap:0.7rem;
+  min-width:0;
+}
+
+.carousel .prev,
+.carousel .next{
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.carousel-viewport .carousel-track{ gap:0.8rem; }
+
+/* THUMB buttons */
+
+.carousel.thumbs .carousel-item{
+  /* toma el ancho total del contenedor (100%)
+  resta 1.6rem (gap total)
+  divide el resultado entre 3 */
+  flex:0 0 calc((100% - 1.6rem) / 3);
+
+  opacity:0.6;
+  transition: all 0.25s ease;
+}
+
+.carousel.thumbs button.carousel-item:hover{ opacity: 1; }
+
+.carousel.thumbs .carousel-item.active{ opacity:1; }
+
+/* IMAGEN */
+
+.carousel.thumbs .carousel-item img {
+  width:100%;
+
+  aspect-ratio: 1 / 1;
+  object-fit:cover;
+}
+
+
+
+/* =========================
+   INFORMACION
+========================= */
+
+.sumario .informacion{
+  display: flex;
+  flex-direction: column;
+
+  gap:0.7rem;
+
+  flex:1;
+  min-width:0;
+}
+
+.informacion .categoria, 
+.informacion .autor {
+  color:var(--color-text-primary);
+}
+
+.informacion .detalle{
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-top:1.5rem;
+  gap: 1.5rem;
+}
+
+.informacion .detalle i,
+.informacion .detalle .titulo {
+  color:var(--color-text-primary);
+}
+
+.informacion .detalle i {
+  margin-right: 0.7rem;
+  font-size: 1.5rem;
+
+  flex-shrink:0;
+  color:var(--color-text-primary);
+}
+
+/* hijos directos div de .informacion .detalle */
+.informacion .detalle > div {
+  display: flex;
+
+  gap:0.7rem;
+  min-width:140px;
+}
+
+
+/* =========================
+   CONTENIDOS, navbar
+========================= */
+
+.ficha .contenidos{
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- navigatorbar ---- */
+
+.contenidos nav{
+  display: flex;
+  border-bottom: 2px solid var(--color-cream-strong);
+
+  flex-wrap:wrap;
+}
+
+.contenidos nav .descripcion.navbar,
+.contenidos nav .comentarios.navbar {
+  padding: 0.7rem 1rem;
+  cursor:pointer;
+  color: var(--color-text-primary);
+}
+
+.active-navbar {
+  /* el activo tiene subrayado debajo */
+  border-bottom: 2.5px solid var(--color-hr-accent);
+}
+
+/* ---- contenidos ---- */
+
+.contenidos .descripcion.contenido, 
+.contenidos .comentarios.contenido {
+  display: none;
+  flex-direction: column;
+}
+.contenidos .descripcion.contenido { margin-top: 1.3rem; }
+
+.active-content {
+  /* el contenido se muestra */
+  display:flex !important;
+
+  flex-direction:column;
+  gap:1rem;
+}
+
+.comentarios{ gap: 1.5rem; }
+
+.comentarios .comentario{ 
+  display: flex;  
+  padding: 1.5rem;
+  gap:1rem;
+  background-color: var(--color-bg-cream);
+}
+
+.comentario > i { 
+  font-size:2rem;
+  color: var(--color-text-primary);
+  flex-shrink:0;
+}
+
+.comentario .opinion {
+  display:flex;
+  flex-direction: column;
+  gap:0.7rem;
+  min-width:0;
+}
+
+.comentario .opinion .cuerpo{
+  display: flex;
+  flex-direction: column;
+}
+
+.comentario .opinion .autor{ color: var(--color-text-primary); }
+
+
+
+
+/* =========================
+   ARTICULO PRECIO (row derecha)
+========================= */
+
+.precio {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+
+  /* no crece para ocupar espacio sobrante,
+  encoge si no cabe */
+  flex:0 1 340px;
+  min-width: 330px;
+
+  padding: 1.5rem;
+  gap: 1.5rem;
+
+  background-color: var(--color-bg-cream);
+}
+
+/* articulo, envios info */
+.precio > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.precio i { font-size: 1.2em; }
+
+
+
+/* =========================
+   ARTICULO: DETALLES Y BOTONES
+========================= */
+
+.precio .articulo .detalle, 
+.precio .articulo .botones {
+  display: flex;
+  flex-direction: column;
+  gap:0.5rem;  
+}
+
+.detalle .info-precio { color: var(--color-text-primary); }
+
+.botones .btn-carrito, 
+.botones .btn-favorito {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding:0.8rem 1rem;
+  gap:1rem;
+  
+  border-radius: 6px;
+  text-align:center;
+}
+
+.botones .btn-carrito {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-inverse);
+  
+  transition: background-color 0.3s, color 0.3s;
+}
+.botones .btn-carrito:hover{
+  cursor:pointer;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-main);
+}
+
+.botones .btn-favorito {
+  border: 1.6px solid var(--color-text-primary);
+  color: var(--color-text-primary);
+  
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+.botones .btn-favorito:hover {
+  cursor:pointer;
+  color: var(--color-text-inverse);
+  border-color: var(--color-text-inverse);
+  background-color: var(--color-bg-primary);
+}
+
+
+
+/* =========================
+   ENVIOS: INFO GENERAL
+========================= */
+
+.precio .envios > div {
+  display: flex;
+  align-items: center;
+  gap:0.7rem;
+}
+
+.envios i{ flex-shrink:0; }
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+  main { display:grid }
+
+
+  /*  Elimina visualmente el contenedor .ficha del layout
+  .ficha deja de “existir” como caja
+  Pero sus hijos siguen existiendo
+  Sus hijos pasan a comportarse como si fueran hijos directos de main */
+  .ficha { display:contents; }
+
+  .ficha .sumario {
+    order:1;
+    padding-inline:2rem;
+    flex-direction: column;
+  }
+  
+  .sumario .covers { width:100%; }
+
+
+  .precio {
+    order:2;
+    width:100%;
+    min-width:0;
+  }
+
+  .precio .articulo .detalle { gap:1rem; }
+
+  .detalle > div { width:100%; }
+
+  .precio .articulo .botones .btn-carrito,
+  .precio .articulo .botones .btn-favorito { width:100%; }
+
+
+  .contenidos { 
+    order:3; 
+    padding-inline:1rem;
+  }
+
+  .contenidos .comentarios.contenido .comentario { flex-direction:column; }  
+
+}
+
+
+
+/* =========================
+   TABLET + DESKTOP 1024px
+========================= */
+
+@media (max-width:1050px) and (min-width:720px){
+
+  main { 
+    display:grid; 
+    gap:3rem; 
+  }
+
+
+
+  .ficha { display:contents; }
+
+  .ficha .sumario {
+    order:1;
+    padding-inline:2rem;
+  }
+  
+  .sumario .covers { width:100%; }
+
+
+  .precio {
+    order:2;
+    width:100%;
+    min-width:0;
+  }
+
+  .precio .articulo .detalle { gap:1rem; }
+
+  .detalle > div { width:100%; }
+
+  .precio .articulo .botones .btn-carrito,
+  .precio .articulo .botones .btn-favorito { width:100%; }
+
+
+  .contenidos { 
+    order:3; 
+    padding-inline:1rem;
+  }
+
+  .contenidos .comentarios.contenido .comentario { flex-direction:column; }  
+
+}

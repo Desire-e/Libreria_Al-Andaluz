@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KVM3T5HS23"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-KVM3T5HS23');
+        </script>
+
+        <!-- Etiqueta de verificación Google Search Console -->
+        <meta name="google-site-verification" content="5DGi7i_g_fI3Xnj2H6C2jHGOVHnY_cHgNwKeU0N531g" />
+
+
+
+        <meta charset="utf-8"/>
+        <meta name="description" content="Librería Al-Ándalus página principal"/>
+        <meta name="robots" content="index"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Librería Al-Ándalus</title>
+
+        <!-- CSS estilos -->
+        <link href="./css/landing.css" rel="stylesheet" type="text/css" media="screen">
+        <!-- bootstrap icon  -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        
+        <!-- JS scripts -->
+        <!-- defer carga js tras HTML cargado, los carga por orden -->
+        <!-- module para exportar variables / funciones de este -->
+        <script type="module" src="./js/index.js" defer></script>
+    </head>
+    
+
+    <body>
+        <button id="btnSubir">
+            <i class="bi bi-chevron-double-up"></i>
+        </button>
+        
+        <div id="statusMessage" role="status" aria-live="polite"></div>
+        <!-- 
+        ACCESIBILIDAD. Mensajes para lectores de pantalla
+        role="status"   Indica a lectores de pantalla que aparecerán mensajes de estado
+        aria-live="polite"  Controla cómo se anuncian los cambios (polite hace que lector 
+        espere a que usuario termine de escuchar para anunciar nuevo mensaje, no intrusivo)
+        -->
+        
+        
+        <!-------- HEADER -------->
+        <header>
+            <a href="index.html"><img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo"/></a>                    
+
+            <!-- Barra de búsqueda -->
+            <form class="search-container">
+                <input id="search" name="search" type="search" placeholder="Buscar..." aria-label="Buscar libro">
+                <a class="search-button" href="busqueda.html" aria-label="Buscar">
+                    <!-- <img src="images\Iconos\opcional-lupa.svg" height="100%" alt=""/> -->
+                    <i class="bi bi-search"></i>
+
+                </a>
+            </form>
+
+            <!-- Navegador -->
+            <nav>
+                <a href="busqueda.html" aria-label="categorías">
+                    <h6 class="font-semibold">Categorías</h6>
+                </a>
+                <a href="#" class="text-lg font-bold" aria-label="iniciar sesión">
+                    <h6 class="font-semibold">Identifícate / Regístrate</h6>
+                </a>
+                <a href="#" class="text-lg font-bold" aria-label="favoritos">
+                    <h6 class="font-semibold">Favoritos</h6>
+                </a>
+                <a href="#" class="text-lg font-bold" aria-label="idioma">
+                    <h6 class="font-semibold">Idioma</h6>
+                </a>
+            </nav>
+
+            <div class="hamburger" aria-label="Menú">
+                <i class="bi bi-list"></i>
+            </div>
+            
+            <div class="usuario">
+                <a href="carrito.html" aria-label="carrito"><i class="bi bi-basket-fill text-xl"></i></a>
+                <a href="#" aria-label="cuenta"><i class="bi bi-person-circle text-xl"></i></a>
+            </div>
+
+        </header>
+
+        <!-- Navegador mobile -->
+        <nav class="nav-mobile">
+
+            <div>
+                <a href="index.html" >
+                    <img class="header-logo" 
+                    src="images\logo\logo-claro.svg" alt="Logo"/>
+                </a>
+                <button class="btn-close text-sm">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+
+
+            <a href="index.html" aria-label="categorías">
+                <i class="bi bi-house-door-fill"></i>
+                Inicio
+            </a>
+
+            <a href="busqueda.html" aria-label="categorías">
+                <i class="bi bi-tag"></i>
+                Categorías
+            </a>
+            <a href="#" aria-label="iniciar sesión">
+                <i class="bi bi-person"></i>
+                Identifícate / Regístrate
+            </a>
+            <a href="#" aria-label="idioma">
+                <i class="bi bi-globe2"></i>
+                Idioma
+            </a>
+
+            <hr/>
+            
+            <a href="#" aria-label="sobre-nosotros">
+                <i class="bi bi-file-text"></i>
+                Sobre nosotros
+            </a>
+            <a href="#" aria-label="contacto">
+                <i class="bi bi-telephone"></i>
+                Contacto
+            </a>
+
+            <a href="#" aria-label="politica-de-privacidad">
+                <i class="bi bi-shield-check"></i>
+                Política de privacidad
+            </a>
+
+            <a href="#" aria-label="preguntas-frecuentes">
+                <i class="bi bi-question-circle"></i>
+                Preguntas frecuentes
+            </a>
+        </nav>
+        
+
+        <div class="overlay"></div>
+
+        <!-- TODO. Animación canvas de carga -->
+        <!-- <canvas id="canvas" width="400" height="300"></canvas> -->
+
+        <!-------- HERO -------->
+        <section class="hero"> 
+            <div class="hero-content">
+                <h1>Librería Al-Ándalus</h1>
+                <h3>Historias que inspiran, conocimiento que transforma</h3>
+                <button class="cta"><h3>Regístrate</h3></button>
+            </div>
+        </section>
+
+
+        <div class="container">
+            
+            <!-------- SECCIONES -------->
+            <main>
+
+                <!-------- SECCION BEST SELLER -------->
+                <section tabindex="0" class="destacada">
+                    
+                    <hr class="hr-strong"/>
+
+                    <h2 tabindex="0">Best-Seller</h2>
+
+                    <!-- -------- -->
+                    <!-- CAROUSEL -->
+                    <!-- -------- -->
+                    <div class="carousel destacada">
+                        
+                        <button class="prev"><i class="bi bi-arrow-left"></i></button>
+
+                        <div class="carousel-viewport">
+                            <div class="carousel-track">
+
+                                <div class="bs carousel-item">
+                                    <a href="./ficha_libro.html">
+
+                                        <div class="bs cover-wrapper">
+                                            <img class="cover" src="images\Portada\portada.png" 
+                                            loading="lazy" alt="portada 1"/>
+                                        </div>
+                                                                                
+                                        <div class="bs desc-wrapper">
+                                            <h5>1 Titulo Lorem ipsum dolor</h5>
+                                            <p class="font-light">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="bs carousel-item">
+                                    <a href="./ficha_libro.html">
+
+                                        <div class="bs cover-wrapper">
+                                            <img class="cover" src="images\Portada\portada.png" 
+                                            loading="lazy" alt="portada 1"/>
+                                        </div>
+                                                                                
+                                        <div class="bs desc-wrapper">
+                                            <h5>2 Lorem ipsum dolor</h5>
+                                            <p class="font-light">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="bs carousel-item">
+                                    <a href="./ficha_libro.html">
+
+                                        <div class="bs cover-wrapper">
+                                            <img class="cover" src="images\Portada\portada.png" 
+                                            loading="lazy" alt="portada 1"/>
+                                        </div>
+                                        
+                                        
+                                        <div class="bs desc-wrapper">
+                                            <h5>3 Titulo Lorem ipsum dolor</h5>
+                                            <p class="font-light">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="bs carousel-item">
+                                    <a href="./ficha_libro.html">
+
+                                        <div class="bs cover-wrapper">
+                                            <img class="cover" src="images\Portada\portada.png" 
+                                            loading="lazy" alt="portada 1"/>
+                                        </div>
+                                                                                
+                                        <div class="bs desc-wrapper">
+                                            <h5>4 Titulo Lorem ipsum dolor</h5>
+
+                                            <p class="font-light">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="bs carousel-item">
+                                    <a href="./ficha_libro.html">
+
+                                        <div class="bs cover-wrapper">
+                                            <img class="cover" src="images\Portada\portada.png" 
+                                            loading="lazy" alt="portada 1"/>
+                                        </div>
+                                                                                
+                                        <div class="bs desc-wrapper">
+                                            <h5>5 Titulo Lorem ipsum dolor</h5>
+                                            <p class="font-light">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <button class="next"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                    
+                    <hr class="hr-strong"/>
+                </section>
+
+                <!-------- SECCION EBOOKS -------->
+                <section tabindex="0">
+                    <h2 tabindex="0">EBooks</h2>
+
+                    <!-- -------- -->
+                    <!-- CAROUSEL -->
+                    <!-- -------- -->
+                    <div class="carousel">
+
+                        <button class="prev"><i class="bi bi-arrow-left"></i></button>
+
+                        <div class="carousel-viewport">
+                            <div class="carousel-track">
+
+                                <div class="carousel-item">
+                                    <a href="./ficha_libro.html">
+                                        
+                                        <div class="cover-wrapper">
+                                            <img class="cover" src="images\Portada\portada.png" 
+                                            loading="lazy" alt="portada 1"/>
+                                        </div>
+
+                                        <div class="desc-wrapper">
+                                            <p class="font-bold">1 Lorem ipsum dolor</p>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <a href="./ficha_libro.html">
+                                        <div class="cover-wrapper">
+                                            <img class="cover" src="images\Portada\portada.png" 
+                                            loading="lazy" alt="portada 1"/>
+                                        </div>
+                                        <div class="desc-wrapper">
+                                            <p class="font-bold">2 Lorem ipsum dolor</p>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <a href="./ficha_libro.html">
+                                        <div class="cover-wrapper">
+                                            <img class="cover" src="images\Portada\portada.png" 
+                                            loading="lazy" alt="portada 1"/>
+                                        </div>
+                                        <div class="desc-wrapper">
+                                            <p class="font-bold">3 Lorem ipsum dolor</p>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <a href="./ficha_libro.html">
+                                        <div class="cover-wrapper">
+                                            <img class="cover" src="images\Portada\portada.png" 
+                                            loading="lazy" alt="portada 1"/>
+                                        </div>
+                                        <div class="desc-wrapper">
+                                            <p class="font-bold">4 Lorem ipsum dolor</p>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <a href="./ficha_libro.html">
+                                        <div class="cover-wrapper">
+                                            <img class="cover" src="images\Portada\portada.png" 
+                                            loading="lazy" alt="portada 1"/>
+                                        </div>
+                                        <div class="desc-wrapper">
+                                            <p class="font-bold">5 Lorem ipsum dolor</p>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <button class="next"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+
+                    <button class="cta font-bold text-lg">Descubre más</button>
+                </section>
+
+
+                <!-------- SECCION CATEGORIAS -------->
+                <section tabindex="0">
+
+                    <div class="categorias">
+                        
+                        <h2>Categorías destacadas</h2>
+
+                        <div class="cards-container">                     
+                            <div class="card">
+                                    <div class="cover-wrapper">
+                                        <img class="cover" src="images\categorias\image.jpg" loading="lazy" alt="portada 1"/>
+                                    </div>
+                                    <div class="desc-wrapper">
+                                        <p class="text-lg font-bold" tabindex="0">Categoría</p>
+                                        <p tabindex="0">
+                                            Una breve y llamativa descripcion de esta categoría
+                                            Una breve y llamativa descripcion de esta categoría
+                                            Una breve y llamativa descripcion de esta categoría
+                                            Una breve y llamativa descripcion de esta categoría
+                                        </p>
+                                        <button class="cta text-md font-bold"><a href="./ficha_libro.html">Ver más</a></button>
+                                    </div>
+                            </div>
+                            
+                            <div class="card">
+                                    <div class="cover-wrapper">
+                                        <img class="cover" src="images\categorias\image.jpg" loading="lazy" alt="portada 1"/>
+                                    </div>
+                                    <div class="desc-wrapper">
+                                        <p class="text-lg font-bold" tabindex="0">Categoría</p>
+                                        <p tabindex="0">
+                                            Una breve y llamativa descripcion de esta categoría
+                                            Una breve y llamativa descripcion de esta categoría
+                                        </p>
+                                        <button class="cta text-md font-bold"><a href="./ficha_libro.html">Ver más</a></button>
+                                    </div>
+                            </div>
+                            <div class="card">
+                                    <div class="cover-wrapper">
+                                        <img class="cover" src="images\categorias\image.jpg" loading="lazy" alt="portada 1"/>
+                                    </div>
+                                    <div class="desc-wrapper">
+                                        <p class="text-lg font-bold" tabindex="0">Categoría</p>
+                                        <p tabindex="0">
+                                            Una breve y llamativa descripcion de esta categoría
+                                            Una breve y llamativa descripcion de esta categoría
+                                        </p>
+                                        <button class="cta text-md font-bold"><a href="./ficha_libro.html">Ver más</a></button>
+                                    </div>
+                            </div>
+                        </div>
+
+                    </div> 
+                </section>
+
+
+
+            </main>     
+
+            <!-------- SUSCRIPCIÓN A BOLETÍN -------->
+            <section>
+                <form class="suscription-container">
+                    <label for="suscription"><h4>Suscríbete a nuestro boletín</h4></label>
+
+                    <div class="suscription-wrapper">
+                        <input id="suscription" name="suscription" type="email" 
+                        placeholder="Ingrese su email" aria-label="Envío de email para suscribirse">
+                        <button class="cta font-bold text-md">Suscribirme</button>
+                    </div>
+
+                </form>
+            </section>  
+        </div>
+
+        <!-------- FOOTER -------->
+        <footer> 
+            <div class="footer-top">
+                <div class="more-info">
+                    <a href="index.html"><img src="images\logo\logo-claro.svg" alt="logo"/></a>
+                    <p class="title text-xl font-semibold">Librería Al-Ándalus</h5>
+                    <div>
+                        <p class="font-light" tabindex="0">Calle de los libros, 123</p>
+                        <p class="font-light" tabindex="0">Almería, España</p>
+                    </div>
+                    <div>
+                        <p class="font-light" tabindex="0">Teléfono: +34 000 00 00 00</p>
+                        <p class="font-light" tabindex="0">Correo: correo@gmail.com</p>
+                    </div>  
+                </div>
+
+                <div class="fast-link">
+                    <p class="footer-title text-lg font-semibold">Enlaces rápidos</p>
+                    <a href="busqueda.html" class="font-light">Categorías</a>
+                    <a href="contacto.html" class="font-light">Sobre nosotros</a>
+                    <a href="contacto.html" class="font-light">Contacto</a>
+                    <a href="#" class="font-light">Trabaja con nosotros</a>
+                    <a href="#" class="font-light">Política de privacidad</a>
+                </div>
+
+                <div class="socialmedia">
+                    <p class="title text-lg font-semibold">Síguenos</p>
+                    <a href="#" class="font-light"><i class="bi bi-instagram"></i> Al-Ándalus</a>
+                    <a href="#" class="font-light"><i class="bi bi-youtube"></i> Al-Ándalus</a>
+                    <a href="#" class="font-light"><i class="bi bi-facebook"></i> Al-Ándalus</a>                        
+                </div>
+
+            </div>
+            
+            <hr/>
+
+            <div class="footer-bottom">
+                <span class="font-light text-sm" tabindex="0">© 2026 · Desirée Rueda Torres</span>
+            </div>
+        </footer>
+
+
+
+        <!-- JAVASCRIPT GOOGLE ANALYTICS -->
+        <!-- Obtener qué se escribió en la barra de búsqueda -->
+        <script>
+
+
+            document.addEventListener("DOMContentLoaded", function() {
+                // Campo de búsqueda
+                const searchInput = document.getElementById('search'); 
+
+                // Cuando el usuario presione "Enter" teniendo foco en el input
+                /* 'keydown': La función se ejecuta cuando se pulse cualquier tecla mientras el searchInput tiene el foco 
+                        function(event): La función recibe un objeto event que contiene información sobre la tecla y el contexto 
+                        (por ejemplo event.key, event.code, event.ctrlKey,...).
+                */
+                searchInput.addEventListener("keydown", function(event) {
+                    
+                    // Si la tecla presionada es enter...
+                    /* event.key: La representación de la tecla ("Enter", "a", "ArrowLeft"...) */
+                    if (event.key === "Enter") {
+                        /* searchInput.value: lee el valor introducido en el input */
+                        const terminoBusqueda = searchInput.value.trim();
+                        
+                    // Si la cadena no está vacía...
+                    /* En js una cadena vacía "" o de solo espacios es falsa */
+                    if (terminoBusqueda) {
+                        /* gtag('event', 'busquedas', {...} : Llama a la función gtag para enviar un evento personalizado 
+                            a GA4. (GA4 detecta automáticamente un nuevo evento llamado busquedas y lo empezará a registrar 
+                            en los informes sin tener que crear el evento desde GA4 manualmente).
+                            * Requisito: la librería de gtag.js debe estar cargada antes (en el <head>)
+                        */
+                        /* { search_term: terminoBusqueda, method: 'enter_key' }: este objeto son los parámetros del evento.
+                                search_term: contiene lo que escribió el usuario.
+                                method: adicionalmente indica cómo se activó (tecla Enter). 
+                        */
+                        gtag('event', 'busquedas', 
+                            {
+                            search_term: terminoBusqueda,
+                            method: 'enter_key'
+                            }
+                        );
+                    }
+                }
+            });
+            });
+        </script>
+    </body>
+</html>
