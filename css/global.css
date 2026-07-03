@@ -96,6 +96,7 @@ h6 {font-size: clamp(1rem, 1.9vw, 1.15rem);}
 .font-regular { font-weight: 400; }
 .font-semibold { font-weight: 600; }
 .font-bold { font-weight: 700; }
+.font-extra-bold { font-weight: 800; }
 
 /* tamaño */
 .text-xl { font-size: 1.6rem; }
@@ -173,14 +174,14 @@ button {
   background: none;
 }
 
-button.cta {
+button.cta, a.cta {
   background: var(--color-bg-primary);
   color: var(--color-text-inverse);
   padding: 1em 2em;
   font-family: var(--font-heading);
   transition: background-color 0.3s ease;
 }
-button.cta:hover {
+button.cta:hover, a.cta:hover {
   background: var(--color-bg-main);
   color: var(--color-text-primary);
   text-decoration: none;
@@ -328,6 +329,14 @@ header nav {
 
   flex-wrap: wrap;
 	gap: clamp(0.5rem, 2vw, 3.2rem);
+  
+}
+.nav-desktop { 
+  font-size: clamp(1rem, 1.9vw, 1.15rem); 
+  font-family: var(--font-heading);
+  
+  /* font-weight: 800; */
+  /* letter-spacing: 0.05em; */
 }
 
 .usuario {
@@ -422,6 +431,34 @@ footer hr { margin: 0 2rem; }
 .footer-bottom {
   text-align: center;
   padding: 1rem;
+}
+
+
+/* =========================
+   ACCESIBILIDAD
+========================= */
+
+.skip-link{
+  position:absolute;
+  left:-9999px;
+  opacity:0;
+  /* para que siga existiendo en la página, pueda recibir focus,
+  pero permanezca fuera de la pantalla hasta que el usuario lo necesite. 
+  visibility:hidden y display:none hacen que no reciba focus*/
+}
+
+.skip-link:focus{
+  left:20px;
+  top:20px;
+  background:white;
+  color:black;
+  padding:10px;
+  z-index:1000;
+}
+
+:focus-visible{
+  outline:2px solid var(--color-link-hover);
+  outline-offset:3px;
 }
 
 
@@ -627,7 +664,7 @@ ANIMACION CANVAS */
 
 /* CARD */
 
-.card a { color: inherit; }
+/* .card a { color: inherit; } */
 
 .card {
   display: flex;

@@ -81,17 +81,30 @@ function setCarousels(){
         // Eventos
         nextBtn.addEventListener("click", () => {
             if (index < getMaxIndex()) {
-            index++;
-            updateCarousel();
+                index++;
+                updateCarousel();
             }
         });
 
         prevBtn.addEventListener("click", () => {
             if (index > 0) {
-            index--;
-            updateCarousel();
+                index--;
+                updateCarousel();
             }
         });
+
+        // ACCESIBILIDAD. Con teclas de dirección <- ->
+        carousel.addEventListener("keydown",(e)=>{
+            if(e.key==="ArrowRight"){
+                index++;
+                updateCarousel();
+            }
+            if(e.key==="ArrowLeft"){
+                index--;
+                updateCarousel();  
+            }
+        });
+
 
         // Recalcula en cambios de tamaño de pantalla
         window.addEventListener("resize", updateCarousel);
@@ -164,9 +177,16 @@ function setStatusMessage(message) {
  * HAMBURGER MOBILE 
  * (header nav)
  *******************************************/
+
+// botón para abrir
 const hamburger = document.querySelector('.hamburger');
+// navegador mobile
 const nav = document.querySelector('.nav-mobile');
+// botón para cerrar
 const btnCloseNav = nav.querySelector(".btn-close");
+// ACCESIBILIDAD. Primer enlace del menu
+const primerEnlace = nav.querySelector("a");
+
 
 // EVENTOS 
 
@@ -174,15 +194,26 @@ hamburger.addEventListener("click", () => {
   nav.classList.toggle("active");
   overlay.classList.toggle("active");
   document.body.classList.add("overlay-active");
+
+  // ACCESIBILIDAD. Indicar menu abierto y focus en primer enlace 
+  hamburger.setAttribute("aria-expanded","true");
+  primerEnlace.focus();
+
 });
 
 overlay.addEventListener("click", closeNavHeaderMobile);
+
 btnCloseNav.addEventListener("click", closeNavHeaderMobile);
 
 function closeNavHeaderMobile(){
   nav.classList.remove("active");
   overlay.classList.remove("active");
   document.body.classList.remove("overlay-active");
+
+  // ACCESIBILIDAD. Indicar menu cerrado y focus en botón que lo abre 
+  hamburger.setAttribute("aria-expanded","false");
+  hamburger.focus();
+
 }
 
 

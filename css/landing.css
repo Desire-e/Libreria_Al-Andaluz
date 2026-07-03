@@ -82,6 +82,8 @@ section {
   padding-block: 1.5rem;
   margin: 3rem 0;
 
+  font-size: clamp(1.5rem, 3.7vw, 2.5rem);
+
   animation: pulse 3s infinite;
 }
 @keyframes pulse { 50% { transform: scale(1.05); } }
@@ -125,7 +127,7 @@ section .categorias {
 
 /* CARDS */
 
-.cards-container button.cta { 
+.cards-container button.cta, .cards-container a.cta  { 
   margin-top: auto;
   font-family: var(--font-body);
 }
