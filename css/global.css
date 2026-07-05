@@ -417,7 +417,7 @@ footer hr { margin: 0 2rem; }
 }
 
 /* columnas footer superior */
-.footer-top .title { margin-bottom: 0.3em; } /* titulos columnas */
+.footer-top > p { margin-bottom: 0.3em; } /* titulos columnas */
 
 .footer-top .more-info, 
 .footer-top .fast-link, 
@@ -459,6 +459,11 @@ footer hr { margin: 0 2rem; }
 :focus-visible{
   outline:2px solid var(--color-link-hover);
   outline-offset:3px;
+}
+
+input[type="text"]:focus-visible,
+textarea:focus-visible {
+    outline: none;
 }
 
 
@@ -677,6 +682,7 @@ ANIMACION CANVAS */
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+
 /* CARD WRAPPER TEXTO */
 
 .card .desc-wrapper {
@@ -690,7 +696,7 @@ ANIMACION CANVAS */
 
 /* CARD WRAPPER PORTADA */
 
-.card .cover-wrapper{
+.card .cover-wrapper {
   aspect-ratio:5 / 4;
   max-height:18rem;
 }
@@ -732,7 +738,8 @@ ANIMACION CANVAS */
   header nav { display: none; }
 
   .nav-mobile {
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;    
     align-items: flex-start;
     justify-content: flex-start;
@@ -756,6 +763,7 @@ ANIMACION CANVAS */
   }
 
   .nav-mobile.active{
+    /* display:flex; */
     transform: translateX(0);
   }
 

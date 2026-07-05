@@ -174,8 +174,8 @@ function setStatusMessage(message) {
 
 
 /*******************************************
- * HAMBURGER MOBILE 
- * (header nav)
+ * HAMBURGER MENU MOBILE 
+ * (Header Side Navigation)
  *******************************************/
 
 // botón para abrir
@@ -191,29 +191,108 @@ const primerEnlace = nav.querySelector("a");
 // EVENTOS 
 
 hamburger.addEventListener("click", () => {
-  nav.classList.toggle("active");
-  overlay.classList.toggle("active");
-  document.body.classList.add("overlay-active");
 
-  // ACCESIBILIDAD. Indicar menu abierto y focus en primer enlace 
-  hamburger.setAttribute("aria-expanded","true");
-  primerEnlace.focus();
+    nav.style.display = "flex";
 
+    // ejecuta esto justo antes de que el navegador vuelva a pintar la pantalla
+    requestAnimationFrame(() => {
+        const abierto = nav.classList.add("active");
+        // overlay.classList.toggle("active", abierto);
+        overlay.classList.add("active");
+        // document.body.classList.toggle("overlay-active", abierto);
+        document.body.classList.add("overlay-active");
+
+        // ACCESIBILIDAD. Indicar menu abierto y focus en primer enlace
+        hamburger.setAttribute("aria-expanded","true");
+        primerEnlace.focus();
+    });
+});
+
+// ACCESIBILIDAD. Navegación con teclado
+
+nav.addEventListener("keydown", e => {
+    // Selecciona todos los elementos focusables en el Side Navigator
+    let focusableNodeList = nav.querySelectorAll(
+        'a, button, input, [tabindex]:not([tabindex="-1"])'
+    );
+    const focusable = [...focusableNodeList];
+
+    // Indice de actual focus, actualizado cada vez se presiona una tecla 
+    const current = focusable.indexOf(document.activeElement);
+
+
+    // Cerrar con Escape
+    if (e.key === "Escape") {
+        closeNavHeaderMobile();
+        return;
+    }
+    
+    // Navegación con Tab
+    if (e.key === "Tab") {
+        // Retroceso
+        if (e.shiftKey) {
+            // si esta en primero, salta al ultimo focusable
+            if (current <= 0) {
+                e.preventDefault();
+                focusable[focusable.length - 1].focus();
+            } // si no, retrocede normal
+        }
+        // Avance
+        else {
+            // si esta en el ultimo, salta al primer focusable
+            if (current === focusable.length - 1) {
+                e.preventDefault();
+                focusable[0].focus();
+            } // si no, avanza normal
+        }
+
+        return;
+    }
+    
+    // Navegación con flechas
+    // Retroceso
+    if (e.key == "ArrowUp") {
+        e.preventDefault();
+
+        if (current <= 0){
+            focusable[focusable.length - 1].focus();
+        } 
+        else { focusable[current - 1].focus(); }
+
+        return;
+    }
+
+    // Avance    
+    if (e.key == "ArrowDown") {
+        e.preventDefault();
+
+        if (current >= focusable.length - 1) {
+            focusable[0].focus();
+        }
+        else { focusable[current + 1].focus(); }
+
+        return;            
+    }
 });
 
 overlay.addEventListener("click", closeNavHeaderMobile);
-
 btnCloseNav.addEventListener("click", closeNavHeaderMobile);
 
 function closeNavHeaderMobile(){
-  nav.classList.remove("active");
-  overlay.classList.remove("active");
-  document.body.classList.remove("overlay-active");
+    nav.classList.remove("active");
 
-  // ACCESIBILIDAD. Indicar menu cerrado y focus en botón que lo abre 
-  hamburger.setAttribute("aria-expanded","false");
-  hamburger.focus();
+    // Tras la transición de desaparición, display:none y limpia listener 
+    nav.addEventListener("transitionend", function cerrar() {
+        nav.style.display = "none";
+        nav.removeEventListener("transitionend", cerrar);
 
+        overlay.classList.remove("active");
+        document.body.classList.remove("overlay-active");
+
+        // ACCESIBILIDAD. Indicar menu cerrado y focus en botón que lo abre 
+        hamburger.setAttribute("aria-expanded","false");
+        hamburger.focus();
+    });
 }
 
 
