@@ -56,6 +56,8 @@ section.resultados .filtros-btn {
   visibility: hidden;
 }
 
+.resultados .card a { color: inherit; }
+
 
 .filtros-header {
   display: flex;
@@ -75,6 +77,11 @@ section.resultados .filtros-btn {
   display: flex;
   flex-direction: column;
   gap:1.5rem;
+}
+
+.filtros-body .accordion-item button {
+  font-size: clamp(1rem, 1.9vw, 1.15rem); 
+  font-family: var(--font-heading);
 }
 
 /* ACCORDIONS FILTROS */
@@ -112,13 +119,15 @@ section.resultados .filtros-btn {
   display: flex;
   
   gap: 0.3rem; 
-  margin-bottom: 0.3rem;
+  /* margin-bottom: 0.3rem; */
+  margin: 0.3rem;
 }
 
 /* cerrado */
 .accordion-item:not(.active) .accordion-content{
   max-height:0;
   opacity:0;
+  display: none;
 }
 .accordion-item:not(.active) .accordion-header i{ transform:rotate(-90deg); }
 
@@ -226,7 +235,7 @@ section.resultados {
   min-width:0;
 }
 
-.custom-select.orden .select-btn {  
+.custom-select.orden .select {  
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -240,12 +249,13 @@ section.resultados {
   border: 1.65px solid var(--color-cream-strong);
 }
 
-.select-btn .selected {
+.select {
   display: inline-flex;
   gap: 0.5rem;
   color: var(--color-text-primary);
 }
-.select-btn i { color: var(--color-text-primary); }
+
+.select i { color: var(--color-text-primary); }
 
 .custom-select.orden .options{
   display:none;
@@ -265,9 +275,9 @@ section.resultados {
 
 .custom-select.orden.open .options{ display:block;  }
 
-.custom-select.orden.open .select-btn{ border-bottom: 0; }
+.custom-select.orden.open .select{ border-bottom: 0; }
 
-.custom-select.orden.open .select-btn {
+.custom-select.orden.open .select {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -320,9 +330,20 @@ section.resultados {
 ========================= */
 
 @media(max-width:900px){
+  
+  /* panel lateral de filtros oculto */
+  section.filtros{ display: none; }
 
-  /* --- Filtros modal --- */
-  section.filtros {
+
+  /* --- Filtros version mobile modal --- */
+  dialog#filtros {
+    display: flex;
+    flex-direction: column;
+
+    /* no crece para ocupar espacio sobrante,
+    encoge si no cabe */
+    flex: 0 1 270px;
+
     gap: 1.3rem;
 
     position: fixed;
@@ -340,8 +361,11 @@ section.resultados {
     overflow-y:auto;
     border-top-right-radius: 7px;
     border-top-left-radius: 7px;
-    z-index: 45;
+    /* z-index: 45; */
     background-color: var(--color-bg-main);
+    border-width:0px;
+
+
 
     /* oculto por defecto */
     opacity:0;
@@ -350,10 +374,9 @@ section.resultados {
     transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
   }
 
-  section.filtros.active {
+  dialog#filtros:open {
     opacity: 1;
     visibility: visible;
-
     transform:translateY(0);
   }
 
@@ -396,7 +419,7 @@ section.resultados {
   /* select de orden resultados */
   .custom-select.orden{ width:100%; }
 
-  .custom-select.orden .select-btn{ width:100%; }
+  .custom-select.orden .select{ width:100%; }
 }
 
 

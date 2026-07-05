@@ -33,151 +33,190 @@
 
 
     <body>
+        <!-- 
+        ACCESIBILIDAD. Mensajes para lectores de pantalla.
+        role="status"   Indica a lectores de pantalla que aparecerán mensajes de estado
+        aria-live="polite"  Controla cómo se anuncian los cambios (polite hace que lector 
+        espere a que usuario termine de escuchar para anunciar nuevo mensaje, no intrusivo)
+        -->
+        <div tabindex="-1" id="statusMessage" role="status" aria-live="polite"></div>
 
-        <button id="btnSubir">
-            <i class="bi bi-chevron-double-up"></i>
+        <a href="#contenido" class="skip-link">
+            Saltar al contenido principal
+        </a>
+
+        <button id="btnSubir" aria-label="Subir al inicio">
+            <i aria-hidden="true" class="bi bi-chevron-double-up"></i>
         </button>
+
         
-        <div id="statusMessage" role="status" aria-live="polite"></div>
-        
+
         <!-------- HEADER -------->
         <header>
-            <a href="index.html"><img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo"/></a>                    
+            <!-- Logo -->
+            <a href="index.html">
+                <img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo librería al-andalus"/>
+            </a>                    
 
             <!-- Barra de búsqueda -->
-            <form class="search-container">
-                <input id="search" name="search" type="search" placeholder="Buscar..." aria-label="Buscar libro">
-                <a class="search-button" href="busqueda.html" aria-label="Buscar">
-                    <!-- <img src="images\Iconos\opcional-lupa.svg" height="100%" alt=""/> -->
-                    <i class="bi bi-search"></i>
+            <form class="search-container" role="search" aria-label="Buscar libros">
+                <input id="search" name="search" type="search" placeholder="Buscar..." 
+                aria-label="Introducir búsqueda">
 
-                </a>
+                <button class="search-button" type="submit" 
+                aria-label="Buscar">
+                    <!-- <img src="images\Iconos\opcional-lupa.svg" height="100%" alt=""/> -->
+                    <i aria-hidden="true" class="bi bi-search"></i>
+                </button>
             </form>
 
-            <!-- Navegador -->
-            <nav>
-                <a href="busqueda.html" aria-label="categorías">
-                    <h6 class="font-semibold">Categorías</h6>
+            <!-- Navegador (DESKTOP) -->
+            <nav class="nav-desktop">
+                <a href="busqueda.html" class="font-semibold " aria-current="page">
+                    Categorías
                 </a>
-                <a href="#" class="text-lg font-bold" aria-label="iniciar sesión">
-                    <h6 class="font-semibold">Identifícate / Regístrate</h6>
+                <a href="#" class="font-semibold">
+                    Identifícate / Regístrate
                 </a>
-                <a href="#" class="text-lg font-bold" aria-label="favoritos">
-                    <h6 class="font-semibold">Favoritos</h6>
+                <a href="#" class="font-semibold">
+                    Favoritos
                 </a>
-                <a href="#" class="text-lg font-bold" aria-label="idioma">
-                    <h6 class="font-semibold">Idioma</h6>
+                <a href="#" class="font-semibold">
+                    Idioma
                 </a>
             </nav>
 
-            <div class="hamburger" aria-label="Menú">
-                <i class="bi bi-list"></i>
-            </div>
-            
+
+            <!-- Hambuger abrir menú (MOBILE) -->
+            <button class="hamburger" aria-label="Abrir menú móvil" aria-expanded="false" aria-controls="nav-mobile">
+                <i aria-hidden="true" class="bi bi-list"></i>
+            </button>
+
+            <!-- 
+            aria-expanded="false" comunica a las tecnologías de asistencia que existe contenido oculto disponible 
+            para ser expandido.
+            aria-controls="menu-mobile" se utiliza en un botón para vincularlo semánticamente al contenedor del menú 
+            de navegación que controla. Permite que las tecnologías de asistencia identifiquen qué elemento de la página 
+            cambia de estado (expandido o colapsado) cuando se interactúa con el botón.  
+            -->
+
+            <!-- Botones carrito y cuenta -->
             <div class="usuario">
-                <a href="carrito.html" aria-label="carrito"><i class="bi bi-basket-fill text-xl"></i></a>
-                <a href="#" aria-label="cuenta"><i class="bi bi-person-circle text-xl"></i></a>
+                <a href="carrito.html" aria-label="Carrito">
+                    <i aria-hidden="true" class="bi bi-basket-fill text-xl"></i>
+                </a>
+                <a href="#" aria-label="Cuenta">
+                    <i aria-hidden="true" class="bi bi-person-circle text-xl"></i>
+                </a>
             </div>
 
         </header>
 
         <!-- Navegador mobile -->
-        <nav class="nav-mobile">
+        <nav tabindex="0" class="nav-mobile" id="nav-mobile">
 
-            <div>
-                <a href="index.html" >
-                    <img class="header-logo" 
-                    src="images\logo\logo-claro.svg" alt="Logo"/>
+            <div aria-label="Menú pantalla móvil">
+                <a href="index.html">
+                    <img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo librería al-andalus"/>
                 </a>
-                <button class="btn-close text-sm">
-                    <i class="bi bi-x-lg"></i>
+
+                <button class="btn-close text-sm" aria-label="Cerrar menú pantalla móvil">
+                    <i aria-hidden="true" class="bi bi-x-lg"></i>
                 </button>
             </div>
 
 
-            <a href="index.html" aria-label="categorías">
-                <i class="bi bi-house-door-fill"></i>
+            <a href="index.html">
+                <i aria-hidden="true" class="bi bi-house-door-fill"></i>
                 Inicio
             </a>
 
-            <a href="busqueda.html" aria-label="categorías">
-                <i class="bi bi-tag"></i>
+            <a href="busqueda.html" aria-current="page">
+                <i aria-hidden="true" class="bi bi-tag"></i>
                 Categorías
             </a>
-            <a href="#" aria-label="iniciar sesión">
-                <i class="bi bi-person"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-person"></i>
                 Identifícate / Regístrate
             </a>
-            <a href="#" aria-label="idioma">
-                <i class="bi bi-globe2"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-globe2"></i>
                 Idioma
             </a>
 
             <hr/>
             
-            
-            <a href="#" aria-label="sobre-nosotros">
-                <i class="bi bi-file-text"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-file-text"></i>
                 Sobre nosotros
             </a>
-            <a href="#" aria-label="contacto">
-                <i class="bi bi-telephone"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-telephone"></i>
                 Contacto
             </a>
 
-            <a href="#" aria-label="politica-de-privacidad">
-                <i class="bi bi-shield-check"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-shield-check"></i>
                 Política de privacidad
             </a>
 
-            <a href="#" aria-label="preguntas-frecuentes">
-                <i class="bi bi-question-circle"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-question-circle"></i>
                 Preguntas frecuentes
             </a>
         </nav>
         
 
-        <div class="overlay"></div>
+
+        <div tabindex="-1" class="overlay"></div>
+
+
 
         <!-- TODO. Animación canvas de carga -->
         <!-- <canvas id="canvas" width="400" height="300"></canvas> -->
 
 
+
         <div class="container">
             
-            <!-------- SECCIONES -------->
             <main>
+                <!-- ------------------------------------- -->
+                <!-- CONTENEDOR DE FILTROS PARA BUSQUEDAS -->
+                <!-- ------------------------------------- -->
 
-                <section class="filtros">
+                <section class="filtros" aria-label="Filtros">
                     
                     <div class="filtros-header">
-                        <h5>Filtros</h5>
+                        <h5 tabindex="0">Filtros</h5>
 
                         <div class="btn-clean-wrapper text-sm">
                             <button class="btn-clean text-sm">
-                                <i class="bi bi-arrow-clockwise"></i>
-                                <span>Limpiar filtros</span>
+                                <i aria-hidden="true" class="bi bi-arrow-clockwise"></i>
+                                Limpiar filtros
                             </button>
                         </div>
 
-                        <button class="btn-close text-sm">
-                            <i class="bi bi-x-lg"></i>
+                        <button aria-label="Cerrar filtros" class="btn-close text-sm">
+                            <i aria-hidden="true" class="bi bi-x-lg"></i>
                         </button>
-
                     </div>
 
 
+                    <!-- FILTROS (DESPLEGABLES) -->
 
                     <div class="filtros-body">
 
+                        <!-- FILTRO POR CATEGORÍAS -->
                         <div class="categorias accordion-item active">
-
-                            <button class="accordion-header">
-                                <h6 class="font-semibold">Categorías</h6>
-                                <i class="bi bi-chevron-down"></i>
+                            
+                            <button class="accordion-header font-semibold"
+                            aria-expanded="false" aria-controls="categoria-panel" id="categorias-button">
+                                Categorías
+                                <i aria-hidden="true" class="bi bi-chevron-down"></i>
                             </button>
 
-                            <div class="accordion-content">
+                            <div class="accordion-content" 
+                            id="categoria-panel" aria-labelledby="categorias-button">
                                 <div>
                                     <input type="checkbox" name="cb-categoria" value="novela-historica" id="novela-historica" />
                                     <label for="novela-historica">Novela histórica (24)</label>
@@ -210,17 +249,19 @@
                             </div>
 
                         </div>
+                        <!-- FIN FILTRO POR CATEGORÍAS -->
 
 
-
+                        <!-- FILTRO POR PRECIO -->
                         <div class="precio accordion-item active">
 
-                            <button class="accordion-header">
-                                <h6 class="font-semibold">Precio</h6>
-                                <i class="bi bi-chevron-down"></i>
+                            <button class="accordion-header font-semibold"
+                            aria-expanded="false" aria-controls="precio-panel" id="precio-button">
+                                Precio
+                                <i aria-hidden="true" class="bi bi-chevron-down"></i>
                             </button>
 
-                            <div class="accordion-content">
+                            <div class="accordion-content" id="precio-panel" aria-labelledby="precio-button">
                                 <div class="range-container">
 
                                     <span id="minValue">1 €</span>
@@ -237,20 +278,21 @@
 
                                 </div>
                             </div>
-
                         </div>
+                        <!-- FIN FILTRO POR PRECIO -->
 
 
-                        
+                        <!-- FILTRO POR DISPONIBILIDAD -->
                         <div class="disponibilidad accordion-item active">
 
-                            <button class="accordion-header">
-                                <h6 class="font-semibold">Disponibilidad</h6>
-                                <i class="bi bi-chevron-down"></i>
-                                <!-- <i class="bi bi-chevron-right"></i> -->
+                            <button class="accordion-header font-semibold"
+                            aria-expanded="false" aria-controls="disponibilidad-panel" id="disponibilidad-button">
+                            
+                                Disponibilidad
+                                <i aria-hidden="true" class="bi bi-chevron-down"></i>
                             </button>
 
-                            <div class="accordion-content">
+                            <div class="accordion-content" id="disponibilidad-panel" aria-labelledby="disponibilidad-button">
                                 <div>
                                     <input type="checkbox" name="cb-disponible" value="stock" id="stock" />
                                     <label for="stock">En stock</label>
@@ -258,18 +300,19 @@
                             </div>
                         
                         </div>
+                        <!-- FIN FILTRO POR DISPONIBILIDAD -->
 
 
-
+                        <!-- FILTRO POR FORMATO -->
                         <div class="formatos accordion-item active">
 
-                            <button class="accordion-header">
-                                <h6 class="font-semibold">Formatos</h6>
-                                <i class="bi bi-chevron-down"></i>
-                                <!-- <i class="bi bi-chevron-right"></i> -->
+                            <button class="accordion-header font-semibold"
+                            aria-expanded="false" aria-controls="formato-panel" id="formato-button">
+                                Formatos
+                                <i aria-hidden="true" class="bi bi-chevron-down"></i>
                             </button>
 
-                            <div class="accordion-content">
+                            <div class="accordion-content" id="formato-panel" aria-labelledby="formato-button">
                                 <div>
                                     <input type="checkbox" name="cb-formato" value="rustica" id="rustica" />
                                     <label for="rustica">Rústica (1.192)</label>
@@ -297,62 +340,241 @@
                             </div>
 
                         </div>
+                        <!-- FIN FILTRO POR FORMATO -->
                         
                     </div>
-                
                 </section>
 
 
+                <!-- TODO. ACCESIBLE COPYPASTE VERSION DESKTOP -->
+                <!-- ------------------------------------- -->
+                <!-- CONTENEDOR DE FILTROS PARA BUSQUEDAS -->
+                <!-- VERSIÓN MODAL (MOBILE) -->
+                <!-- ------------------------------------- -->
+                <dialog id="filtros">
+                    
+                    <div class="filtros-header">
+                        <h5 tabindex="0">Filtros</h5>
 
-                <section class="resultados">
+                        <div class="btn-clean-wrapper text-sm">
+                            <button class="btn-clean text-sm">
+                                <i aria-hidden="true" class="bi bi-arrow-clockwise"></i>
+                                Limpiar filtros
+                            </button>
+                        </div>
+
+                        <button aria-label="Cerrar filtros" class="btn-close text-sm">
+                            <i aria-hidden="true" class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+
+
+                    <!-- FILTROS (DESPLEGABLES) -->
+
+                    <div class="filtros-body">
+
+                        <!-- FILTRO POR CATEGORÍAS -->
+                        <div class="categorias accordion-item active">
+                            
+                            <button class="accordion-header font-semibold"
+                            aria-expanded="false" aria-controls="categoria-panel" id="categorias-button">
+                                Categorías
+                                <i aria-hidden="true" class="bi bi-chevron-down"></i>
+                            </button>
+
+                            <div class="accordion-content" 
+                            id="categoria-panel" aria-labelledby="categorias-button">
+                                <div>
+                                    <input type="checkbox" name="cb-categoria" value="novela-historica" id="novela-historica" />
+                                    <label for="novela-historica">Novela histórica (24)</label>
+                                </div>
+                                
+                                <div>
+                                    <input type="checkbox" name="cb-categoria" value="fantasia" id="fantasia" />
+                                    <label for="fantasia">Fantasía (18)</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" name="cb-categoria" value="scific" id="scific" />
+                                    <label for="scific">Ciencia ficción (9)</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" name="cb-categoria" value="ensayo" id="ensayo" />
+                                    <label for="ensayo">Ensayo (14)</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" name="cb-categoria" value="poesia" id="poesia" />
+                                    <label for="poesia">Poesía (6)</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" name="cb-categoria" value="infantojuvenil" id="infantojuvenil" />
+                                    <label for="infantojuvenil">Infantil y juvenil (7)</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- FIN FILTRO POR CATEGORÍAS -->
+
+
+                        <!-- FILTRO POR PRECIO -->
+                        <div class="precio accordion-item active">
+
+                            <button class="accordion-header font-semibold"
+                            aria-expanded="false" aria-controls="precio-panel" id="precio-button">
+                                Precio
+                                <i aria-hidden="true" class="bi bi-chevron-down"></i>
+                            </button>
+
+                            <div class="accordion-content" id="precio-panel" aria-labelledby="precio-button">
+                                <div class="range-container">
+
+                                    <span id="minValue">1 €</span>
+
+                                    <div class="slider-wrapper">
+                                        <input type="range" id="minRange"
+                                        min="1" max="100" value="1" />
+
+                                        <input type="range" id="maxRange"
+                                        min="1" max="100" value="100" />
+                                    </div>
+
+                                    <span id="maxValue">100 €</span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FIN FILTRO POR PRECIO -->
+
+
+                        <!-- FILTRO POR DISPONIBILIDAD -->
+                        <div class="disponibilidad accordion-item active">
+
+                            <button class="accordion-header font-semibold"
+                            aria-expanded="false" aria-controls="disponibilidad-panel" id="disponibilidad-button">
+                            
+                                Disponibilidad
+                                <i aria-hidden="true" class="bi bi-chevron-down"></i>
+                            </button>
+
+                            <div class="accordion-content" id="disponibilidad-panel" aria-labelledby="disponibilidad-button">
+                                <div>
+                                    <input type="checkbox" name="cb-disponible" value="stock" id="stock" />
+                                    <label for="stock">En stock</label>
+                                </div>
+                            </div>
+                        
+                        </div>
+                        <!-- FIN FILTRO POR DISPONIBILIDAD -->
+
+
+                        <!-- FILTRO POR FORMATO -->
+                        <div class="formatos accordion-item active">
+
+                            <button class="accordion-header font-semibold"
+                            aria-expanded="false" aria-controls="formato-panel" id="formato-button">
+                                Formatos
+                                <i aria-hidden="true" class="bi bi-chevron-down"></i>
+                            </button>
+
+                            <div class="accordion-content" id="formato-panel" aria-labelledby="formato-button">
+                                <div>
+                                    <input type="checkbox" name="cb-formato" value="rustica" id="rustica" />
+                                    <label for="rustica">Rústica (1.192)</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="cb-formato" value="tela" id="tela" />
+                                    <label for="tela">Tela (323)</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="cb-formato" value="pasta-dura" id="pasta-dura" />
+                                    <label for="pasta-dura">Pasta dura (80)</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="cb-formato" value="bolsillo" id="bolsillo" />
+                                    <label for="bolsillo">Bolsillo (2)</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="cb-formato" value="ebook" id="ebook" />
+                                    <label for="ebook">Ebook (1)</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="cb-formato" value="otros" id="otros" />
+                                    <label for="otros">Otros (40)</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- FIN FILTRO POR FORMATO -->
+                        
+                    </div>
+                
+                </dialog>
+
+
+
+                <!-- ------------------------------------- -->
+                <!-- CONTENEDOR DE RESULTADOS DE BUSQUEDAS -->
+                <!-- ------------------------------------- -->
+
+                <section class="resultados" aria-label="Resultados de busqueda">
 
 
                     <div class="resultados-header">
                         <div>
-                            <h4>Resultados para "una búsqueda"</h4>
-                            <p>Se han encontrado 24 resultados</p>
+                            <h4 tabindex="0">Resultados para "una búsqueda"</h4>
+                            <p tabindex="0">Se han encontrado 24 resultados</p>
                         </div>
 
+
+                        
+                        <!-- Botón activa modal de filtros (MOBILE) -->
                         <button class="filtros-btn">
-                            <i class="bi bi-filter"></i>
+                            <i aria-hidden="true" class="bi bi-filter"></i>
                             <h6 class="text-md">Filtros</h6>
                         </button>
 
-                        <div class="custom-select orden">
-                            <button class="select-btn">
-                                <div data-selected="" class="selected">
-                                    <!-- <h6 class="text-md">Ordenar por: </h6>  -->
-                                    <p class="">Ordenar por: </p> 
-                                    <!-- <h6 class="font-regular text-md"> -->
-                                    <p class="">
-                                        <!-- Relevancia -->
-                                    </p>
-                                </div>
+        
 
-                                <i class="bi bi-chevron-down"></i>
-                                <i  class="bi bi-chevron-right"></i>
+                        <!-- CUSTOM SELECT de orden de resultados -->
+                        <div class="custom-select orden">
+
+                            <!-- SELECT -->
+                            <button class="select" data-selected=""
+                            role="combobox" id="select" aria-label="Orden de resultados"
+                            aria-haspopup="listbox" aria-expanded="false" aria-controls="orden-options">
+                            <!-- aria-haspopup="listbox" indica que al activar un elemento se desplegará un listbox 
+                            para que el usuario seleccione opciones. -->
+
+                                <!-- OPTION SELECTED -->
+                                <div>
+                                    <span> Ordenar por: </span>
+                                    <span></span>
+                                </div>
+                                
+                                <i aria-hidden="true" class="bi bi-chevron-down"></i>
+                                <i aria-hidden="true" class="bi bi-chevron-right"></i>
                             </button>
 
-                            <div class="options">
-                                <div class="option" data-value="relevancia">
-                                    <!-- <h6 class="font-regular text-md">
-                                        Relevancia
-                                    </h6> -->
-                                    <p class="font-light">
-                                        Relevancia
-                                    </p>
+                            <!-- OPTIONS -->
+                            <div class="options"
+                            id="orden-options" role="listbox" >
+                            <!-- role="listbox" para identificar un contenedor que permite seleccionar uno o más elementos 
+                            estáticos de una lista, similar al <select> nativa pero con la capacidad de incluir imágenes 
+                            y ofrecer un control personalizado sobre la interacción y el estilo. -->
+
+                                <div tabindex="0" class="option" data-value="relevancia" role="option">
+                                    <p class="font-light">Relevancia</p>
                                 </div>
 
-                                <div class="option" data-value="precio-asc">
-                                    <p class="font-light">
-                                        Más barato
-                                    </p>
+                                <div tabindex="0" class="option" role="option" data-value="precio-asc" role="option">
+                                    <p class="font-light">Más barato</p>
                                 </div>
 
-                                <div class="option" data-value="precio-des">
-                                    <p class="font-light">
-                                        Más caro
-                                    </p>
+                                <div tabindex="0" class="option" role="option" data-value="precio-des" role="option">
+                                    <p class="font-light">Más caro</p>
                                 </div>
                             </div>
 
@@ -361,194 +583,197 @@
                     
                     <hr/>
 
+
+
+                    <!-- RESULTADOS DE BUSQUEDA -->
+
                     <div class="resultados-body">
 
-                            <div class="card">
-                                <a href="./ficha_libro.html">
-                                    <div class="cover-wrapper">
-                                        <img class="cover" src="images\Portada\portada.png" />
-                                    </div>
+                        <div class="card">
+                            <a href="./ficha_libro.html" aria-label="Ir ficha de libro">
+                                <div class="cover-wrapper">
+                                    <img class="cover" src="images\Portada\portada.png" alt="Portada del libro" />
+                                </div>
 
-                                    <div class="desc-wrapper">
-                                        <h6 class="text-sm categoria">Categoría libro</h6>
-                                        <h6 class="titulo">Título libro</h6>
-                                        <h6 class="text-md font-semibold autor">Autor libro</h6>
-                                    </div>
+                                <div class="desc-wrapper">
+                                    <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6>
+                                    <h6 tabindex="0" class="titulo">Título libro</h6>
+                                    <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6>
+                                </div>
 
-                                    <div class="puntuacion">
-                                        <div class="estrellas">
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-half"></i>
-                                            <i class="bi bi-star"></i>
-                                        </div>
-                                        <p class="text-sm">(124)</p>
+                                <div class="puntuacion">
+                                    <div tabindex="0" class="estrellas">
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-half"></i>
+                                        <i aria-hidden="true" class="bi bi-star"></i>
                                     </div>
+                                    <p class="text-sm">(124)</p>
+                                </div>
 
-                                    <div class="desc-wrapper">
-                                        <h5 class="precio">24,99 €</h5>
-                                        <p class="text-sm font-bold stock disponible">En stock</p>
-                                        <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
+                                <div class="desc-wrapper">
+                                    <h5 tabindex="0" class="precio">24,99 €</h5>
+                                    <p tabindex="0" class="text-sm font-bold stock disponible">En stock</p>
+                                    <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="card">
+                            <a href="./ficha_libro.html" aria-label="Ir ficha de libro">
+                                <div class="cover-wrapper">
+                                    <img class="cover" src="images\Portada\portada.png" alt="Portada del libro" />
+                                </div>
+
+                                <div class="desc-wrapper">
+                                    <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6>
+                                    <h6 tabindex="0" class="titulo">Título libro</h6>
+                                    <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6>
+                                </div>
+
+                                <div class="puntuacion">
+                                    <div tabindex="0" class="estrellas">
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-half"></i>
+                                        <i aria-hidden="true" class="bi bi-star"></i>
                                     </div>
-                                </a>
-                            </div>
+                                    <p class="text-sm">(124)</p>
+                                </div>
 
-                            <div class="card">
-                                <a href="./ficha_libro.html">
-                                    <div class="cover-wrapper">
-                                        <img class="cover" src="images\Portada\portada.png" />
+                                <div class="desc-wrapper">
+                                    <h5 tabindex="0" class="precio">24,99 €</h5>
+                                    <p tabindex="0" class="text-sm font-bold stock disponible">En stock</p>
+                                    <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="card">
+                            <a href="./ficha_libro.html" aria-label="Ir ficha de libro">
+                                <div class="cover-wrapper">
+                                    <img class="cover" src="images\Portada\portada.png" alt="Portada del libro" />
+                                </div>
+
+                                <div class="desc-wrapper">
+                                    <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6>
+                                    <h6 tabindex="0" class="titulo">Título libro</h6>
+                                    <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6>
+                                </div>
+
+                                <div class="puntuacion">
+                                    <div tabindex="0" class="estrellas">
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-half"></i>
+                                        <i aria-hidden="true" class="bi bi-star"></i>
                                     </div>
+                                    <p class="text-sm">(124)</p>
+                                </div>
 
-                                    <div class="desc-wrapper">
-                                        <h6 class="text-sm categoria">Categoría libro</h6>
-                                        <h6 class="titulo">Título libro</h6>
-                                        <h6 class="text-md font-semibold autor">Autor libro</h6>
+                                <div class="desc-wrapper">
+                                    <h5 tabindex="0" class="precio">24,99 €</h5>
+                                    <p tabindex="0" class="text-sm font-bold stock disponible">En stock</p>
+                                    <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="card">
+                            <a href="./ficha_libro.html" aria-label="Ir ficha de libro">
+                                <div class="cover-wrapper">
+                                    <img class="cover" src="images\Portada\portada.png" alt="Portada del libro" />
+                                </div>
+
+                                <div class="desc-wrapper">
+                                    <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6>
+                                    <h6 tabindex="0" class="titulo">Título libro</h6>
+                                    <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6>
+                                </div>
+
+                                <div class="puntuacion">
+                                    <div tabindex="0" class="estrellas">
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-half"></i>
+                                        <i aria-hidden="true" class="bi bi-star"></i>
                                     </div>
+                                    <p class="text-sm">(124)</p>
+                                </div>
 
-                                    <div class="puntuacion">
-                                        <div class="estrellas">
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-half"></i>
-                                            <i class="bi bi-star"></i>
-                                        </div>
-                                        <p class="text-sm">(124)</p>
+                                <div class="desc-wrapper">
+                                    <h5 tabindex="0" class="precio">24,99 €</h5>
+                                    <p tabindex="0" class="text-sm font-bold stock disponible">En stock</p>
+                                    <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="card">
+                            <a href="./ficha_libro.html" aria-label="Ir ficha de libro">
+                                <div class="cover-wrapper">
+                                    <img class="cover" src="images\Portada\portada.png" alt="Portada del libro" />
+                                </div>
+
+                                <div class="desc-wrapper">
+                                    <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6>
+                                    <h6 tabindex="0" class="titulo">Título libro</h6>
+                                    <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6>
+                                </div>
+
+                                <div class="puntuacion">
+                                    <div tabindex="0" class="estrellas">
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-half"></i>
+                                        <i aria-hidden="true" class="bi bi-star"></i>
                                     </div>
+                                    <p class="text-sm">(124)</p>
+                                </div>
 
-                                    <div class="desc-wrapper">
-                                        <h5 class="precio">24,99 €</h5>
-                                        <p class="text-sm font-bold stock disponible">En stock</p>
-                                        <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
+                                <div class="desc-wrapper">
+                                    <h5 tabindex="0" class="precio">24,99 €</h5>
+                                    <p tabindex="0" class="text-sm font-bold stock disponible">En stock</p>
+                                    <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="card">
+                            <a href="./ficha_libro.html" aria-label="Ir ficha de libro">
+                                <div class="cover-wrapper">
+                                    <img class="cover" src="images\Portada\portada.png" alt="Portada del libro" />
+                                </div>
+
+                                <div class="desc-wrapper">
+                                    <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6>
+                                    <h6 tabindex="0" class="titulo">Título libro</h6>
+                                    <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6>
+                                </div>
+
+                                <div class="puntuacion">
+                                    <div tabindex="0" class="estrellas">
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-half"></i>
+                                        <i aria-hidden="true" class="bi bi-star"></i>
                                     </div>
-                                </a>
-                            </div>
+                                    <p class="text-sm">(124)</p>
+                                </div>
 
-                            <div class="card">
-                                <a href="./ficha_libro.html">
-                                    <div class="cover-wrapper">
-                                        <img class="cover" src="images\Portada\portada.png" />
-                                    </div>
-
-                                    <div class="desc-wrapper">
-                                        <h6 class="text-sm categoria">Categoría libro</h6>
-                                        <h6 class="titulo">Título libro</h6>
-                                        <h6 class="text-md font-semibold autor">Autor libro</h6>
-                                    </div>
-
-                                    <div class="puntuacion">
-                                        <div class="estrellas">
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-half"></i>
-                                            <i class="bi bi-star"></i>
-                                        </div>
-                                        <p class="text-sm">(124)</p>
-                                    </div>
-
-                                    <div class="desc-wrapper">
-                                        <h5 class="precio">24,99 €</h5>
-                                        <p class="text-sm font-bold stock disponible">En stock</p>
-                                        <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="card">
-                                <a href="./ficha_libro.html">
-                                    <div class="cover-wrapper">
-                                        <img class="cover" src="images\Portada\portada.png" />
-                                    </div>
-
-                                    <div class="desc-wrapper">
-                                        <h6 class="text-sm categoria">Categoría libro</h6>
-                                        <h6 class="titulo">Título libro</h6>
-                                        <h6 class="text-md font-semibold autor">Autor libro</h6>
-                                    </div>
-
-                                    <div class="puntuacion">
-                                        <div class="estrellas">
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-half"></i>
-                                            <i class="bi bi-star"></i>
-                                        </div>
-                                        <p class="text-sm">(124)</p>
-                                    </div>
-
-                                    <div class="desc-wrapper">
-                                        <h5 class="precio">24,99 €</h5>
-                                        <p class="text-sm font-bold stock disponible">En stock</p>
-                                        <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="card">
-                                <a href="./ficha_libro.html">
-                                    <div class="cover-wrapper">
-                                        <img class="cover" src="images\Portada\portada.png" />
-                                    </div>
-
-                                    <div class="desc-wrapper">
-                                        <h6 class="text-sm categoria">Categoría libro</h6>
-                                        <h6 class="titulo">Título libro</h6>
-                                        <h6 class="text-md font-semibold autor">Autor libro</h6>
-                                    </div>
-
-                                    <div class="puntuacion">
-                                        <div class="estrellas">
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-half"></i>
-                                            <i class="bi bi-star"></i>
-                                        </div>
-                                        <p class="text-sm">(124)</p>
-                                    </div>
-
-                                    <div class="desc-wrapper">
-                                        <h5 class="precio">24,99 €</h5>
-                                        <p class="text-sm font-bold stock disponible">En stock</p>
-                                        <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="card">
-                                <a href="./ficha_libro.html">
-                                    <div class="cover-wrapper">
-                                        <img class="cover" src="images\Portada\portada.png" />
-                                    </div>
-
-                                    <div class="desc-wrapper">
-                                        <h6 class="text-sm categoria">Categoría libro</h6>
-                                        <h6 class="titulo">Título libro</h6>
-                                        <h6 class="text-md font-semibold autor">Autor libro</h6>
-                                    </div>
-
-                                    <div class="puntuacion">
-                                        <div class="estrellas">
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-half"></i>
-                                            <i class="bi bi-star"></i>
-                                        </div>
-                                        <p class="text-sm">(124)</p>
-                                    </div>
-
-                                    <div class="desc-wrapper">
-                                        <h5 class="precio">24,99 €</h5>
-                                        <p class="text-sm font-bold stock disponible">En stock</p>
-                                        <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
-                                    </div>
-                                </a>
-                            </div>
-
+                                <div class="desc-wrapper">
+                                    <h5 tabindex="0" class="precio">24,99 €</h5>
+                                    <p tabindex="0" class="text-sm font-bold stock disponible">En stock</p>
+                                    <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
+                                </div>
+                            </a>
+                        </div>
 
                     </div>
 
@@ -561,24 +786,29 @@
 
 
         <!-------- FOOTER -------->
-        <footer> 
+        <footer>
             <div class="footer-top">
                 <div class="more-info">
-                    <a href="index.html"><img src="images\logo\logo-claro.svg" alt="logo"/></a>
-                    <p class="title text-xl font-semibold">Librería Al-Ándalus</h5>
+                    <a href="index.html">
+                        <img src="images\logo\logo-claro.svg" loading="lazy" alt="Logo librería al-andalus"/>
+                    </a>
+
+                    <p class="text-xl font-semibold" tabindex="0">Librería Al-Ándalus</h5>
+                    
                     <div>
                         <p class="font-light" tabindex="0">Calle de los libros, 123</p>
                         <p class="font-light" tabindex="0">Almería, España</p>
                     </div>
+
                     <div>
                         <p class="font-light" tabindex="0">Teléfono: +34 000 00 00 00</p>
                         <p class="font-light" tabindex="0">Correo: correo@gmail.com</p>
-                    </div>  
+                    </div>
                 </div>
 
                 <div class="fast-link">
-                    <p class="footer-title text-lg font-semibold">Enlaces rápidos</p>
-                    <a href="busqueda.html" class="font-light">Categorías</a>
+                    <p class="footer-title text-lg font-semibold" tabindex="0">Enlaces rápidos</p>
+                    <a href="busqueda.html" class="font-light" aria-current="page">Categorías</a>
                     <a href="contacto.html" class="font-light">Sobre nosotros</a>
                     <a href="contacto.html" class="font-light">Contacto</a>
                     <a href="#" class="font-light">Trabaja con nosotros</a>
@@ -586,16 +816,24 @@
                 </div>
 
                 <div class="socialmedia">
-                    <p class="title text-lg font-semibold">Síguenos</p>
-                    <a href="#" class="font-light"><i class="bi bi-instagram"></i> Al-Ándalus</a>
-                    <a href="#" class="font-light"><i class="bi bi-youtube"></i> Al-Ándalus</a>
-                    <a href="#" class="font-light"><i class="bi bi-facebook"></i> Al-Ándalus</a>                        
+                    <p class="title text-lg font-semibold" tabindex="0">Síguenos</p>
+                    <a href="#" class="font-light" aria-label="Cuenta de instagram">
+                        <i class="bi bi-instagram" aria-hidden="true"></i> 
+                        @Al-Ándalus
+                    </a>
+                    <a href="#" class="font-light" aria-label="Canal de youtube">
+                        <i aria-hidden="true" class="bi bi-youtube"></i> 
+                        @Al-Ándalus
+                    </a>
+                    <a href="#" class="font-light" aria-label="Cuenta de facebook">
+                        <i aria-hidden="true" class="bi bi-facebook"></i> 
+                        @Al-Ándalus
+                    </a>
                 </div>
 
             </div>
-
-            <hr/>
             
+            <hr/>
 
             <div class="footer-bottom">
                 <span class="font-light text-sm" tabindex="0">© 2026 · Desirée Rueda Torres</span>

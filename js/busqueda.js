@@ -31,22 +31,31 @@ function cleanFilters(e) {
 
 
 /*******************************************
- * ACCORDIONS FILTROS
+ * ACCORDIONS DE CADA FILTRO
  *******************************************/
-            
+// Acordeones
 const accordions = document.querySelectorAll(".accordion-item");
 
-accordions.forEach( accordion => {
+// Recorre acordeones
+accordions.forEach( (accordion, index) => {
+    // Obtiene header (boton) de un accordion 
     const header = accordion.querySelector(".accordion-header");
 
+    // Obtiene checkboxes del body de un accordion
+    const cboxes = accordion.querySelectorAll('input[type="checkbox"]');
+
+    const accordionOpen = false;
+    
+    
     // EVENTOS 
     
     // Evento inicializar
     document.addEventListener("DOMContentLoaded", () => {
-        // Todos los accordion cerrados
+        // Todos los accordion cerrados (opacidad 0 y display none)
         accordion.classList.remove("active");
+        // Accesibilidad
+        header.setAttribute("aria-expanded", "false");
     });
-
 
     // Evento click en accordion
     header.addEventListener("click",()=>{
@@ -54,13 +63,80 @@ accordions.forEach( accordion => {
         // Evita que se queden abiertos más de un accordion
         // cierra todos los demás accordion
         accordions.forEach(acc => {
-            if(acc !== accordion) { acc.classList.remove("active"); }
+            if(acc !== accordion) { 
+                acc.classList.remove("active"); 
+                // Accesibilidad
+                acc.querySelector(".accordion-header").setAttribute("aria-expanded", "false");
+            }
         });
 
         // Abre accordion clickado 
-        accordion.classList.toggle("active");
+        const accordionOpen = accordion.classList.toggle("active");
+        // Accesibilidad
+        header.setAttribute("aria-expanded", accordionOpen);
+    });
+
+
+    // Accesibilidad. Evento navegación de checkboxes con teclado
+    cboxes.forEach((cb, i) => {
+        cb.addEventListener("keydown", e => {
+
+            if(e.key==="Enter"){
+                e.preventDefault();
+
+                // marcar checkbox Enter
+                cb.checked = !cb.checked;
+            }
+            else if(e.key==="ArrowDown"){
+                e.preventDefault();
+
+                // avanza si no llegó al final
+                if(i < cboxes.length - 1){
+                    cboxes[i + 1].focus();
+                }
+            }
+            else if(e.key==="ArrowUp"){
+                e.preventDefault();
+
+                // retrocede si no llegó al inicio
+                if(i > 0){
+                    cboxes[i - 1].focus();
+                }
+            }
+        });
     });
 });
+
+// Accesibilidad. Evento navegación de accordions con teclado
+
+const headers = document.querySelectorAll(".accordion-header");
+
+headers.forEach((header, index) => {
+    header.addEventListener("keydown", e => {
+        if(e.key==="ArrowDown"){
+            e.preventDefault();
+
+            // avanza si no llegó al final
+            if(index < headers.length - 1){
+                headers[index + 1].focus();
+            }
+
+        }
+        else if(e.key==="ArrowUp"){
+            e.preventDefault();
+
+            // retrocede si no llegó al inicio
+            if(index > 0){
+                headers[index - 1].focus();
+            }
+            // si llegó al inicio, foco en btn-clean
+            else {
+                btnCleanFilters.focus();
+            }
+        }
+    });    
+});
+
 
 
 
@@ -98,85 +174,119 @@ function update() {
 
 
 /*******************************************
- * SELECT CUSTOM 
- * (filtro orden, modal mobile) 
+ * FILTROS, MOBILE VERSION (MODAL)
  *******************************************/
-
-const btnFiltros = document.querySelector('.filtros-btn');
-const filtros = document.querySelector('section.filtros');
-const btnCloseFiltros = filtros.querySelector(".btn-close");
+const btnFiltros = document.querySelector('.filtros-btn'); // Para abrir modal de filtros (MOBILE)
+const dialog = document.querySelector('dialog#filtros'); // Modal de filtros (MOBILE)
+const btnCloseFiltros = dialog.querySelector(".btn-close");  // Para cerrar modal
 
 // EVENTOS
 btnFiltros.addEventListener("click",abrirModalFiltros);
 btnCloseFiltros.addEventListener("click", cerrarModalFiltros);
-overlay.addEventListener("click", cerrarModalFiltros);
+
+// .show() - Muestra la etiqueta dialog
+// .showModal() - Muestra el dialog como un modal, bloqueando el resto del contenido.
+// .close() - Oculta la etiqueta dialog
 
 function cerrarModalFiltros(){
-    filtros.classList.remove("active");
-    overlay.classList.remove("active");
-    
-    document.body.classList.remove("overlay-active");
+    // Closes the dialog
+    dialog.close();
 }
 
 function abrirModalFiltros(){
-    filtros.classList.toggle("active");
-    overlay.classList.toggle("active");
+    // Opens as non-modal (equivalent to dialog.show())
+    // dialog.setAttribute('open', '');
 
-    document.body.classList.add("overlay-active");
+    // Opens as modal (traps focus, blocks background)
+    dialog.showModal();
 }
 
 
 /*******************************************
- * CUSTOM SELECT 
- * (orden de resultados)
+ * ORDEN DE RESULTADOS, CUSTOM SELECT
  *******************************************/
 
 // container select
-const select = document.querySelector('.custom-select.orden');
-// boton desplegable con option seleccionado
-const selectBtn = select.querySelector('.select-btn');
-// container option seleccionado
-const selectedOpt = select.querySelector('.selected');            
+const selectContainer = document.querySelector('.custom-select.orden');
+
+// boton desplegable con option seleccionado 
+const select = selectContainer.querySelector('.select');
+
+// todos los options
+const optionsContainer = selectContainer.querySelector(".options");
+const options = optionsContainer.querySelectorAll('.option');
+
 // option seleccionado
-const selectedText = selectedOpt.querySelector("p:last-child");
+const selectedOptText = select.querySelector("div span:nth-child(2)");
+
 // flechas
-const arrowClose = select.querySelector(".bi.bi-chevron-down");
-const arrowOpen = select.querySelector(".bi.bi-chevron-right");
+const arrowClose = selectContainer.querySelector(".bi.bi-chevron-down");
+const arrowOpen = selectContainer.querySelector(".bi.bi-chevron-right");
+
+let isOpen = false;
+
 
 // EVENTOS
 
-// Abrir options
-selectBtn.addEventListener('click', openSelect);
+// Abrir/cerrar custom-select
+select.addEventListener('click', openCloseSelect);
+selectContainer.addEventListener('focusout', (e) => {
 
-// Seleccionar option
-select.querySelectorAll('.option').forEach(option => {
-    option.addEventListener('click', () => {                    
-        // cambiar texto del seleccionado
-        selectedText.textContent = option.textContent.trim();
+    // e.relatedTarget = el elemento al que va el foco
+    const next = e.relatedTarget;
 
-        // actualizar valor
-        selectedOpt.dataset.selected = option.dataset.value;
-
-        // cerrar
+    // si el foco no está dentro del custom-select, cerrar
+    if (!selectContainer.contains(next)) {
         closeSelect();
+    }
+});
+
+
+options.forEach((opt, i) => {
+    // Seleccionar option    
+    opt.addEventListener('click', ()=>{ newSelectedOption(opt) }); 
+
+    // ACCESIBILIDAD. Navegación con teclado entre options
+    opt.addEventListener("keydown", e => {
+        if(e.key==="Enter"){
+            e.preventDefault();
+
+            // marcar option
+            newSelectedOption(opt);
+        }
+        
+        if(e.key==="ArrowDown"){
+            e.preventDefault();
+
+            // avanza si no llegó al final
+            if(i < options.length - 1){
+                options[i + 1].focus();
+            }
+        }
+        
+        if(e.key==="ArrowUp"){
+            e.preventDefault();
+
+            // retrocede si no llegó al inicio
+            if(i > 0){
+                options[i - 1].focus();
+            }
+        }
+
+        if (e.key === "Escape") {
+            closeSelect();
+            return;
+        }
     });
 });
 
-function openSelect(){
-    select.classList.toggle('open'); 
+select.addEventListener("keydown", e =>{
+    if (e.key === "Escape") {
+        closeSelect();
+        return;
+    }
+})
 
-    let isOpen = select.classList.contains('open');
-    arrowClose.style.display = isOpen ? 'none' : 'block';
-    arrowOpen.style.display = isOpen ? 'block' : 'none'
-}
-
-function closeSelect(){
-    select.classList.remove('open');
-
-    let isOpen = select.classList.contains('open');
-    arrowClose.style.display = isOpen ? 'none' : 'block';
-    arrowOpen.style.display = isOpen ? 'block' : 'none'
-}
 
 // Inicializar
 function initSelectOrden(){
@@ -185,35 +295,46 @@ function initSelectOrden(){
     arrowOpen.style.display = 'none';
 
     // Option seleccionada por defecto (primer option)
-    let defaultOpt = select.querySelector('.option:first-child');
+    let defaultOpt = document.querySelector('.options .option:first-child');
         
     // cambiar texto del seleccionado
-    selectedText.textContent = defaultOpt.textContent.trim();
+    // selectedOptText.textContent = defaultOpt.querySelector('p').textContent.trim();
+    selectedOptText.textContent = defaultOpt.textContent.trim();
     // actualizar valor
-    selectedOpt.dataset.selected = defaultOpt.dataset.value;
+    select.dataset.selected = defaultOpt.dataset.value;
 }
-// // Inicializar
-// document.addEventListener("DOMContentLoaded", () => {
-//     // Flechas en estado cerrado
-//     arrowClose.style.display = 'block';
-//     arrowOpen.style.display = 'none';
 
-//     // Option seleccionada por defecto (primer option)
-//     let defaultOpt = select.querySelector('.option:first-child');
-        
-//     // cambiar texto del seleccionado
-//     selectedText.textContent = defaultOpt.textContent.trim();
-//     // actualizar valor
-//     selectedOpt.dataset.selected = defaultOpt.dataset.value;
-//     // cerrar
-//     // closeSelect();
-// });
+function openCloseSelect(){
+    selectContainer.classList.toggle('open');
 
+    isOpen = selectContainer.classList.contains('open');
 
+    arrowClose.style.display = isOpen ? 'none' : 'block';
+    arrowOpen.style.display = isOpen ? 'block' : 'none';
 
-            
+    select.setAttribute("aria-expanded", isOpen);
+}
+function closeSelect() {
+    selectContainer.classList.remove('open');
 
+    isOpen = false;
 
-            
+    arrowClose.style.display = 'block';
+    arrowOpen.style.display = 'none';
+
+    select.setAttribute("aria-expanded", "false");
+}
+
+function newSelectedOption(option) {                    
+    // cambiar texto del seleccionado
+    selectedOptText.textContent = option.querySelector('p').textContent.trim();
+
+    // actualizar valor
+    select.dataset.selected = option.dataset.value;
+
+    // cerrar
+    closeSelect();
+}
+
 
 
