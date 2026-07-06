@@ -11,8 +11,14 @@ window.addEventListener('load', function(event) {
     // showBestSeller();
 });
 
+/** BOTON BUSCAR */
+const searchBtn = document.querySelector(".search-button");
 
-
+searchBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.href = "busqueda.html";
+    
+});
 
 /*******************************************
  * CARRUSELS
@@ -163,7 +169,7 @@ document.addEventListener("keydown", function(e) {
 
 const statusMessage = document.getElementById('statusMessage');
 // Crear mensajes de estado
-function setStatusMessage(message) {
+export function setStatusMessage(message) {
     // inserta mensaje
     statusMessage.textContent = message; 
     
