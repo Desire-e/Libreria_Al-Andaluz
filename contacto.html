@@ -33,136 +33,172 @@
     
 
     <body>
-        <button id="btnSubir">
-            <i class="bi bi-chevron-double-up"></i>
+
+        <!-- 
+        ACCESIBILIDAD. Mensajes para lectores de pantalla.
+        role="status"   Indica a lectores de pantalla que aparecerán mensajes de estado
+        aria-live="polite"  Controla cómo se anuncian los cambios (polite hace que lector 
+        espere a que usuario termine de escuchar para anunciar nuevo mensaje, no intrusivo)
+        -->
+        <div tabindex="-1" id="statusMessage" role="status" aria-live="polite"></div>
+
+        <a href="#contenido" class="skip-link">
+            Saltar al contenido principal
+        </a>
+
+        <button id="btnSubir" aria-label="Subir al inicio">
+            <i aria-hidden="true" class="bi bi-chevron-double-up"></i>
         </button>
-        
-        <div id="statusMessage" role="status" aria-live="polite"></div>
+
         
         
         <!-------- HEADER -------->
         <header>
-            <a href="index.html"><img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo"/></a>                    
+            <!-- Logo -->
+            <a href="index.html">
+                <img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo librería al-andalus"/>
+            </a>                    
 
             <!-- Barra de búsqueda -->
             <form class="search-container">
-                <input id="search" name="search" type="search" placeholder="Buscar..." aria-label="Buscar libro">
-                <a class="search-button" href="busqueda.html" aria-label="Buscar">
-                    <!-- <img src="images\Iconos\opcional-lupa.svg" height="100%" alt=""/> -->
-                    <i class="bi bi-search"></i>
+                <input id="search" name="search" type="search" placeholder="Buscar..." 
+                aria-label="Buscar">
 
-                </a>
+                <button class="search-button" type="submit" 
+                aria-label="Realizar búsqueda">
+                    <!-- <img src="images\Iconos\opcional-lupa.svg" height="100%" alt=""/> -->
+                    <i aria-hidden="true" class="bi bi-search"></i>
+                </button>
             </form>
 
-            <!-- Navegador -->
-            <nav>
-                <a href="busqueda.html" aria-label="categorías">
-                    <h6 class="font-semibold">Categorías</h6>
+            <!-- Navegador (DESKTOP) -->
+            <nav class="nav-desktop">
+                <a href="busqueda.html" class="font-semibold ">
+                    Categorías
                 </a>
-                <a href="#" class="text-lg font-bold" aria-label="iniciar sesión">
-                    <h6 class="font-semibold">Identifícate / Regístrate</h6>
+                <a href="#" class="font-semibold">
+                    Identifícate / Regístrate
                 </a>
-                <a href="#" class="text-lg font-bold" aria-label="favoritos">
-                    <h6 class="font-semibold">Favoritos</h6>
+                <a href="#" class="font-semibold">
+                    Favoritos
                 </a>
-                <a href="#" class="text-lg font-bold" aria-label="idioma">
-                    <h6 class="font-semibold">Idioma</h6>
+                <a href="#" class="font-semibold">
+                    Idioma
                 </a>
             </nav>
 
-            <div class="hamburger" aria-label="Menú">
-                <i class="bi bi-list"></i>
-            </div>
-            
+
+            <!-- Hambuger abrir menú (MOBILE) -->
+            <button class="hamburger" aria-label="Abrir menú móvil" aria-expanded="false" aria-controls="nav-mobile">
+                <i aria-hidden="true" class="bi bi-list"></i>
+            </button>
+
+            <!-- 
+            aria-expanded="false" comunica a las tecnologías de asistencia que existe contenido oculto disponible 
+            para ser expandido.
+            aria-controls="menu-mobile" se utiliza en un botón para vincularlo semánticamente al contenedor del menú 
+            de navegación que controla. Permite que las tecnologías de asistencia identifiquen qué elemento de la página 
+            cambia de estado (expandido o colapsado) cuando se interactúa con el botón.  
+            -->
+
+            <!-- Botones carrito y cuenta -->
             <div class="usuario">
-                <a href="carrito.html" aria-label="carrito"><i class="bi bi-basket-fill text-xl"></i></a>
-                <a href="#" aria-label="cuenta"><i class="bi bi-person-circle text-xl"></i></a>
+                <a href="carrito.html" aria-label="Carrito">
+                    <i aria-hidden="true" class="bi bi-basket-fill text-xl"></i>
+                </a>
+                <a href="#" aria-label="Cuenta">
+                    <i aria-hidden="true" class="bi bi-person-circle text-xl"></i>
+                </a>
             </div>
 
         </header>
 
         <!-- Navegador mobile -->
-        <nav class="nav-mobile">
+        <nav tabindex="0" class="nav-mobile" id="nav-mobile">
 
-            <div>
-                <a href="index.html" >
-                    <img class="header-logo" 
-                    src="images\logo\logo-claro.svg" alt="Logo"/>
+            <div aria-label="Menú pantalla móvil">
+                <a href="index.html">
+                    <img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo librería al-andalus"/>
                 </a>
-                <button class="btn-close text-sm">
-                    <i class="bi bi-x-lg"></i>
+
+                <button class="btn-close text-sm" aria-label="Cerrar menú pantalla móvil">
+                    <i aria-hidden="true" class="bi bi-x-lg"></i>
                 </button>
             </div>
 
 
-            <a href="index.html" aria-label="categorías">
-                <i class="bi bi-house-door-fill"></i>
+            <a href="index.html">
+                <i aria-hidden="true" class="bi bi-house-door-fill"></i>
                 Inicio
             </a>
 
-            <a href="busqueda.html" aria-label="categorías">
-                <i class="bi bi-tag"></i>
+            <a href="busqueda.html">
+                <i aria-hidden="true" class="bi bi-tag"></i>
                 Categorías
             </a>
-            <a href="#" aria-label="iniciar sesión">
-                <i class="bi bi-person"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-person"></i>
                 Identifícate / Regístrate
             </a>
-            <a href="#" aria-label="idioma">
-                <i class="bi bi-globe2"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-globe2"></i>
                 Idioma
             </a>
 
             <hr/>
             
-            <a href="#" aria-label="sobre-nosotros">
-                <i class="bi bi-file-text"></i>
+            <a href="#" aria-current="page">
+                <i aria-hidden="true" class="bi bi-file-text"></i>
                 Sobre nosotros
             </a>
-            <a href="#" aria-label="contacto">
-                <i class="bi bi-telephone"></i>
+            <a href="#" aria-current="page">
+                <i aria-hidden="true" class="bi bi-telephone"></i>
                 Contacto
             </a>
 
-            <a href="#" aria-label="politica-de-privacidad">
-                <i class="bi bi-shield-check"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-shield-check"></i>
                 Política de privacidad
             </a>
 
-            <a href="#" aria-label="preguntas-frecuentes">
-                <i class="bi bi-question-circle"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-question-circle"></i>
                 Preguntas frecuentes
             </a>
         </nav>
         
 
-        <div class="overlay"></div>
+
+        <div tabindex="-1" class="overlay"></div>
+
+
 
         <!-- TODO. Animación canvas de carga -->
         <!-- <canvas id="canvas" width="400" height="300"></canvas> -->
 
 
-        <div class="container">
+
+        <div class="container" id="contenido">
             
             <!-------- SECCIONES -------->
             <main>
 
-                <section tabindex="0">
+                <section>
 
                     <div class="about-us">
                     
                         <div class="desc-wrapper">
-                            <h2>Sobre nosotros</h2>
+                            <h2 tabindex="0">Sobre nosotros</h2>
                             
                             <hr class="hr-accent"/>
                             
-                            <h4>Sed ut perspiciatis unde omnis iste</h4>
-                            <p>
+                            <h4 tabindex="0">Sed ut perspiciatis unde omnis iste</h4>
+                            <p tabindex="0">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
                             </p>
-                            <p>
+                            <p tabindex="0">
                                 Duis aute irure 
                                 dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
                                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
@@ -171,53 +207,53 @@
                         </div>
 
                         <div class="image-wrapper">
-                            <img src="./images/equipo/equipo-sobremesa-1.jpg" />
+                            <img tabindex="0" src="./images/equipo/equipo-sobremesa-1.jpg" alt="Imagen del equipo" />
                         </div>
                 </section>
 
 
-                <section tabindex="0">
+                <section>
 
                     <div class="etica-empresa">
 
-                        <h4>Nuestros valores</h4>
+                        <h4 tabindex="0">Nuestros valores</h4>
                         <hr class="hr-accent"/>
 
                         <div class="eticas">
 
                             <div class="etica">
-                                <i class="bi bi-shield-fill-check"></i>
+                                <i aria-hidden="true" class="bi bi-shield-fill-check"></i>
 
                                 <div class="desc-wrapper">
-                                    <h5>Calidad</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h5 tabindex="0">Calidad</h5>
+                                    <p tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
                             </div>
 
                             <div class="etica">
-                                <i class="bi bi-book-fill"></i>
+                                <i aria-hidden="true" class="bi bi-book-fill"></i>
                                 <div class="desc-wrapper">
-                                    <h5>Pasión</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h5 tabindex="0">Pasión</h5>
+                                    <p tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
                             </div>
 
                             <div class="etica">
-                                <i class="bi bi-people-fill"></i>
+                                <i aria-hidden="true" class="bi bi-people-fill"></i>
                                 <div class="desc-wrapper">
-                                    <h5>Cercanía</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h5 tabindex="0">Cercanía</h5>
+                                    <p tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
                             </div>
 
                             <div class="etica">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-leaf-fill" viewBox="0 0 16 16">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-leaf-fill" viewBox="0 0 16 16">
                                     <path d="M1.4 1.7c.217.289.65.84 1.725 1.274 1.093.44 2.885.774 5.834.528 2.02-.168 3.431.51 4.326 1.556C14.161 6.082 14.5 7.41 14.5 8.5q0 .344-.027.734C13.387 8.252 11.877 7.76 10.39 7.5c-2.016-.288-4.188-.445-5.59-2.045-.142-.162-.402-.102-.379.112.108.985 1.104 1.82 1.844 2.308 2.37 1.566 5.772-.118 7.6 3.071.505.8 1.374 2.7 1.75 4.292.07.298-.066.611-.354.715a.7.7 0 0 1-.161.042 1 1 0 0 1-1.08-.794c-.13-.97-.396-1.913-.868-2.77C12.173 13.386 10.565 14 8 14c-1.854 0-3.32-.544-4.45-1.435-1.124-.887-1.889-2.095-2.39-3.383-1-2.562-1-5.536-.65-7.28L.73.806z"/>
                                 </svg>
                                 <!-- <i class="bi bi-leaf-fill"></i> -->
                                 <div class="desc-wrapper">
-                                    <h5>Compromiso</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h5 tabindex="0">Compromiso</h5>
+                                    <p tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
                             </div>
 
@@ -227,28 +263,29 @@
                 </section>
 
 
-                <section tabindex="0">
-
+                <section>
                     <div class="contacto">
 
                         <div class="info">
 
-                            <h4>Información de contacto</h4>
-                            
+                            <h4 tabindex="0">Información de contacto</h4>
                             <hr class="hr-accent"/>
                             
-                            <p>¿Tienes alguna duda, sugerencia o necesitas ayuda? Estamos aquí para ayudarte</p>
+                            <p tabindex="0">¿Tienes alguna duda, sugerencia o necesitas ayuda? Estamos aquí para ayudarte</p>
 
-                            <div class="more-info">
+                            <address>
                                 <p tabindex="0">Calle de los libros, 123</p>
                                 <p tabindex="0">Almería, España</p>
                                 <p tabindex="0">Teléfono: +34 000 00 00 00</p>
                                 <p tabindex="0">Correo: correo@gmail.com</p>
-                            </div>                        
+                            </address>
                         </div>
 
                         <div class="frames">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102179.46860250023!2d-2.4597510000000073!3d36.83988000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7075f9253c8cfd%3A0x10423ef17d0655c!2sI.E.S.%20Al-%C3%81ndalus!5e0!3m2!1ses!2ses!4v1737641430839!5m2!1ses!2ses" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                    
+                            <iframe 
+                            title="Ubicación de la librería en Google Maps"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102179.46860250023!2d-2.4597510000000073!3d36.83988000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7075f9253c8cfd%3A0x10423ef17d0655c!2sI.E.S.%20Al-%C3%81ndalus!5e0!3m2!1ses!2ses!4v1737641430839!5m2!1ses!2ses" 
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                    
                         </div>
 
                     </div>
@@ -258,24 +295,31 @@
 
         </div>
 
+
         <!-------- FOOTER -------->
         <footer> 
             <div class="footer-top">
                 <div class="more-info">
-                    <a href="index.html"><img src="images\logo\logo-claro.svg" alt="logo"/></a>
-                    <p class="title text-xl font-semibold">Librería Al-Ándalus</h5>
+                    <a href="index.html" aria-current="page">
+                        <img src="images\logo\logo-claro.svg" loading="lazy" alt="Logo librería al-andalus"/>
+                    </a>
+
+                    <p class="text-xl font-semibold" tabindex="0">Librería Al-Ándalus</p>
+                    
                     <div>
                         <p class="font-light" tabindex="0">Calle de los libros, 123</p>
                         <p class="font-light" tabindex="0">Almería, España</p>
                     </div>
+
                     <div>
                         <p class="font-light" tabindex="0">Teléfono: +34 000 00 00 00</p>
                         <p class="font-light" tabindex="0">Correo: correo@gmail.com</p>
-                    </div>  
+                    </div>
                 </div>
 
                 <div class="fast-link">
-                    <p class="footer-title text-lg font-semibold">Enlaces rápidos</p>
+                    <p class="footer-title text-lg font-semibold" tabindex="0">Enlaces rápidos</p>
+                    <!-- <p class="footer-title text-lg font-semibold" tabindex="0">Enlaces rápidos</p> -->
                     <a href="busqueda.html" class="font-light">Categorías</a>
                     <a href="contacto.html" class="font-light">Sobre nosotros</a>
                     <a href="contacto.html" class="font-light">Contacto</a>
@@ -284,19 +328,31 @@
                 </div>
 
                 <div class="socialmedia">
-                    <p class="title text-lg font-semibold">Síguenos</p>
-                    <a href="#" class="font-light"><i class="bi bi-instagram"></i> Al-Ándalus</a>
-                    <a href="#" class="font-light"><i class="bi bi-youtube"></i> Al-Ándalus</a>
-                    <a href="#" class="font-light"><i class="bi bi-facebook"></i> Al-Ándalus</a>                        
+                    <p class="title text-lg font-semibold" tabindex="0">Síguenos</p>
+                    <!-- <p class="title text-lg font-semibold" tabindex="0">Síguenos</p> -->
+                    <a href="#" class="font-light" aria-label="Cuenta de instagram">
+                        <i class="bi bi-instagram" aria-hidden="true"></i> 
+                        @Al-Ándalus
+                    </a>
+                    <a href="#" class="font-light" aria-label="Canal de youtube">
+                        <i aria-hidden="true" class="bi bi-youtube"></i> 
+                        @Al-Ándalus
+                    </a>
+                    <a href="#" class="font-light" aria-label="Cuenta de facebook">
+                        <i aria-hidden="true" class="bi bi-facebook"></i> 
+                        @Al-Ándalus
+                    </a>
                 </div>
 
             </div>
+            
             <hr/>
 
             <div class="footer-bottom">
                 <span class="font-light text-sm" tabindex="0">© 2026 · Desirée Rueda Torres</span>
             </div>
         </footer>
+
 
     </body>
 </html>

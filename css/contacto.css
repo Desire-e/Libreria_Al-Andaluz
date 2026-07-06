@@ -147,10 +147,16 @@ main {
   min-width: 0;
 }
 
-.contacto .info .more-info{
+/* .contacto .info .more-info{
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+} */
+.contacto .info address{
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-style: normal;
 }
 
 
