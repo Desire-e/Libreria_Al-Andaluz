@@ -36,7 +36,7 @@
         aria-live="polite"  Controla cómo se anuncian los cambios (polite hace que lector 
         espere a que usuario termine de escuchar para anunciar nuevo mensaje, no intrusivo)
         -->
-        <div tabindex="-1" id="statusMessage" role="status" aria-live="polite"></div>
+        <div id="statusMessage" role="status" aria-live="polite"></div>
 
         <a href="#contenido" class="skip-link">
             Saltar al contenido principal
@@ -47,21 +47,21 @@
         </button>
 
         
-
+        
         <!-------- HEADER -------->
         <header>
             <!-- Logo -->
-            <a href="index.html">
+            <a href="index.html" >
                 <img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo librería al-andalus"/>
             </a>                    
 
             <!-- Barra de búsqueda -->
-            <form class="search-container" role="search" aria-label="Buscar libros">
+            <form class="search-container">
                 <input id="search" name="search" type="search" placeholder="Buscar..." 
                 aria-label="Buscar">
 
                 <button class="search-button" type="submit" 
-                aria-label="Buscar">
+                aria-label="Realizar búsqueda">
                     <!-- <img src="images\Iconos\opcional-lupa.svg" height="100%" alt=""/> -->
                     <i aria-hidden="true" class="bi bi-search"></i>
                 </button>
@@ -99,7 +99,7 @@
 
             <!-- Botones carrito y cuenta -->
             <div class="usuario">
-                <a href="carrito.html" aria-label="Carrito" aria-current="page">
+                <a href="carrito.html" aria-current="page" aria-label="Carrito">
                     <i aria-hidden="true" class="bi bi-basket-fill text-xl"></i>
                 </a>
                 <a href="#" aria-label="Cuenta">
@@ -113,7 +113,7 @@
         <nav tabindex="0" class="nav-mobile" id="nav-mobile">
 
             <div aria-label="Menú pantalla móvil">
-                <a href="index.html">
+                <a href="index.html" >
                     <img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo librería al-andalus"/>
                 </a>
 
@@ -123,7 +123,7 @@
             </div>
 
 
-            <a href="index.html">
+            <a href="index.html" >
                 <i aria-hidden="true" class="bi bi-house-door-fill"></i>
                 Inicio
             </a>
@@ -168,7 +168,7 @@
         <div tabindex="-1" class="overlay"></div>
 
 
-            
+
         <!-- TODO. Animación canvas de carga -->
         <!-- <canvas id="canvas" width="400" height="300"></canvas> -->
 
@@ -179,29 +179,30 @@
             <!-------- SECCIONES -------->
             <main>
                 <div class="carrito-header">
-                    <h3 tabindex="0">Cesta de compra</h3>
-                    <p tabindex="0">0 productos</p>
+                    <h1>Cesta de compra</h1>
+                    <p>0 productos</p>
                 </div>
 
                 <div class="carrito-body">
 
                     <div class="container-articulos">
 
-                        <p class="no-articles" tabindex="0">No hay artículos en su cesta</p>
+                        <p class="no-articles">No hay artículos en su cesta</p>
 
                         <div class="articulo">
                             <div class="cover-wrapper">
                                 <a href="ficha_libro.html">
                                     <img class="cover" src="images\Portada\portada.png" alt="portada de un artículo del carrito"/>
-                                </a>                                
+                                </a>                    
                             </div>
 
                             <div class="desc-wrapper">
                                 <div class="descripcion">
-                                    <p class="text-lg font-semibold" tabindex="0">Título del libro</p>
-                                    <p class="stock agotado" tabindex="0">Agotado</p>
+                                    <p class="text-md font-semibold">Título del libro</p>
+                                    <p class="stock agotado">Agotado</p>
                                 </div>
-                                <p class="text-lg font-semibold" tabindex="0">10,00 €</p>
+
+                                <p class="text-md font-semibold">10,00 €</p>
                                 
                                 <div class="cantidad">
                                     <button class="article-minus-btn"><i aria-hidden="false" class="bi bi-dash"></i></button>
@@ -222,10 +223,10 @@
 
                             <div class="desc-wrapper">
                                 <div class="descripcion">
-                                    <p class="text-lg font-semibold" tabindex="0">Título del libro</p>
-                                    <p class="stock agotado" tabindex="0">Agotado</p>
+                                    <p class="text-lg font-semibold">Título del libro</p>
+                                    <p class="stock agotado">Agotado</p>
                                 </div>
-                                <p class="text-lg font-semibold" tabindex="0">10,00 €</p>
+                                <p class="text-lg font-semibold">10,00 €</p>
                                 <div class="cantidad">
                                     <button class="article-minus-btn"><i aria-hidden="false" class="bi bi-dash"></i></button>
                                     <input name="article-amount-input" class="article-amount" type="text" value="1"/>
@@ -246,10 +247,10 @@
                             
                             <div class="desc-wrapper">
                                 <div class="descripcion">
-                                    <p class="text-lg font-semibold" tabindex="0">Título del libro</p>
-                                    <p class="stock agotado" tabindex="0">Agotado</p>
+                                    <p class="text-lg font-semibold">Título del libro</p>
+                                    <p class="stock agotado">Agotado</p>
                                 </div>
-                                <p class="text-lg font-semibold" tabindex="0">10,00 €</p>
+                                <p class="text-lg font-semibold">10,00 €</p>
                                 <div class="cantidad">
                                     <button class="article-minus-btn"><i aria-hidden="false" class="bi bi-dash"></i></button>
                                     <input name="article-amount-input" class="article-amount" type="text" value="1"/>
@@ -264,7 +265,7 @@
 
                     <div class="container-resumen">
 
-                        <h5 tabindex="0">Resumen</h5>
+                        <h2 class="text-xl">Resumen</h2>
                         
                         <div class="ticket">
                             
@@ -272,21 +273,21 @@
                                 <table>
                                     <tbody>
                                         <tr>
-                                            <td scope="row" class="concepto" tabindex="0">Productos</td>
-                                            <td class="precio" tabindex="0">0,00 €</td>
+                                            <td scope="row" class="concepto">Productos</td>
+                                            <td class="precio">0,00 €</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row" class="concepto" tabindex="0">Envío</td>
-                                            <td class="precio" tabindex="0">0,00 €</td>
+                                            <td scope="row" class="concepto">Envío</td>
+                                            <td class="precio">0,00 €</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row" class="concepto" tabindex="0">Descuento</td>
-                                            <td class="precio" tabindex="0">0,00 €</td>
+                                            <td scope="row" class="concepto">Descuento</td>
+                                            <td class="precio">0,00 €</td>
                                         </tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th class="text-sm font-semibold" tabindex="0" scope="row">
+                                            <th class="text-sm font-semibold" scope="row">
                                                 * IVA incluído en los precios
                                             </th>
                                         </tr>
@@ -296,10 +297,10 @@
                             
                             
                             <form class="code-promo">
-                                <label for="code-promo-input" tabindex="0">Código promocional</label>
+                                <label for="code-promo-input">Código promocional</label>
                                 
                                 <div class="code-wrapper">
-                                    <input id="code-promo-input" name="code-promo-input" aria-labelledby="apply-btn"
+                                    <input id="code-promo-input" name="code-promo-input"
                                     type="text" placeholder="XX0000">
                                     <button type="submit" id="apply-btn" class="text-sm">Aplicar</button>   
                                 </div>
@@ -314,9 +315,9 @@
                                 <form>
                                     <table class="total text-lg">
                                         <tbody>
-                                            <tr aria-labelledby="pay-btn">
-                                                <td scope="row" tabindex="0" class="concepto">Total</td> 
-                                                <td tabindex="0" class="precio">0.00 €</td>
+                                            <tr>
+                                                <td scope="row" class="concepto">Total</td> 
+                                                <td class="precio">0.00 €</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -331,12 +332,12 @@
 
                     <div class="container-resumen-mobile">
                         <form class="code-promo">
-                            <label for="code-promo-input" tabindex="0">Código promocional</label>
+                            <label for="code-promo-input-mobile">Código promocional</label>
                             
                             <div class="code-wrapper">
-                                <input id="code-promo-input" class="code-promo-input" name="code-promo-input" 
-                                aria-labelledby="apply-btn" type="text" placeholder="XX0000">
-                                <button type="submit" id="apply-btn" class="text-sm">Aplicar</button>    
+                                <input id="code-promo-input-mobile" class="code-promo-input" name="code-promo-input" 
+                                type="text" placeholder="XX0000">
+                                <button type="submit" id="apply-btn-mobile" class="text-sm">Aplicar</button>    
                             </div>
                         </form>
 
@@ -355,26 +356,25 @@
         <footer> 
             <div class="footer-top">
                 <div class="more-info">
-                    <a href="index.html" aria-current="page">
+                    <a href="index.html" >
                         <img src="images\logo\logo-claro.svg" loading="lazy" alt="Logo librería al-andalus"/>
                     </a>
 
-                    <p class="text-xl font-semibold" tabindex="0">Librería Al-Ándalus</p>
+                    <p class="text-xl font-semibold">Librería Al-Ándalus</p>
                     
                     <div>
-                        <p class="font-light" tabindex="0">Calle de los libros, 123</p>
-                        <p class="font-light" tabindex="0">Almería, España</p>
+                        <p class="font-light">Calle de los libros, 123</p>
+                        <p class="font-light">Almería, España</p>
                     </div>
 
                     <div>
-                        <p class="font-light" tabindex="0">Teléfono: +34 000 00 00 00</p>
-                        <p class="font-light" tabindex="0">Correo: correo@gmail.com</p>
+                        <p class="font-light">Teléfono: +34 000 00 00 00</p>
+                        <p class="font-light">Correo: correo@gmail.com</p>
                     </div>
                 </div>
 
                 <div class="fast-link">
-                    <p class="footer-title text-lg font-semibold" tabindex="0">Enlaces rápidos</p>
-                    <!-- <p class="footer-title text-lg font-semibold" tabindex="0">Enlaces rápidos</p> -->
+                    <p class="footer-title text-lg font-semibold">Enlaces rápidos</p>
                     <a href="busqueda.html" class="font-light">Categorías</a>
                     <a href="contacto.html" class="font-light">Sobre nosotros</a>
                     <a href="contacto.html" class="font-light">Contacto</a>
@@ -383,8 +383,7 @@
                 </div>
 
                 <div class="socialmedia">
-                    <p class="title text-lg font-semibold" tabindex="0">Síguenos</p>
-                    <!-- <p class="title text-lg font-semibold" tabindex="0">Síguenos</p> -->
+                    <p class="title text-lg font-semibold">Síguenos</p>
                     <a href="#" class="font-light" aria-label="Cuenta de instagram">
                         <i class="bi bi-instagram" aria-hidden="true"></i> 
                         @Al-Ándalus
@@ -404,7 +403,7 @@
             <hr/>
 
             <div class="footer-bottom">
-                <span class="font-light text-sm" tabindex="0">© 2026 · Desirée Rueda Torres</span>
+                <span class="font-light text-sm">© 2026 · Desirée Rueda Torres</span>
             </div>
         </footer>
 
