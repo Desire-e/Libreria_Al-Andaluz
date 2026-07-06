@@ -40,6 +40,8 @@ main {
   min-width: 400px;
 }
 
+.about-us h2 { font-size: clamp(1.2rem, 2.5vw, 1.7rem); }
+
 .about-us .image-wrapper {
   /* no crece si sobra espacio */
   flex-grow:0;
@@ -105,7 +107,8 @@ main {
   flex-shrink: 0;
 }
 
-.etica .desc-wrapper h5 { color: var(--color-text-primary); }
+.etica .desc-wrapper h4 { color: var(--color-text-primary); }
+
 
 .etica .desc-wrapper {
   display: flex;

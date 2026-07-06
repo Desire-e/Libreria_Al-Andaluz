@@ -75,6 +75,9 @@ section {
   width: min(600px, 100%);
 }
 
+.hero h1 { font-size: clamp(2.5rem, 8vw, 6rem); }
+.hero h2 {font-size: clamp(1.5rem, 3.7vw, 2.5rem);}
+
 .hero button.cta {
   width: clamp(12rem, 30vw, 20rem);
   height: auto;

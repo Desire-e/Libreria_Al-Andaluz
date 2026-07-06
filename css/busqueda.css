@@ -17,7 +17,7 @@ main {
    FILTROS (col izquierda)
 ========================= */
 
-section.filtros {
+aside.filtros {
   display: flex;
   flex-direction: column;
 
@@ -63,6 +63,8 @@ section.resultados .filtros-btn {
   display: flex;
   justify-content: space-between;
 }
+
+.filtros-header > p{ font-family: var(--font-heading); }
 
 .filtros-header .btn-clean-wrapper{ 
   display:flex;
@@ -318,8 +320,12 @@ section.resultados {
   flex: initial;
 }
 
-.card .desc-wrapper h5.precio { color: var(--color-text-primary); }
-.card .desc-wrapper h6.categoria { color: var(--color-text-primary); }
+.card .desc-wrapper .precio{
+  font-family: var(--font-heading);
+  color: var(--color-text-primary);
+}
+.card .desc-wrapper .categoria{ color: var(--color-text-primary); }
+
 
 .resultados-body .card .cover-wrapper { aspect-ratio: 2 / 3; }
 
@@ -332,7 +338,7 @@ section.resultados {
 @media(max-width:900px){
   
   /* panel lateral de filtros oculto */
-  section.filtros{ display: none; }
+  aside.filtros{ display: none; }
 
 
   /* --- Filtros version mobile modal --- */
@@ -400,7 +406,9 @@ section.resultados {
     width:100%;
     opacity: 1 !important;
     visibility: visible !important;
+    font-family: var(--font-heading);
   }
+  
 
 
   /* --- Resultados --- */
@@ -428,7 +436,7 @@ section.resultados {
 ========================= */
 
 @media (min-width:1000px) and (max-width:1400px){ 
-  section.filtros { max-width: 250px; } 
+  aside.filtros { max-width: 250px; } 
 }
 
 

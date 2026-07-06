@@ -184,13 +184,14 @@
                 <!-- CONTENEDOR DE FILTROS PARA BUSQUEDAS -->
                 <!-- ------------------------------------- -->
 
-                <section class="filtros" aria-label="Filtros">
+                <aside class="filtros" aria-label="Filtros">
                     
                     <div class="filtros-header">
-                        <h5 tabindex="0">Filtros</h5>
+                        <!-- <h5 tabindex="0">Filtros</h5> -->
+                        <p class="text-md font-extra-bold" tabindex="0">Filtros</p>
 
-                        <div class="btn-clean-wrapper text-sm">
-                            <button class="btn-clean text-sm">
+                        <div class="btn-clean-wrapper">
+                            <button class="btn-clean">
                                 <i aria-hidden="true" class="bi bi-arrow-clockwise"></i>
                                 Limpiar filtros
                             </button>
@@ -343,7 +344,7 @@
                         <!-- FIN FILTRO POR FORMATO -->
                         
                     </div>
-                </section>
+                </aside>
 
 
                 <!-- ------------------------------------- -->
@@ -353,7 +354,8 @@
                 <dialog id="filtros">
                     
                     <div class="filtros-header">
-                        <h5 tabindex="0">Filtros</h5>
+                        <!-- <h5 tabindex="0">Filtros</h5> -->
+                        <p class="text-lg font-extra-bold" tabindex="0">Filtros</p>
 
                         <div class="btn-clean-wrapper text-sm">
                             <button class="btn-clean text-sm">
@@ -375,9 +377,9 @@
                         <!-- FILTRO POR CATEGORÍAS -->
                         <div class="categorias accordion-item active">
                             
-                            <button class="accordion-header font-semibold"
+                            <button class="accordion-header"
                             aria-expanded="false" aria-controls="categoria-panel" id="categorias-button">
-                                Categorías
+                                <p class="font-semibold text-md">Categorías</p>
                                 <i aria-hidden="true" class="bi bi-chevron-down"></i>
                             </button>
 
@@ -421,9 +423,9 @@
                         <!-- FILTRO POR PRECIO -->
                         <div class="precio accordion-item active">
 
-                            <button class="accordion-header font-semibold"
+                            <button class="accordion-header"
                             aria-expanded="false" aria-controls="precio-panel" id="precio-button">
-                                Precio
+                                <p class="font-semibold text-md">Precio</p>
                                 <i aria-hidden="true" class="bi bi-chevron-down"></i>
                             </button>
 
@@ -451,10 +453,9 @@
                         <!-- FILTRO POR DISPONIBILIDAD -->
                         <div class="disponibilidad accordion-item active">
 
-                            <button class="accordion-header font-semibold"
+                            <button class="accordion-header"
                             aria-expanded="false" aria-controls="disponibilidad-panel" id="disponibilidad-button">
-                            
-                                Disponibilidad
+                                <p class="font-semibold text-md">Disponibilidad</p>
                                 <i aria-hidden="true" class="bi bi-chevron-down"></i>
                             </button>
 
@@ -472,9 +473,9 @@
                         <!-- FILTRO POR FORMATO -->
                         <div class="formatos accordion-item active">
 
-                            <button class="accordion-header font-semibold"
+                            <button class="accordion-header"
                             aria-expanded="false" aria-controls="formato-panel" id="formato-button">
-                                Formatos
+                                <p class="font-semibold text-md">Formatos</p>
                                 <i aria-hidden="true" class="bi bi-chevron-down"></i>
                             </button>
 
@@ -523,7 +524,7 @@
 
                     <div class="resultados-header">
                         <div>
-                            <h4 tabindex="0">Resultados para "una búsqueda"</h4>
+                            <h1 class="text-xl" tabindex="0">Resultados para "una búsqueda"</h1>
                             <p tabindex="0">Se han encontrado 24 resultados</p>
                         </div>
 
@@ -532,7 +533,7 @@
                         <!-- Botón activa modal de filtros (MOBILE) -->
                         <button class="filtros-btn">
                             <i aria-hidden="true" class="bi bi-filter"></i>
-                            <h6 class="text-md">Filtros</h6>
+                            <p class="text-md font-extra-bold">Filtros</p>
                         </button>
 
         
@@ -548,7 +549,7 @@
                             para que el usuario seleccione opciones. -->
 
                                 <!-- OPTION SELECTED -->
-                                <div>
+                                <div >
                                     <span> Ordenar por: </span>
                                     <span></span>
                                 </div>
@@ -595,9 +596,14 @@
                                 </div>
 
                                 <div class="desc-wrapper">
-                                    <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6>
-                                    <h6 tabindex="0" class="titulo">Título libro</h6>
-                                    <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6>
+                                    <!-- <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6> -->
+                                    <h4 tabindex="0" class="text-sm categoria">Categoría libro</h4>
+                                    
+                                    <!-- <h6 tabindex="0" class="titulo">Título libro</h6> -->
+                                    <h2 tabindex="0" class="text-lg titulo">Título libro</h2>
+                                    
+                                    <!-- <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6> -->
+                                    <h3 tabindex="0" class="text-md font-semibold autor">Autor libro</h3>
                                 </div>
 
                                 <div class="puntuacion">
@@ -608,16 +614,18 @@
                                         <i aria-hidden="true" class="bi bi-star-half"></i>
                                         <i aria-hidden="true" class="bi bi-star"></i>
                                     </div>
-                                    <p class="text-sm">(124)</p>
+                                    <p>(124)</p>
                                 </div>
 
                                 <div class="desc-wrapper">
-                                    <h5 tabindex="0" class="precio">24,99 €</h5>
-                                    <p tabindex="0" class="text-sm font-bold stock disponible">En stock</p>
-                                    <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
+                                    <!-- <h5 tabindex="0" class="precio">24,99 €</h5> -->
+                                    <p tabindex="0" class="precio text-lg font-extra-bold">24,99 €</p>
+                                    <!-- <p tabindex="0" class="font-bold stock disponible">En stock</p> -->
+                                    <p class="text-sm font-bold stock agotado">Agotado</p>
                                 </div>
                             </a>
                         </div>
+
 
                         <div class="card">
                             <a href="./ficha_libro.html" aria-label="Ir ficha de libro">
@@ -626,9 +634,14 @@
                                 </div>
 
                                 <div class="desc-wrapper">
-                                    <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6>
-                                    <h6 tabindex="0" class="titulo">Título libro</h6>
-                                    <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6>
+                                    <!-- <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6> -->
+                                    <h4 tabindex="0" class="text-sm categoria">Categoría libro</h4>
+                                    
+                                    <!-- <h6 tabindex="0" class="titulo">Título libro</h6> -->
+                                    <h2 tabindex="0" class="text-lg titulo">Título libro</h2>
+                                    
+                                    <!-- <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6> -->
+                                    <h3 tabindex="0" class="text-md font-semibold autor">Autor libro</h3>
                                 </div>
 
                                 <div class="puntuacion">
@@ -639,16 +652,18 @@
                                         <i aria-hidden="true" class="bi bi-star-half"></i>
                                         <i aria-hidden="true" class="bi bi-star"></i>
                                     </div>
-                                    <p class="text-sm">(124)</p>
+                                    <p>(124)</p>
                                 </div>
 
                                 <div class="desc-wrapper">
-                                    <h5 tabindex="0" class="precio">24,99 €</h5>
-                                    <p tabindex="0" class="text-sm font-bold stock disponible">En stock</p>
-                                    <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
+                                    <!-- <h5 tabindex="0" class="precio">24,99 €</h5> -->
+                                    <p tabindex="0" class="precio text-lg font-extra-bold">24,99 €</p>
+                                    <!-- <p tabindex="0" class="font-bold stock disponible">En stock</p> -->
+                                    <p class="text-sm font-bold stock agotado">Agotado</p>
                                 </div>
                             </a>
                         </div>
+
 
                         <div class="card">
                             <a href="./ficha_libro.html" aria-label="Ir ficha de libro">
@@ -657,9 +672,14 @@
                                 </div>
 
                                 <div class="desc-wrapper">
-                                    <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6>
-                                    <h6 tabindex="0" class="titulo">Título libro</h6>
-                                    <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6>
+                                    <!-- <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6> -->
+                                    <h4 tabindex="0" class="text-sm categoria">Categoría libro</h4>
+                                    
+                                    <!-- <h6 tabindex="0" class="titulo">Título libro</h6> -->
+                                    <h2 tabindex="0" class="text-lg titulo">Título libro</h2>
+                                    
+                                    <!-- <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6> -->
+                                    <h3 tabindex="0" class="text-md font-semibold autor">Autor libro</h3>
                                 </div>
 
                                 <div class="puntuacion">
@@ -670,16 +690,18 @@
                                         <i aria-hidden="true" class="bi bi-star-half"></i>
                                         <i aria-hidden="true" class="bi bi-star"></i>
                                     </div>
-                                    <p class="text-sm">(124)</p>
+                                    <p>(124)</p>
                                 </div>
 
                                 <div class="desc-wrapper">
-                                    <h5 tabindex="0" class="precio">24,99 €</h5>
-                                    <p tabindex="0" class="text-sm font-bold stock disponible">En stock</p>
+                                    <!-- <h5 tabindex="0" class="precio">24,99 €</h5> -->
+                                    <p tabindex="0" class="precio text-lg font-extra-bold">24,99 €</p>
+                                    <p tabindex="0" class="font-bold stock disponible">En stock</p>
                                     <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
                                 </div>
                             </a>
                         </div>
+
 
                         <div class="card">
                             <a href="./ficha_libro.html" aria-label="Ir ficha de libro">
@@ -688,9 +710,14 @@
                                 </div>
 
                                 <div class="desc-wrapper">
-                                    <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6>
-                                    <h6 tabindex="0" class="titulo">Título libro</h6>
-                                    <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6>
+                                    <!-- <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6> -->
+                                    <h4 tabindex="0" class="text-sm categoria">Categoría libro</h4>
+                                    
+                                    <!-- <h6 tabindex="0" class="titulo">Título libro</h6> -->
+                                    <h2 tabindex="0" class="text-lg titulo">Título libro</h2>
+                                    
+                                    <!-- <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6> -->
+                                    <h3 tabindex="0" class="text-md font-semibold autor">Autor libro</h3>
                                 </div>
 
                                 <div class="puntuacion">
@@ -701,16 +728,18 @@
                                         <i aria-hidden="true" class="bi bi-star-half"></i>
                                         <i aria-hidden="true" class="bi bi-star"></i>
                                     </div>
-                                    <p class="text-sm">(124)</p>
+                                    <p>(124)</p>
                                 </div>
 
                                 <div class="desc-wrapper">
-                                    <h5 tabindex="0" class="precio">24,99 €</h5>
-                                    <p tabindex="0" class="text-sm font-bold stock disponible">En stock</p>
+                                    <!-- <h5 tabindex="0" class="precio">24,99 €</h5> -->
+                                    <p tabindex="0" class="precio text-lg font-extra-bold">24,99 €</p>
+                                    <p tabindex="0" class="font-bold stock disponible">En stock</p>
                                     <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
                                 </div>
                             </a>
                         </div>
+
 
                         <div class="card">
                             <a href="./ficha_libro.html" aria-label="Ir ficha de libro">
@@ -719,9 +748,14 @@
                                 </div>
 
                                 <div class="desc-wrapper">
-                                    <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6>
-                                    <h6 tabindex="0" class="titulo">Título libro</h6>
-                                    <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6>
+                                    <!-- <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6> -->
+                                    <h4 tabindex="0" class="text-sm categoria">Categoría libro</h4>
+                                    
+                                    <!-- <h6 tabindex="0" class="titulo">Título libro</h6> -->
+                                    <h2 tabindex="0" class="text-lg titulo">Título libro</h2>
+                                    
+                                    <!-- <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6> -->
+                                    <h3 tabindex="0" class="text-md font-semibold autor">Autor libro</h3>
                                 </div>
 
                                 <div class="puntuacion">
@@ -732,16 +766,18 @@
                                         <i aria-hidden="true" class="bi bi-star-half"></i>
                                         <i aria-hidden="true" class="bi bi-star"></i>
                                     </div>
-                                    <p class="text-sm">(124)</p>
+                                    <p>(124)</p>
                                 </div>
 
                                 <div class="desc-wrapper">
-                                    <h5 tabindex="0" class="precio">24,99 €</h5>
-                                    <p tabindex="0" class="text-sm font-bold stock disponible">En stock</p>
+                                    <!-- <h5 tabindex="0" class="precio">24,99 €</h5> -->
+                                    <p tabindex="0" class="precio text-lg font-extra-bold">24,99 €</p>
+                                    <p tabindex="0" class="font-bold stock disponible">En stock</p>
                                     <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
                                 </div>
                             </a>
                         </div>
+
 
                         <div class="card">
                             <a href="./ficha_libro.html" aria-label="Ir ficha de libro">
@@ -750,9 +786,14 @@
                                 </div>
 
                                 <div class="desc-wrapper">
-                                    <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6>
-                                    <h6 tabindex="0" class="titulo">Título libro</h6>
-                                    <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6>
+                                    <!-- <h6 tabindex="0" class="text-sm categoria">Categoría libro</h6> -->
+                                    <h4 tabindex="0" class="text-sm categoria">Categoría libro</h4>
+                                    
+                                    <!-- <h6 tabindex="0" class="titulo">Título libro</h6> -->
+                                    <h2 tabindex="0" class="text-lg titulo">Título libro</h2>
+                                    
+                                    <!-- <h6 tabindex="0" class="text-md font-semibold autor">Autor libro</h6> -->
+                                    <h3 tabindex="0" class="text-md font-semibold autor">Autor libro</h3>
                                 </div>
 
                                 <div class="puntuacion">
@@ -763,12 +804,13 @@
                                         <i aria-hidden="true" class="bi bi-star-half"></i>
                                         <i aria-hidden="true" class="bi bi-star"></i>
                                     </div>
-                                    <p class="text-sm">(124)</p>
+                                    <p>(124)</p>
                                 </div>
 
                                 <div class="desc-wrapper">
-                                    <h5 tabindex="0" class="precio">24,99 €</h5>
-                                    <p tabindex="0" class="text-sm font-bold stock disponible">En stock</p>
+                                    <!-- <h5 tabindex="0" class="precio">24,99 €</h5> -->
+                                    <p tabindex="0" class="precio text-lg font-extra-bold">24,99 €</p>
+                                    <p tabindex="0" class="font-bold stock disponible">En stock</p>
                                     <!-- <p class="text-sm font-bold stock agotado">Agotado</p> -->
                                 </div>
                             </a>
@@ -785,14 +827,14 @@
 
 
         <!-------- FOOTER -------->
-        <footer>
+        <footer> 
             <div class="footer-top">
                 <div class="more-info">
-                    <a href="index.html">
+                    <a href="index.html" aria-current="page">
                         <img src="images\logo\logo-claro.svg" loading="lazy" alt="Logo librería al-andalus"/>
                     </a>
 
-                    <p class="text-xl font-semibold" tabindex="0">Librería Al-Ándalus</h5>
+                    <p class="text-xl font-semibold" tabindex="0">Librería Al-Ándalus</p>
                     
                     <div>
                         <p class="font-light" tabindex="0">Calle de los libros, 123</p>
@@ -807,7 +849,8 @@
 
                 <div class="fast-link">
                     <p class="footer-title text-lg font-semibold" tabindex="0">Enlaces rápidos</p>
-                    <a href="busqueda.html" class="font-light" aria-current="page">Categorías</a>
+                    <!-- <p class="footer-title text-lg font-semibold" tabindex="0">Enlaces rápidos</p> -->
+                    <a href="busqueda.html" class="font-light">Categorías</a>
                     <a href="contacto.html" class="font-light">Sobre nosotros</a>
                     <a href="contacto.html" class="font-light">Contacto</a>
                     <a href="#" class="font-light">Trabaja con nosotros</a>
@@ -816,6 +859,7 @@
 
                 <div class="socialmedia">
                     <p class="title text-lg font-semibold" tabindex="0">Síguenos</p>
+                    <!-- <p class="title text-lg font-semibold" tabindex="0">Síguenos</p> -->
                     <a href="#" class="font-light" aria-label="Cuenta de instagram">
                         <i class="bi bi-instagram" aria-hidden="true"></i> 
                         @Al-Ándalus
@@ -838,6 +882,5 @@
                 <span class="font-light text-sm" tabindex="0">© 2026 · Desirée Rueda Torres</span>
             </div>
         </footer>
-
     </body>
 </html>
