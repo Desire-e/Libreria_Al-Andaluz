@@ -65,10 +65,14 @@ p {
   --color-bg-main: #fff;
   --color-bg-cream: #f5f4ef;
   --color-bg-primary: #70643a;
+
+  /* other */
+  --red: #8C0000;
+  --green:#4d900b;
 }
 
-.stock.agotado { color:#8C0000; }
-.stock.disponible { color:#4d900b; }
+.stock.agotado { color: var(--red); }
+.stock.disponible { color:var(--green); }
 
 /* =========================
    TÍTULOS
@@ -397,7 +401,11 @@ footer {
 
 footer div img { width: clamp(80px, 7vw, 120px); } /* logo */
 
-footer hr { margin: 0 2rem; }
+footer hr { 
+  margin: 0 2rem; 
+  border-top: 2px solid;
+  border-top-color: #aea57e8a;
+}
 
 .footer-top{
   display: flex;
@@ -462,6 +470,7 @@ footer hr { margin: 0 2rem; }
 }
 
 input[type="text"]:focus-visible,
+input[type="search"]:focus-visible,
 textarea:focus-visible {
     outline: none;
 }
@@ -504,7 +513,10 @@ textarea:focus-visible {
 }
 body.overlay-active{ overflow: hidden; } /* paraliza scroll */
 
-
+p.form-error {
+  color: var(--red);
+  margin-block: 0.5rem;
+}
 
 /* TODO. 
 ANIMACION CANVAS */

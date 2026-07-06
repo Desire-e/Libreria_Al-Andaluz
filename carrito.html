@@ -30,116 +30,151 @@
 
     
     <body>
-        <button id="btnSubir">
-            <i class="bi bi-chevron-double-up"></i>
+        <!-- 
+        ACCESIBILIDAD. Mensajes para lectores de pantalla.
+        role="status"   Indica a lectores de pantalla que aparecerán mensajes de estado
+        aria-live="polite"  Controla cómo se anuncian los cambios (polite hace que lector 
+        espere a que usuario termine de escuchar para anunciar nuevo mensaje, no intrusivo)
+        -->
+        <div tabindex="-1" id="statusMessage" role="status" aria-live="polite"></div>
+
+        <a href="#contenido" class="skip-link">
+            Saltar al contenido principal
+        </a>
+
+        <button id="btnSubir" aria-label="Subir al inicio">
+            <i aria-hidden="true" class="bi bi-chevron-double-up"></i>
         </button>
+
         
-        <div id="statusMessage" role="status" aria-live="polite"></div>
-        
+
         <!-------- HEADER -------->
         <header>
-            <a href="index.html"><img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo"/></a>                    
+            <!-- Logo -->
+            <a href="index.html">
+                <img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo librería al-andalus"/>
+            </a>                    
 
             <!-- Barra de búsqueda -->
-            <form class="search-container">
-                <input id="search" name="search" type="search" placeholder="Buscar..." aria-label="Buscar libro">
-                <a class="search-button" href="busqueda.html" aria-label="Buscar">
-                    <!-- <img src="images\Iconos\opcional-lupa.svg" height="100%" alt=""/> -->
-                    <i class="bi bi-search"></i>
+            <form class="search-container" role="search" aria-label="Buscar libros">
+                <input id="search" name="search" type="search" placeholder="Buscar..." 
+                aria-label="Buscar">
 
-                </a>
+                <button class="search-button" type="submit" 
+                aria-label="Buscar">
+                    <!-- <img src="images\Iconos\opcional-lupa.svg" height="100%" alt=""/> -->
+                    <i aria-hidden="true" class="bi bi-search"></i>
+                </button>
             </form>
 
-            <!-- Navegador -->
-            <nav>
-                <a href="busqueda.html" aria-label="categorías">
-                    <h6 class="font-semibold">Categorías</h6>
+            <!-- Navegador (DESKTOP) -->
+            <nav class="nav-desktop">
+                <a href="busqueda.html" class="font-semibold ">
+                    Categorías
                 </a>
-                <a href="#" class="text-lg font-bold" aria-label="iniciar sesión">
-                    <h6 class="font-semibold">Identifícate / Regístrate</h6>
+                <a href="#" class="font-semibold">
+                    Identifícate / Regístrate
                 </a>
-                <a href="#" class="text-lg font-bold" aria-label="favoritos">
-                    <h6 class="font-semibold">Favoritos</h6>
+                <a href="#" class="font-semibold">
+                    Favoritos
                 </a>
-                <a href="#" class="text-lg font-bold" aria-label="idioma">
-                    <h6 class="font-semibold">Idioma</h6>
+                <a href="#" class="font-semibold">
+                    Idioma
                 </a>
             </nav>
 
-            <div class="hamburger" aria-label="Menú">
-                <i class="bi bi-list"></i>
-            </div>
-            
+
+            <!-- Hambuger abrir menú (MOBILE) -->
+            <button class="hamburger" aria-label="Abrir menú móvil" aria-expanded="false" aria-controls="nav-mobile">
+                <i aria-hidden="true" class="bi bi-list"></i>
+            </button>
+
+            <!-- 
+            aria-expanded="false" comunica a las tecnologías de asistencia que existe contenido oculto disponible 
+            para ser expandido.
+            aria-controls="menu-mobile" se utiliza en un botón para vincularlo semánticamente al contenedor del menú 
+            de navegación que controla. Permite que las tecnologías de asistencia identifiquen qué elemento de la página 
+            cambia de estado (expandido o colapsado) cuando se interactúa con el botón.  
+            -->
+
+            <!-- Botones carrito y cuenta -->
             <div class="usuario">
-                <a href="carrito.html" aria-label="carrito"><i class="bi bi-basket-fill text-xl"></i></a>
-                <a href="#" aria-label="cuenta"><i class="bi bi-person-circle text-xl"></i></a>
+                <a href="carrito.html" aria-label="Carrito" aria-current="page">
+                    <i aria-hidden="true" class="bi bi-basket-fill text-xl"></i>
+                </a>
+                <a href="#" aria-label="Cuenta">
+                    <i aria-hidden="true" class="bi bi-person-circle text-xl"></i>
+                </a>
             </div>
 
         </header>
 
         <!-- Navegador mobile -->
-        <nav class="nav-mobile">
+        <nav tabindex="0" class="nav-mobile" id="nav-mobile">
 
-            <div>
-                <a href="index.html" >
-                    <img class="header-logo" 
-                    src="images\logo\logo-claro.svg" alt="Logo"/>
+            <div aria-label="Menú pantalla móvil">
+                <a href="index.html">
+                    <img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo librería al-andalus"/>
                 </a>
-                <button class="btn-close text-sm">
-                    <i class="bi bi-x-lg"></i>
+
+                <button class="btn-close text-sm" aria-label="Cerrar menú pantalla móvil">
+                    <i aria-hidden="true" class="bi bi-x-lg"></i>
                 </button>
             </div>
 
 
-            <a href="index.html" aria-label="categorías">
-                <i class="bi bi-house-door-fill"></i>
+            <a href="index.html">
+                <i aria-hidden="true" class="bi bi-house-door-fill"></i>
                 Inicio
             </a>
 
-            <a href="busqueda.html" aria-label="categorías">
-                <i class="bi bi-tag"></i>
+            <a href="busqueda.html">
+                <i aria-hidden="true" class="bi bi-tag"></i>
                 Categorías
             </a>
-            <a href="#" aria-label="iniciar sesión">
-                <i class="bi bi-person"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-person"></i>
                 Identifícate / Regístrate
             </a>
-            <a href="#" aria-label="idioma">
-                <i class="bi bi-globe2"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-globe2"></i>
                 Idioma
             </a>
 
             <hr/>
             
-            <a href="#" aria-label="sobre-nosotros">
-                <i class="bi bi-file-text"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-file-text"></i>
                 Sobre nosotros
             </a>
-            <a href="#" aria-label="contacto">
-                <i class="bi bi-telephone"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-telephone"></i>
                 Contacto
             </a>
 
-            <a href="#" aria-label="politica-de-privacidad">
-                <i class="bi bi-shield-check"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-shield-check"></i>
                 Política de privacidad
             </a>
 
-            <a href="#" aria-label="preguntas-frecuentes">
-                <i class="bi bi-question-circle"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-question-circle"></i>
                 Preguntas frecuentes
             </a>
         </nav>
         
 
-        <div class="overlay"></div>
+
+        <div tabindex="-1" class="overlay"></div>
+
+
             
         <!-- TODO. Animación canvas de carga -->
         <!-- <canvas id="canvas" width="400" height="300"></canvas> -->
 
+
             
-        <!-------- CONTENEDOR  -------->
-        <div class="container carrito">
+        <div class="container carrito" id="contenido">
 
             <!-------- SECCIONES -------->
             <main>
@@ -152,66 +187,50 @@
 
                     <div class="container-articulos">
 
-                        <p class="no-articles">Aún no hay artículos en su cesta</p>
+                        <p class="no-articles" tabindex="0">No hay artículos en su cesta</p>
 
                         <div class="articulo">
-
                             <div class="cover-wrapper">
                                 <a href="ficha_libro.html">
                                     <img class="cover" src="images\Portada\portada.png" alt="portada de un artículo del carrito"/>
                                 </a>                                
                             </div>
-                            <!-- <a href="ficha_libro.html">
-                                <img class="cover" src="images\Portada\portada.png" alt="portada de un artículo del carrito"/>
-                            </a> -->
 
-                            <!-- <div class="info"> -->
                             <div class="desc-wrapper">
-
                                 <div class="descripcion">
                                     <p class="text-lg font-semibold" tabindex="0">Título del libro</p>
                                     <p class="stock agotado" tabindex="0">Agotado</p>
                                 </div>
-                                    <p class="text-lg font-semibold" tabindex="0">10,00 €</p>
-
+                                <p class="text-lg font-semibold" tabindex="0">10,00 €</p>
+                                
                                 <div class="cantidad">
-                                        <button class="article-minus-btn"><i class="bi bi-dash"></i></button>
-                                        <input class="article-amount" type="text" value="1"/>
-                                        <button class="article-plus-btn"><i class="bi bi-plus"></i></button>
+                                    <button class="article-minus-btn"><i aria-hidden="false" class="bi bi-dash"></i></button>
+                                    <input name="article-amount-input" class="article-amount" type="text" value="1"/>
+                                    <button class="article-plus-btn"><i aria-hidden="false" class="bi bi-plus"></i></button>
                                 </div>
-
                             </div>
                         </div>
 
                         <hr/>
                         
-
                         <div class="articulo">
-
                             <div class="cover-wrapper">
                                 <a href="ficha_libro.html">
                                     <img class="cover" src="images\Portada\portada.png" alt="portada de un artículo del carrito"/>
                                 </a>                                
                             </div>
-                            <!-- <a href="ficha_libro.html">
-                                <img class="cover" src="images\Portada\portada.png" alt="portada de un artículo del carrito"/>
-                            </a> -->
 
-                            <!-- <div class="info"> -->
                             <div class="desc-wrapper">
-
                                 <div class="descripcion">
                                     <p class="text-lg font-semibold" tabindex="0">Título del libro</p>
                                     <p class="stock agotado" tabindex="0">Agotado</p>
                                 </div>
-                                    <p class="text-lg font-semibold" tabindex="0">10,00 €</p>
-
+                                <p class="text-lg font-semibold" tabindex="0">10,00 €</p>
                                 <div class="cantidad">
-                                        <button class="article-minus-btn"><i class="bi bi-dash"></i></button>
-                                        <input class="article-amount" type="text" value="1"/>
-                                        <button class="article-plus-btn"><i class="bi bi-plus"></i></button>
+                                    <button class="article-minus-btn"><i aria-hidden="false" class="bi bi-dash"></i></button>
+                                    <input name="article-amount-input" class="article-amount" type="text" value="1"/>
+                                    <button class="article-plus-btn"><i aria-hidden="false" class="bi bi-plus"></i></button>
                                 </div>
-
                             </div>
                         </div>
 
@@ -222,33 +241,24 @@
                             <div class="cover-wrapper">
                                 <a href="ficha_libro.html">
                                     <img class="cover" src="images\Portada\portada.png" alt="portada de un artículo del carrito"/>
-                                </a>                                
+                                </a>
                             </div>
-                            <!-- <a href="ficha_libro.html">
-                                <img class="cover" src="images\Portada\portada.png" alt="portada de un artículo del carrito"/>
-                            </a> -->
-
-                            <!-- <div class="info"> -->
+                            
                             <div class="desc-wrapper">
-
                                 <div class="descripcion">
                                     <p class="text-lg font-semibold" tabindex="0">Título del libro</p>
                                     <p class="stock agotado" tabindex="0">Agotado</p>
                                 </div>
-                                    <p class="text-lg font-semibold" tabindex="0">10,00 €</p>
-
+                                <p class="text-lg font-semibold" tabindex="0">10,00 €</p>
                                 <div class="cantidad">
-                                        <button class="article-minus-btn"><i class="bi bi-dash"></i></button>
-                                        <input class="article-amount" type="text" value="1"/>
-                                        <button class="article-plus-btn"><i class="bi bi-plus"></i></button>
+                                    <button class="article-minus-btn"><i aria-hidden="false" class="bi bi-dash"></i></button>
+                                    <input name="article-amount-input" class="article-amount" type="text" value="1"/>
+                                    <button class="article-plus-btn"><i aria-hidden="false" class="bi bi-plus"></i></button>
                                 </div>
-
                             </div>
                         </div>
 
                     </div>
-
-
 
                     
 
@@ -258,7 +268,31 @@
                         
                         <div class="ticket">
                             
-                            <div class="desglose">
+                            <div class="desglose" aria-label="Desglose de precio">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td scope="row" class="concepto" tabindex="0">Productos</td>
+                                            <td class="precio" tabindex="0">0,00 €</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row" class="concepto" tabindex="0">Envío</td>
+                                            <td class="precio" tabindex="0">0,00 €</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row" class="concepto" tabindex="0">Descuento</td>
+                                            <td class="precio" tabindex="0">0,00 €</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th class="text-sm font-semibold" tabindex="0" scope="row">
+                                                * IVA incluído en los precios
+                                            </th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                                <!-- 
                                 <div class="titulos">
                                     <p tabindex="0">Productos</p>
                                     <p tabindex="0">Envío</p>
@@ -269,21 +303,49 @@
                                     <p tabindex="0">0,00 €</p>
                                     <p tabindex="0">0,00 €</p>
                                     <p tabindex="0">0,00 €</p>
-                                </div>
+                                </div> 
+                                -->
                             </div>
-
-                            <p class="iva text-sm font-semibold" tabindex="0">* IVA incluído en los precios</p>
                             
-                            <div class="code-promo">
+                            
+                            <!-- <div class="code-promo">
                                 <p tabindex="0">Código promocional</p>
                                 <div class="code-wrapper">
-                                    <input type="text" placeholder="XX0000">
-                                    <button class="text-sm">Aplicar</button>    
+                                    <input id="code-promo-input" name="code-promo-input" 
+                                    type="text" placeholder="XX0000">
+                                    <button type="submit" class="text-sm">Aplicar</button>    
                                 </div>
-                            </div>
+                            </div> -->
+                            <form class="code-promo">
+                                <label for="code-promo-input" tabindex="0">Código promocional</label>
+                                
+                                <div class="code-wrapper">
+                                    <input id="code-promo-input" name="code-promo-input" aria-labelledby="apply-btn"
+                                    type="text" placeholder="XX0000">
+                                    <button type="submit" id="apply-btn" class="text-sm">Aplicar</button>   
+                                </div>
+                                <!-- <p class="form-error text-sm"></p> -->
+                            </form>
+                            
 
                             <hr/>
 
+
+                            <div class="payment" aria-label="Precio total">
+                                <form>
+                                    <table class="total text-lg">
+                                        <tbody>
+                                            <tr aria-labelledby="pay-btn">
+                                                <td scope="row" tabindex="0" class="concepto">Total</td> 
+                                                <td tabindex="0" class="precio">0.00 €</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <button type="submit" class="pay-btn">Pagar</button>
+                                </form>
+                            </div>
+                            <!-- 
                             <div class="total">
                                 <div class="titulos">
                                     <p class="text-lg" tabindex="0">Total</p>
@@ -292,69 +354,91 @@
                                     <p class="text-lg" tabindex="0">0.00 €</p>
                                 </div>
                             </div>
-
-                            <button class="pay-btn">Pagar</button>
+                            <button class="pay-btn">Pagar</button> 
+                            -->
                             
                         </div>
-
                     </div>
 
 
                     <div class="container-resumen-mobile">
-
-                        <div class="code-promo">
+                        <!-- <div class="code-promo">
                             <p tabindex="0">Código promocional</p>
 
                             <div class="code-wrapper">
                                 <input type="text" placeholder="XX0000">
                                 <button class="text-sm">Aplicar</button>    
                             </div>
-                        </div>
+                        </div> -->
+                        <form class="code-promo">
+                            <label for="code-promo-input" tabindex="0">Código promocional</label>
+                            
+                            <div class="code-wrapper">
+                                <input id="code-promo-input" class="code-promo-input" name="code-promo-input" 
+                                aria-labelledby="apply-btn" type="text" placeholder="XX0000">
+                                <button type="submit" id="apply-btn" class="text-sm">Aplicar</button>    
+                            </div>
+                        </form>
 
-                        <button class="pay-btn">Tramitar pedido (24,50 €)</button>
-
+                        <form>
+                            <button class="pay-btn">Tramitar pedido (24,50 €)</button>
+                        </form>
                     </div>
-
                     
                 </div>
 
             </main>
         </div>
 
+
         <!-------- FOOTER -------->
-        <footer> 
+        <footer>
             <div class="footer-top">
                 <div class="more-info">
-                    <a href="index.html"><img src="images\logo\logo-claro.svg" alt="logo"/></a>
-                    <p class="title text-xl font-semibold">Librería Al-Ándalus</h5>
+                    <a href="index.html">
+                        <img src="images\logo\logo-claro.svg" loading="lazy" alt="Logo librería al-andalus"/>
+                    </a>
+
+                    <p class="text-xl font-semibold" tabindex="0">Librería Al-Ándalus</h5>
+                    
                     <div>
                         <p class="font-light" tabindex="0">Calle de los libros, 123</p>
                         <p class="font-light" tabindex="0">Almería, España</p>
                     </div>
+
                     <div>
                         <p class="font-light" tabindex="0">Teléfono: +34 000 00 00 00</p>
                         <p class="font-light" tabindex="0">Correo: correo@gmail.com</p>
-                    </div>  
+                    </div>
                 </div>
 
                 <div class="fast-link">
-                    <p class="footer-title text-lg font-semibold">Enlaces rápidos</p>
+                    <p class="footer-title text-lg font-semibold" tabindex="0">Enlaces rápidos</p>
                     <a href="busqueda.html" class="font-light">Categorías</a>
                     <a href="contacto.html" class="font-light">Sobre nosotros</a>
                     <a href="contacto.html" class="font-light">Contacto</a>
-                    <a href="#" class="font-light">Trabaja con nosotros</a>
+                    <a href="#" class="">Trabaja con nosotros</a>
                     <a href="#" class="font-light">Política de privacidad</a>
                 </div>
 
                 <div class="socialmedia">
-                    <p class="title text-lg font-semibold">Síguenos</p>
-                    <a href="#" class="font-light"><i class="bi bi-instagram"></i> Al-Ándalus</a>
-                    <a href="#" class="font-light"><i class="bi bi-youtube"></i> Al-Ándalus</a>
-                    <a href="#" class="font-light"><i class="bi bi-facebook"></i> Al-Ándalus</a>                        
+                    <p class="title text-lg font-semibold" tabindex="0">Síguenos</p>
+                    <a href="#" class="font-light" aria-label="Cuenta de instagram">
+                        <i class="bi bi-instagram" aria-hidden="true"></i> 
+                        @Al-Ándalus
+                    </a>
+                    <a href="#" class="font-light" aria-label="Canal de youtube">
+                        <i aria-hidden="true" class="bi bi-youtube"></i> 
+                        @Al-Ándalus
+                    </a>
+                    <a href="#" class="font-light" aria-label="Cuenta de facebook">
+                        <i aria-hidden="true" class="bi bi-facebook"></i> 
+                        @Al-Ándalus
+                    </a>
                 </div>
 
             </div>
-
+            
             <hr/>
 
             <div class="footer-bottom">

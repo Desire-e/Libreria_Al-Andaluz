@@ -130,13 +130,14 @@ main {
 }
 
 .ticket .desglose {
-  display: grid;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  /* gap: 1rem; */
   
   /* 1fr = unidad de medida relativa en CSS Grid 
   representa una fracción del espacio disponible 
   en el contenedor de la cuadrícula. */
-  grid-template-columns: 1fr auto;
+  /* grid-template-columns: 1fr auto; */
 
   /* En CSS Grid, si no defines grid-template-rows, 
   el navegador crea las filas automáticamente según 
@@ -144,40 +145,62 @@ main {
   /* grid-template-rows: auto auto auto; */  
 }
 
-.desglose .titulos,
+/* .desglose .titulos,
 .desglose .precios {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-}
+} */
 
-.desglose .titulos{
-  grid-column: 1;   /* ocupa col 1 */
-  grid-row: 1 / 4;  /* ocupa de row 1 a 3 */
-}
+/* .desglose .titulos{
+  grid-column: 1;   /* ocupa col 1 
+  grid-row: 1 / 4;  /* ocupa de row 1 a 3 
+} */
 
-.desglose .precios{
+/* .desglose .precios{
   grid-column: 2;   
   grid-row: 1 / 4;
 
   justify-self: end;
+} */
+
+/* .ticket .iva { opacity: 0.6; } */
+
+/* PRECIOS Y CONCEPTO */
+.desglose table {
+  border-collapse: separate;
+  border-spacing: 0 0.8rem; /* 0 horizontal, 10px vertical */
+  width: 100%;
 }
 
-.ticket .iva { opacity: 0.6; }
+.desglose table tr td.precio {
+  text-align: right;
+  /* el texto no puede partirse en varias líneas. */
+  white-space: nowrap;
+}
 
+/* IVA */
+.desglose tfoot { 
+  opacity: 0.6; 
+  width: 100%;
+  text-align: left;
+}
 
 
 /* =====================
    RESUMEN TICKET. CÓDIGO PROMO
 ===================== */
 
-.code-promo {
+/* .code-promo {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
+} */
 
-.code-wrapper { display: flex; }
+.code-wrapper { 
+  display: flex; 
+  margin-top: 0.5rem; 
+}
 
 .code-wrapper input {
   flex: 1;
@@ -203,7 +226,7 @@ main {
    RESUMEN TICKET. TOTAL
 ===================== */
 
-.ticket .total {
+/* .ticket .total {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 1rem;
@@ -213,9 +236,24 @@ main {
 
 .total .titulos { grid-column: 1; }
 
-.total .precios{ grid-column: 2; }
+.total .precios{ grid-column: 2; } */
 
+.ticket .payment{
+  display: flex;
+  flex-direction: column;
+}
 
+.payment form table.total {
+  border-collapse: separate;
+  border-spacing: 0 1rem; /* 0 horizontal, 10px vertical */
+  width: 100%;
+}
+
+table.total tr td.precio {
+  text-align: right;
+  /* el texto no puede partirse en varias líneas. */
+  white-space: nowrap;
+}
 
 /* =====================
    RESUMEN TICKET. BOTON
@@ -269,8 +307,8 @@ main {
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 2000;  
-
+    /* z-index: 2000;   */
+    z-index: 35;
     width: 100%;
     padding: 0.5rem 1rem;
     background-color: var(--color-bg-cream);
