@@ -41,7 +41,7 @@
         aria-live="polite"  Controla cómo se anuncian los cambios (polite hace que lector 
         espere a que usuario termine de escuchar para anunciar nuevo mensaje, no intrusivo)
         -->
-        <div id="statusMessage" role="status" aria-live="polite"></div>
+        <div id="statusMessage" role="status" aria-atomic="true" aria-live="polite"></div>
 
         <a href="#contenido" class="skip-link">
             Saltar al contenido principal
@@ -210,8 +210,7 @@
                     <!-- -------- -->
                     <div tabindex="0" class="carousel destacada" role="region" aria-label="Libros más vendidos">
                         
-                        <button class="prev" aria-label="Retroceder carousel">
-                            <!-- <i aria-hidden="true" class="bi bi-arrow-left"></i> -->
+                        <button class="prev" aria-label="Anterior libro">
                             <i aria-hidden="true" class="bi bi-chevron-left"></i>
                         </button>
 
@@ -308,8 +307,7 @@
                             </div>
                         </div>
 
-                        <button class="next"   aria-label="Avanzar carousel">
-                            <!-- <i aria-hidden="true" class="bi bi-arrow-right"></i> -->
+                        <button class="next" aria-label="Siguiente libro">
                             <i aria-hidden="true" class="bi bi-chevron-right"></i>
                         </button>
                     </div>
@@ -326,7 +324,7 @@
                     <!-- -------- -->
                     <div tabindex="0" class="carousel" role="region" aria-label="Libros electrónicos">
 
-                        <button class="prev"   aria-label="Retroceder carousel">
+                        <button class="prev" aria-label="Anterior libro">
                             <i aria-hidden="true" class="bi bi-chevron-left"></i>
                         </button>
 
@@ -413,7 +411,7 @@
                             </div>
                         </div>
 
-                        <button class="next"   aria-label="Avanzar carousel">
+                        <button class="next"   aria-label="Siguiente libro">
                             <i aria-hidden="true" class="bi bi-chevron-right"></i>
                         </button>
                     </div>

@@ -53,10 +53,10 @@
         
         
         <!-------- HEADER -------->
-        <header>
+        <header role="banner">
             <!-- Logo -->
             <a href="index.html">
-                <img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo librería al-andalus"/>
+                <img class="header-logo" src="images/logo/logo-claro.svg" alt="Logo librería al-andalus"/>
             </a>                    
 
             <!-- Barra de búsqueda -->
@@ -71,7 +71,7 @@
             </form>
 
             <!-- Navegador (DESKTOP) -->
-            <nav class="nav-desktop">
+            <nav class="nav-desktop" aria-label="Navegación principal">
                 <a href="busqueda.html" class="font-semibold ">
                     Categorías
                 </a>
@@ -113,11 +113,11 @@
         </header>
 
         <!-- Navegador mobile -->
-        <nav tabindex="0" class="nav-mobile" id="nav-mobile">
+        <nav tabindex="0" class="nav-mobile" id="nav-mobile" aria-label="Navegación principal móvil">
 
-            <div aria-label="Menú pantalla móvil">
+            <div >
                 <a href="index.html">
-                    <img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo librería al-andalus"/>
+                    <img class="header-logo" src="images/logo/logo-claro.svg" alt="Logo librería al-andalus"/>
                 </a>
 
                 <button class="btn-close text-sm" aria-label="Cerrar menú pantalla móvil">
@@ -301,7 +301,7 @@
             <div class="footer-top">
                 <div class="more-info">
                     <a href="index.html">
-                        <img src="images\logo\logo-claro.svg" loading="lazy" alt="Logo librería al-andalus"/>
+                        <img src="images/logo/logo-claro.svg" loading="lazy" alt="Logo librería al-andalus"/>
                     </a>
 
                     <p class="text-xl font-semibold">Librería Al-Ándalus</p>
