@@ -97,15 +97,10 @@ section {
    CAROUSEL GENERAL
 ========================= */
 
-.carousel { gap: 2em; }
-
 .carousel .prev, 
 .carousel .next {
 	font-size: 1.5rem;
 }
-
-.carousel-viewport .carousel-track { gap: 2em; }
-
 
 
 /* ===========================
@@ -151,17 +146,13 @@ section.destacada {
 
 
 /* CAROUSEL ITEM VARIANTE */
+/* tamaño controlado desde main.js  */
 
 .bs.carousel-item {  
-  /* tamaño para 3 de estas items visibles (desktop) */
-  flex: 0 0 calc((100% - 4rem) / 3);
-  /* 4rem = suma de gaps: 2rem + 2rem */
-  
   font-family: var(--font-heading);
   transition: transform 0.3s;
-}
-
-.bs.carousel-item:hover { transform: scale(1.02); }
+} 
+.bs.carousel-item:hover { transform: scale(1.02); } 
 
 
 /* WRAPPER IMAGEN - cover mas grande */
@@ -230,8 +221,6 @@ section.destacada {
   #suscription { width: 100%; }
 
 
-  .bs.carousel-item{ flex:0 0 100%; }
-
   .bs.carousel-item .cover-wrapper{
     max-height:20rem;
     width:100%
@@ -245,7 +234,5 @@ section.destacada {
 ========================= */
 
 @media(max-width:900px) and (min-width:700px) {
-  .bs.carousel-item{ flex:0 0 calc((100% - 2rem)/2); }
-
   .bs.carousel-item .cover-wrapper{ max-height:21rem; }
 }
