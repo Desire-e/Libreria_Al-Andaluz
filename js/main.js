@@ -23,7 +23,7 @@ searchBtn.addEventListener("click", (e) => {
 /*******************************************
  * CARRUSELS
  *******************************************/
-    // NEW CAROUSEL
+
 function setCarousels(){
 
     // HELPERS
@@ -31,7 +31,8 @@ function setCarousels(){
     // Cards visibles según viewport
     function getVisibleCards(carousel=null) {
         const width = window.innerWidth;
-
+        // carousel especial
+        // para best-seller en index.html
         if(carousel && carousel.classList.contains("destacada")){
             // mobile
             if (width < 600) return 1;
@@ -40,13 +41,13 @@ function setCarousels(){
             // desktop
             return 3;
         }
+        // carousel normal
         // mobile
         if (width < 600) return 2;
         // desktop 1024 y tablet
         if (width < 1440) return 3;
         // desktop
         return 4;
- 
     }
 
     
@@ -119,159 +120,77 @@ function setCarousels(){
             updateCarousel();
         }
 
+        function announceIndex(){
+            let message = `Mostrando items ${currentIndex + 1} a ${currentIndex + visibleCards}, de ${totalCards} en total`;
+            
+            setStatusMessage(message);
+        }
+
+        function announceItem(focusedElement){
+
+            if (!focusedElement.matches(".carousel-item a")) return;
+
+            const focusableCards = [...track.querySelectorAll(".carousel-item a")];
+            const index = focusableCards.indexOf(focusedElement);
+
+            let message = `Item ${index + 1} de ${totalCards}`;
+            
+            if(index >= 0) setStatusMessage(message);
+        }
+
 
         // -----------------------------------------------------
         // EVENTOS
 
         prevBtn.addEventListener('click', () => {
             if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
+                currentIndex--;
+                updateCarousel();
+                announceIndex();
             }
         });
 
         nextBtn.addEventListener('click', () => {
             if (currentIndex < maxIndex) {
-            currentIndex++;
-            updateCarousel();
+                currentIndex++;
+                updateCarousel();
+                announceIndex();
             }
         });
  
         window.addEventListener('resize', handleResize);
+
+        carousel.addEventListener("focusin", e => {
+            announceItem(e.target);
+        });
+        
+        carousel.addEventListener('keydown', e =>{
+            // if(e.key==="Tab"){
+            //     announceItem(document.activeElement);
+            // }
+
+            if(e.key==="ArrowLeft"){
+                e.preventDefault();
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                    announceIndex();
+                }
+            }
+
+            if(e.key==="ArrowRight"){
+                e.preventDefault();
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateCarousel();
+                    announceIndex();
+                } 
+            }
+        });
+
         handleResize();
     });
 }
-/*
-function setCarousels(){
-    // NodeList de carousels
-    const carousels = document.querySelectorAll(".carousel"); 
-
-    // Cards visibles según viewport
-    function getVisibleCards() {
-        if (window.innerWidth <= 700) return 1; 
-        if (window.innerWidth <= 900) return 2; 
-        return 3;
-    }
-
-
-    // Recorre NodeList
-    carousels.forEach(carousel => {
-        // track (contenedor con todas las carousel-item)
-        const track = carousel.querySelector(".carousel-track");
-
-        // botones de desplazamiento 
-        const nextBtn = carousel.querySelector(".next");
-        const prevBtn = carousel.querySelector(".prev");
-
-        
-        // Si no hay track ni botones, salir
-        if (!track || !nextBtn || !prevBtn) return;
-
-
-        // posición actual (grupo de cards visibles en el track)
-        let index = 0; 
-        // cards máximas visibles
-        // const visibleCards = getVisibleCards();
-
-        // Cuánto desplazar track:
-        // Desktop de 3 en 3
-        // Tablet de 2 en 2
-        // Mobile de 1 en 1
-        function updateCarousel() {
-            
-            // Si no hay cards, salir
-            // const cards = track.querySelectorAll(".carousel-item");
-            // if (cards.length === 0) return;
-            // Nunca permitir que el índice salga del rango válido
-            index = Math.max(0, Math.min(index, getMaxIndex()));
-            const cards = track.querySelectorAll(".carousel-item");
-            if (cards.length === 0) return;
-
-
-
-            // Calcula tamaño máximo de una card + gap entre cards            
-            const cardWidth = cards[0].offsetWidth;
-            const gap = parseFloat(getComputedStyle(track).gap) || 0;
-
-            // Calcula cuántos px mover el track en base a lo anterior
-            // const totalMove = index * (cardWidth + gap);
-            const viewport = carousel.querySelector(".carousel-viewport");
-            const move = index * (cardWidth + gap);
-            // Nunca desplazar más allá del final del track
-            const maxMove = track.scrollWidth - viewport.clientWidth;
-
-            // track.style.transform = `translateX(-${totalMove}px)`;
-            track.style.transform =
-                `translateX(-${Math.min(move, maxMove)}px)`;
-        }
-
-
-        // Límite máximo de desplazar track - da index máximo del track
-        // Si 6 cards, avanza de 1 en 1, y son visibles 3 cards: 
-        // solo se puede desplazar adelante 3 veces más (cards restantes)
-        // function getMaxIndex() {
-        //     const totalCards = track.querySelectorAll(".carousel-item").length;
-        //     // return totalCards - visibleCards;
-        //     return Math.max(0, totalCards - getVisibleCards());
-        // }
-        function getMaxIndex() {
-            const cards = track.querySelectorAll(".carousel-item");
-            if (!cards.length) return 0;
-
-            const gap = parseFloat(getComputedStyle(track).gap) || 0;
-            const cardWidth = cards[0].offsetWidth + gap;
-
-            const maxTranslate =
-                track.scrollWidth -
-                carousel.querySelector(".carousel-viewport").offsetWidth;
-
-            return Math.max(0, Math.ceil(maxTranslate / cardWidth));
-        }
-
-        // Eventos
-        nextBtn.addEventListener("click", () => {
-            if (index < getMaxIndex()) {
-                index++;
-                updateCarousel();
-            }
-        });
-
-        prevBtn.addEventListener("click", () => {
-            if (index > 0) {
-                index--;
-                updateCarousel();
-            }
-        });
-
-        // ACCESIBILIDAD. Con teclas de dirección <- ->
-        carousel.addEventListener("keydown",(e)=>{
-            // if(e.key==="ArrowRight"){
-            //     index++;
-            //     updateCarousel();
-            // }
-            // if(e.key==="ArrowLeft"){
-            //     index--;
-            //     updateCarousel();  
-            // }
-
-            if (e.key === "ArrowRight" 
-                && index < getMaxIndex()) {
-                index++;
-                updateCarousel();
-            }
-
-            if (e.key === "ArrowLeft" 
-                && index > 0) {
-                index--;
-                updateCarousel();
-            }
-        });
-
-
-        // Recalcula en cambios de tamaño de pantalla
-        window.addEventListener("resize", updateCarousel);
-    });
-}*/
 
 
 
