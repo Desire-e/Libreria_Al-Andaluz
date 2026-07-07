@@ -23,16 +23,134 @@ searchBtn.addEventListener("click", (e) => {
 /*******************************************
  * CARRUSELS
  *******************************************/
+    // NEW CAROUSEL
+function setCarousels(){
 
+    // HELPERS
+
+    // Cards visibles según viewport
+    function getVisibleCards(carousel=null) {
+        const width = window.innerWidth;
+
+        if(carousel && carousel.classList.contains("destacada")){
+            // mobile
+            if (width < 600) return 1;
+            // desktop 1024 y tablet
+            if (width < 1440) return 2;
+            // desktop
+            return 3;
+        }
+        // mobile
+        if (width < 600) return 2;
+        // desktop 1024 y tablet
+        if (width < 1440) return 3;
+        // desktop
+        return 4;
+ 
+    }
+
+    
+    // NodeList de carousels
+    const carousels = document.querySelectorAll(".carousel:not(.thumbs)"); 
+    
+    // Recorre NodeList
+    carousels.forEach(carousel => {
+
+        // track completo
+        const track = carousel.querySelector('.carousel-track');
+        
+        // botones
+        const prevBtn = carousel.querySelector('.prev');
+        const nextBtn = carousel.querySelector('.next');
+        
+        // todas las cards del track
+        if (!track || !prevBtn || !nextBtn) return;    
+        const cards = track.children;
+
+        // total de cards, actualmente en DOM
+        const totalCards = cards.length;
+
+        // index actual
+        let currentIndex = 0;
+        
+        // numero de cards visibles, según pantalla
+        let visibleCards = getVisibleCards(carousel);
+        
+        // indice máximo, es el total de cards - visibles
+        // si 7 cards y visibles 3: 7-3 = 4
+        // i0 [1][2][3] - i1 [2][3][4] - i2 [3][4][5] - i3 [4][5][6] - i4 [5][6][7]
+        let maxIndex = totalCards - visibleCards;
+        
+
+        // -----------------------------------------------------
+        // FUNCIONES DE EVENTOS
+
+        // Mueve carousel
+        function updateCarousel() {
+            // calcula el % ancho máximo de las cards dentro del container
+            //  100 / 3 = 35 % ancho
+            const cardWidthPercent = 100 / visibleCards;            
+            
+            // calcular cuánto se desplaza el track (ej: i1 -> 1*35 = translateX(-35%))
+            const offset = currentIndex * cardWidthPercent;
+            track.style.transform = `translateX(-${offset}%)`;
+
+            // deshabilitar botones en bordes
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === maxIndex;
+        }
+
+        // Maneja resize de la pagina
+        function handleResize() {
+            // recalcula nº de cards visibles segun pantalla
+            visibleCards = getVisibleCards(carousel);
+            
+            // modifica ancho de cards css 
+            // document.querySelector('.carousel-wrapper').style.setProperty('--visible-cards', visibleCards);
+            carousel.style.setProperty('--visible-cards', visibleCards);
+            
+            // recalcula indice maximo
+            maxIndex = totalCards - visibleCards;
+
+            // no sobrepasa indice máximo al ocurrir un resize
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            
+            // actualiza carousel
+            updateCarousel();
+        }
+
+
+        // -----------------------------------------------------
+        // EVENTOS
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+            }
+        });
+ 
+        window.addEventListener('resize', handleResize);
+        handleResize();
+    });
+}
+/*
 function setCarousels(){
     // NodeList de carousels
     const carousels = document.querySelectorAll(".carousel"); 
 
     // Cards visibles según viewport
     function getVisibleCards() {
-        if (window.innerWidth <= 700) { return 1; } 
-        else if (window.innerWidth <= 900) { return 2; } 
-        else { return 3; }
+        if (window.innerWidth <= 700) return 1; 
+        if (window.innerWidth <= 900) return 2; 
+        return 3;
     }
 
 
@@ -53,7 +171,7 @@ function setCarousels(){
         // posición actual (grupo de cards visibles en el track)
         let index = 0; 
         // cards máximas visibles
-        const visibleCards = getVisibleCards();
+        // const visibleCards = getVisibleCards();
 
         // Cuánto desplazar track:
         // Desktop de 3 en 3
@@ -62,27 +180,53 @@ function setCarousels(){
         function updateCarousel() {
             
             // Si no hay cards, salir
+            // const cards = track.querySelectorAll(".carousel-item");
+            // if (cards.length === 0) return;
+            // Nunca permitir que el índice salga del rango válido
+            index = Math.max(0, Math.min(index, getMaxIndex()));
             const cards = track.querySelectorAll(".carousel-item");
             if (cards.length === 0) return;
+
+
 
             // Calcula tamaño máximo de una card + gap entre cards            
             const cardWidth = cards[0].offsetWidth;
             const gap = parseFloat(getComputedStyle(track).gap) || 0;
 
-
             // Calcula cuántos px mover el track en base a lo anterior
-            const totalMove = index * (cardWidth + gap);
-            track.style.transform = `translateX(-${totalMove}px)`;
+            // const totalMove = index * (cardWidth + gap);
+            const viewport = carousel.querySelector(".carousel-viewport");
+            const move = index * (cardWidth + gap);
+            // Nunca desplazar más allá del final del track
+            const maxMove = track.scrollWidth - viewport.clientWidth;
+
+            // track.style.transform = `translateX(-${totalMove}px)`;
+            track.style.transform =
+                `translateX(-${Math.min(move, maxMove)}px)`;
         }
+
 
         // Límite máximo de desplazar track - da index máximo del track
         // Si 6 cards, avanza de 1 en 1, y son visibles 3 cards: 
         // solo se puede desplazar adelante 3 veces más (cards restantes)
+        // function getMaxIndex() {
+        //     const totalCards = track.querySelectorAll(".carousel-item").length;
+        //     // return totalCards - visibleCards;
+        //     return Math.max(0, totalCards - getVisibleCards());
+        // }
         function getMaxIndex() {
-            const totalCards = track.querySelectorAll(".carousel-item").length;
-            return totalCards - visibleCards;
-        }
+            const cards = track.querySelectorAll(".carousel-item");
+            if (!cards.length) return 0;
 
+            const gap = parseFloat(getComputedStyle(track).gap) || 0;
+            const cardWidth = cards[0].offsetWidth + gap;
+
+            const maxTranslate =
+                track.scrollWidth -
+                carousel.querySelector(".carousel-viewport").offsetWidth;
+
+            return Math.max(0, Math.ceil(maxTranslate / cardWidth));
+        }
 
         // Eventos
         nextBtn.addEventListener("click", () => {
@@ -101,13 +245,25 @@ function setCarousels(){
 
         // ACCESIBILIDAD. Con teclas de dirección <- ->
         carousel.addEventListener("keydown",(e)=>{
-            if(e.key==="ArrowRight"){
+            // if(e.key==="ArrowRight"){
+            //     index++;
+            //     updateCarousel();
+            // }
+            // if(e.key==="ArrowLeft"){
+            //     index--;
+            //     updateCarousel();  
+            // }
+
+            if (e.key === "ArrowRight" 
+                && index < getMaxIndex()) {
                 index++;
                 updateCarousel();
             }
-            if(e.key==="ArrowLeft"){
+
+            if (e.key === "ArrowLeft" 
+                && index > 0) {
                 index--;
-                updateCarousel();  
+                updateCarousel();
             }
         });
 
@@ -115,7 +271,7 @@ function setCarousels(){
         // Recalcula en cambios de tamaño de pantalla
         window.addEventListener("resize", updateCarousel);
     });
-}
+}*/
 
 
 

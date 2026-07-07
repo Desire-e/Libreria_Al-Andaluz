@@ -54,10 +54,10 @@
         
         
         <!-------- HEADER -------->
-        <header>
+        <header role="banner">
             <!-- Logo -->
             <a href="index.html" aria-current="page">
-                <img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo librería al-andalus"/>
+                <img class="header-logo" src="images/logo/logo-claro.svg" alt="Logo librería al-andalus"/>
             </a>                    
 
             <!-- Barra de búsqueda -->
@@ -73,7 +73,7 @@
             </form>
 
             <!-- Navegador (DESKTOP) -->
-            <nav class="nav-desktop">
+            <nav class="nav-desktop" aria-label="Navegación principal">
                 <a href="busqueda.html" class="font-semibold ">
                     Categorías
                 </a>
@@ -115,11 +115,11 @@
         </header>
 
         <!-- Navegador mobile -->
-        <nav tabindex="0" class="nav-mobile" id="nav-mobile">
+        <nav tabindex="0" class="nav-mobile" id="nav-mobile" aria-label="Navegación principal móvil">
 
-            <div aria-label="Menú pantalla móvil">
+            <div >
                 <a href="index.html" aria-current="page">
-                    <img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo librería al-andalus"/>
+                    <img class="header-logo" src="images/logo/logo-claro.svg" alt="Logo librería al-andalus"/>
                 </a>
 
                 <button class="btn-close text-sm" aria-label="Cerrar menú pantalla móvil">
@@ -215,13 +215,13 @@
                         </button>
 
                         <div class="carousel-viewport">
-                            <div class="carousel-track">
+                            <div class="carousel-track" id="track">
 
                                 <div class="bs carousel-item">
                                     <a href="./ficha_libro.html">
 
                                         <div class="bs cover-wrapper">
-                                            <img class="cover" src="images\Portada\portada.png" loading="lazy" 
+                                            <img class="cover" src="images/Portada/portada.png" loading="lazy" 
                                             alt="Portada del libro"/>
                                         </div>
                                                                                 
@@ -238,7 +238,7 @@
                                     <a href="./ficha_libro.html">
 
                                         <div class="bs cover-wrapper">
-                                            <img class="cover" src="images\Portada\portada.png" loading="lazy" 
+                                            <img class="cover" src="images/Portada/portada.png" loading="lazy" 
                                             alt="Portada del libro"/>
                                         </div>
                                                                                 
@@ -257,7 +257,7 @@
                                     <a href="./ficha_libro.html">
 
                                         <div class="bs cover-wrapper">
-                                            <img class="cover" src="images\Portada\portada.png" loading="lazy" 
+                                            <img class="cover" src="images/Portada/portada.png" loading="lazy" 
                                             alt="Portada del libro"/>
                                         </div>
                                     
@@ -274,7 +274,7 @@
                                     <a href="./ficha_libro.html">
 
                                         <div class="bs cover-wrapper">
-                                            <img class="cover" src="images\Portada\portada.png" loading="lazy" 
+                                            <img class="cover" src="images/Portada/portada.png" loading="lazy" 
                                             alt="Portada del libro"/>
                                         </div>
                                                                                 
@@ -291,7 +291,7 @@
                                     <a href="./ficha_libro.html">
 
                                         <div class="bs cover-wrapper">
-                                            <img class="cover" src="images\Portada\portada.png" loading="lazy" 
+                                            <img class="cover" src="images/Portada/portada.png" loading="lazy" 
                                             alt="Portada del libro"/>
                                         </div>
                                                                                 
@@ -307,7 +307,7 @@
                             </div>
                         </div>
 
-                        <button class="next" aria-label="Avanzar carousel">
+                        <button class="next"   aria-label="Avanzar carousel">
                             <i aria-hidden="true" class="bi bi-arrow-right"></i>
                         </button>
                     </div>
@@ -324,18 +324,18 @@
                     <!-- -------- -->
                     <div tabindex="0" class="carousel" role="region" aria-label="Libros electrónicos">
 
-                        <button class="prev" aria-label="Retroceder carousel">
+                        <button class="prev"   aria-label="Retroceder carousel">
                             <i aria-hidden="true" class="bi bi-arrow-left"></i>
                         </button>
 
                         <div class="carousel-viewport">
-                            <div class="carousel-track">
+                            <div class="carousel-track" id="track">
 
                                 <div class="carousel-item">
                                     <a href="./ficha_libro.html">
                                         
                                         <div class="cover-wrapper">
-                                            <img class="cover" src="images\Portada\portada.png" loading="lazy" 
+                                            <img class="cover" src="images/Portada/portada.png" loading="lazy" 
                                             alt="Portada del libro"/>
                                         </div>
 
@@ -351,7 +351,7 @@
                                 <div class="carousel-item">
                                     <a href="./ficha_libro.html">
                                         <div class="cover-wrapper">
-                                            <img class="cover" src="images\Portada\portada.png" loading="lazy" 
+                                            <img class="cover" src="images/Portada/portada.png" loading="lazy" 
                                             alt="Portada del libro"/>
                                         </div>
                                         <div class="desc-wrapper">
@@ -366,7 +366,7 @@
                                 <div class="carousel-item">
                                     <a href="./ficha_libro.html">
                                         <div class="cover-wrapper">
-                                            <img class="cover" src="images\Portada\portada.png" loading="lazy" 
+                                            <img class="cover" src="images/Portada/portada.png" loading="lazy" 
                                             alt="Portada del libro"/>
                                         </div>
                                         <div class="desc-wrapper">
@@ -381,7 +381,7 @@
                                 <div class="carousel-item">
                                     <a href="./ficha_libro.html">
                                         <div class="cover-wrapper">
-                                            <img class="cover" src="images\Portada\portada.png" loading="lazy" 
+                                            <img class="cover" src="images/Portada/portada.png" loading="lazy" 
                                             alt="Portada del libro"/>
                                         </div>
                                         <div class="desc-wrapper">
@@ -396,7 +396,7 @@
                                 <div class="carousel-item">
                                     <a href="./ficha_libro.html">
                                         <div class="cover-wrapper">
-                                            <img class="cover" src="images\Portada\portada.png" loading="lazy" 
+                                            <img class="cover" src="images/Portada/portada.png" loading="lazy" 
                                             alt="Portada del libro"/>
                                         </div>
                                         <div class="desc-wrapper">
@@ -411,7 +411,7 @@
                             </div>
                         </div>
 
-                        <button class="next" aria-label="Avanzar carousel">
+                        <button class="next"   aria-label="Avanzar carousel">
                             <i aria-hidden="true" class="bi bi-arrow-right"></i>
                         </button>
                     </div>
@@ -430,7 +430,7 @@
                         <div class="cards-container">                     
                             <div class="card">
                                     <div class="cover-wrapper">
-                                        <img class="cover" src="images\categorias\image.jpg" loading="lazy" alt=""/>
+                                        <img class="cover" src="images/categorias/image.jpg" loading="lazy" alt=""/>
                                     </div>
 
                                     <div class="desc-wrapper">
@@ -450,7 +450,7 @@
                             
                             <div class="card">
                                     <div class="cover-wrapper">
-                                        <img class="cover" src="images\categorias\image.jpg" loading="lazy" alt=""/>
+                                        <img class="cover" src="images/categorias/image.jpg" loading="lazy" alt=""/>
                                     </div>
 
                                     <div class="desc-wrapper">
@@ -467,7 +467,7 @@
                             </div>
                             <div class="card">
                                     <div class="cover-wrapper">
-                                        <img class="cover" src="images\categorias\image.jpg" loading="lazy" alt=""/>
+                                        <img class="cover" src="images/categorias/image.jpg" loading="lazy" alt=""/>
                                     </div>
 
                                     <div class="desc-wrapper">
@@ -514,7 +514,7 @@
             <div class="footer-top">
                 <div class="more-info">
                     <a href="index.html" aria-current="page">
-                        <img src="images\logo\logo-claro.svg" loading="lazy" alt="Logo librería al-andalus"/>
+                        <img src="images/logo/logo-claro.svg" loading="lazy" alt="Logo librería al-andalus"/>
                     </a>
 
                     <p class="text-xl font-semibold">Librería Al-Ándalus</p>
