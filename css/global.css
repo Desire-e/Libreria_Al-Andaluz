@@ -69,6 +69,10 @@ p {
   /* other */
   --red: #8C0000;
   --green:#4d900b;
+
+  /* hr */
+  --color-hr: #92844c4d;
+  --color-hr-accent: #ad9f6c;
 }
 
 .stock.agotado { color: var(--red); }
@@ -84,25 +88,11 @@ h1,h2,h3,h4,h5,h6 {
   letter-spacing: 0.05em;
 }
 
-/* h1 {font-size: clamp(2.5rem, 8vw, 6rem);}
-h2 {font-size: clamp(2.2rem, 5.2vw, 3.7rem);}
-h3 {font-size: clamp(1.5rem, 3.7vw, 2.5rem);}
-h4 {font-size: clamp(1.3rem, 3vw, 2rem);}
-h5 {font-size: clamp(1.15rem, 2vw, 1.5rem);}
-h6 {font-size: clamp(1rem, 1.9vw, 1.15rem);} */
 h1 {font-size: clamp(2.5rem, 5.2vw, 3.7rem);}
 h2 {font-size: clamp(2.2rem, 3.7vw, 2.5rem);}
 h3 {font-size: clamp(1.8rem, 3vw, 2rem);}
 h4 {font-size: clamp(1.2rem, 2.5vw, 1.7rem);}
 h5 {font-size: clamp(1rem, 1.9vw, 1.15rem);}
-
-/* HEADING DONE: LANDING, BUSQUEDA, CONTACTO, FICHA */
-/* h6 {font-size: clamp(1rem, 1.9vw, 1.15rem);}  */
-
-/* ----------- */
-
-/* NEW CARRITO */
-
 
 
 /* =========================
