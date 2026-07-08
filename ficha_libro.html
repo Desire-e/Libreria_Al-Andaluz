@@ -33,115 +33,149 @@
     
 
     <body>
-        <button id="btnSubir">
-            <i class="bi bi-chevron-double-up"></i>
-        </button>
-        
+        <!-- 
+        ACCESIBILIDAD. Mensajes para lectores de pantalla.
+        role="status"   Indica a lectores de pantalla que aparecerán mensajes de estado
+        aria-live="polite"  Controla cómo se anuncian los cambios (polite hace que lector 
+        espere a que usuario termine de escuchar para anunciar nuevo mensaje, no intrusivo)
+        -->
         <div id="statusMessage" role="status" aria-live="polite"></div>
-        
+
+        <a href="#contenido" class="skip-link">
+            Saltar al contenido principal
+        </a>
+
+        <button id="btnSubir" aria-label="Subir al inicio">
+            <i aria-hidden="true" class="bi bi-chevron-double-up"></i>
+        </button>
+
+
         <!-------- HEADER -------->
-        <header>
-            <a href="index.html"><img class="header-logo" src="images\logo\logo-claro.svg" alt="Logo"/></a>                    
+        <header role="banner">
+            <!-- Logo -->
+            <a href="index.html" >
+                <img class="header-logo" src="images/logo/logo-claro.svg" alt="Logo librería al-andalus"/>
+            </a>                    
 
             <!-- Barra de búsqueda -->
             <form class="search-container">
-                <input id="search" name="search" type="search" placeholder="Buscar..." aria-label="Buscar libro">
-                <a class="search-button" href="busqueda.html" aria-label="Buscar">
-                    <!-- <img src="images\Iconos\opcional-lupa.svg" height="100%" alt=""/> -->
-                    <i class="bi bi-search"></i>
+                <input id="search" name="search" type="search" placeholder="Buscar..." 
+                aria-label="Buscar">
 
-                </a>
+                <button class="search-button" type="submit" 
+                aria-label="Realizar búsqueda">
+                    <i aria-hidden="true" class="bi bi-search"></i>
+                </button>
             </form>
 
-            <!-- Navegador -->
-            <nav>
-                <a href="busqueda.html" aria-label="categorías">
-                    <h6 class="font-semibold">Categorías</h6>
+            <!-- Navegador (DESKTOP) -->
+            <nav class="nav-desktop" aria-label="Navegación principal">
+                <a href="busqueda.html" class="font-semibold ">
+                    Categorías
                 </a>
-                <a href="#" class="text-lg font-bold" aria-label="iniciar sesión">
-                    <h6 class="font-semibold">Identifícate / Regístrate</h6>
+                <a href="#" class="font-semibold">
+                    Identifícate / Regístrate
                 </a>
-                <a href="#" class="text-lg font-bold" aria-label="favoritos">
-                    <h6 class="font-semibold">Favoritos</h6>
+                <a href="#" class="font-semibold">
+                    Favoritos
                 </a>
-                <a href="#" class="text-lg font-bold" aria-label="idioma">
-                    <h6 class="font-semibold">Idioma</h6>
+                <a href="#" class="font-semibold">
+                    Idioma
                 </a>
             </nav>
 
-            <div class="hamburger" aria-label="Menú">
-                <i class="bi bi-list"></i>
-            </div>
-            
+
+            <!-- Hambuger abrir menú (MOBILE) -->
+            <button class="hamburger" aria-label="Abrir menú móvil" aria-expanded="false" aria-controls="nav-mobile">
+                <i aria-hidden="true" class="bi bi-list"></i>
+            </button>
+
+            <!-- 
+            aria-expanded="false" comunica a las tecnologías de asistencia que existe contenido oculto disponible 
+            para ser expandido.
+            aria-controls="menu-mobile" se utiliza en un botón para vincularlo semánticamente al contenedor del menú 
+            de navegación que controla. Permite que las tecnologías de asistencia identifiquen qué elemento de la página 
+            cambia de estado (expandido o colapsado) cuando se interactúa con el botón.  
+            -->
+
+            <!-- Botones carrito y cuenta -->
             <div class="usuario">
-                <a href="carrito.html" aria-label="carrito"><i class="bi bi-basket-fill text-xl"></i></a>
-                <a href="#" aria-label="cuenta"><i class="bi bi-person-circle text-xl"></i></a>
+                <a href="carrito.html"  aria-label="Carrito">
+                    <i aria-hidden="true" class="bi bi-basket-fill text-xl"></i>
+                </a>
+                <a href="#" aria-label="Cuenta">
+                    <i aria-hidden="true" class="bi bi-person-circle text-xl"></i>
+                </a>
             </div>
 
         </header>
 
         <!-- Navegador mobile -->
-        <nav class="nav-mobile">
+        <nav tabindex="0" class="nav-mobile" id="nav-mobile" aria-label="Navegación principal móvil">
 
             <div>
                 <a href="index.html" >
-                    <img class="header-logo" 
-                    src="images\logo\logo-claro.svg" alt="Logo"/>
+                    <img class="header-logo" src="images/logo/logo-claro.svg" alt="Logo librería al-andalus"/>
                 </a>
-                <button class="btn-close text-sm">
-                    <i class="bi bi-x-lg"></i>
+
+                <button class="btn-close text-sm" aria-label="Cerrar menú pantalla móvil">
+                    <i aria-hidden="true" class="bi bi-x-lg"></i>
                 </button>
             </div>
 
 
-            <a href="index.html" aria-label="categorías">
-                <i class="bi bi-house-door-fill"></i>
+            <a href="index.html" >
+                <i aria-hidden="true" class="bi bi-house-door-fill"></i>
                 Inicio
             </a>
 
-            <a href="busqueda.html" aria-label="categorías">
-                <i class="bi bi-tag"></i>
+            <a href="busqueda.html">
+                <i aria-hidden="true" class="bi bi-tag"></i>
                 Categorías
             </a>
-            <a href="#" aria-label="iniciar sesión">
-                <i class="bi bi-person"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-person"></i>
                 Identifícate / Regístrate
             </a>
-            <a href="#" aria-label="idioma">
-                <i class="bi bi-globe2"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-globe2"></i>
                 Idioma
             </a>
 
             <hr/>
             
-            <a href="#" aria-label="sobre-nosotros">
-                <i class="bi bi-file-text"></i>
+            <a href="contacto.html">
+                <i aria-hidden="true" class="bi bi-file-text"></i>
                 Sobre nosotros
             </a>
-            <a href="#" aria-label="contacto">
-                <i class="bi bi-telephone"></i>
+            <a href="contacto.html">
+                <i aria-hidden="true" class="bi bi-telephone"></i>
                 Contacto
             </a>
 
-            <a href="#" aria-label="politica-de-privacidad">
-                <i class="bi bi-shield-check"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-shield-check"></i>
                 Política de privacidad
             </a>
 
-            <a href="#" aria-label="preguntas-frecuentes">
-                <i class="bi bi-question-circle"></i>
+            <a href="#">
+                <i aria-hidden="true" class="bi bi-question-circle"></i>
                 Preguntas frecuentes
             </a>
         </nav>
         
 
-        <div class="overlay"></div>
+
+        <div tabindex="-1" class="overlay"></div>
+
+
 
         <!-- TODO. Animación canvas de carga -->
         <!-- <canvas id="canvas" width="400" height="300"></canvas> -->
 
 
-        <div class="container">
+
+        <div class="container contenido">
             
             <!-------- SECCIONES -------->
             <main>
@@ -152,90 +186,111 @@
                         <div class="covers">
                             
                             <!-- imagen principal -->
-                            <div class="cover-wrapper principal">
-                                <img class="cover principal-image" width="200" src="images\Portada\portada.png" />
+                           <!-- 
+                            TODO
+                            — si el usuario está enfocado en un tab y pulsa flecha derecha, eso debe mover la selección 
+                            al siguiente tab (y hacer scroll automático si hace falta para que quede visible)
+                            — 
+                            -->
+                            <div class="cover-wrapper principal" id="cover-principal" 
+                            role="tabpanel" aria-labelledby="thumb-1" tabindex="0">
+                                <img class="cover principal-image" width="100%" src="" alt=""/>
                             </div>
                             
                             <!-- carousel -->
-                            <div class="carousel thumbs">
-                                <button class="prev"><i class="bi bi-arrow-left"></i></button>
+                            
+                            <div class="carousel thumbs" 
+                            tabindex="0" role="tablist" aria-label="Miniaturas">
+                                <button class="prev" aria-label="Anterior">
+                                    <i aria-hidden="true" class="bi bi-chevron-left"></i>                                
+                                </button>
                                 
                                 <div class="carousel-viewport">
-                                    
-                                    <div class="carousel-track">                                        
-                                        <button class="carousel-item active">
-                                            <img src="images\Portada\portada.png" />
+                                    <div class="carousel-track">
+                                        <button class="carousel-item active" 
+                                        id="thumb-1" role="tab" aria-selected="true" aria-controls="cover-principal"
+                                        aria-label="Miniatura 1 de 4">
+                                        <!-- 
+                                        tabindex="-1" — eso es el roving tabindex que exige el patrón 
+                                        para que al tabular no navegue a siquientes thumbs, sino que solo mueva el carousel
+                                        de thumbnails 
+                                        -->
+                                            <img src="images/Portada/portada.png" alt="Imagen miniatura" />
                                         </button>
-                                        <button class="carousel-item">
-                                            <img src="images\Portada\portada.png" />
+
+                                        <button class="carousel-item active" 
+                                        id="thumb-2" role="tab" aria-selected="false" tabindex="-1" 
+                                        aria-controls="cover-principal" aria-label="Miniatura 2 de 4">
+                                            <img src="images/Portada/portada-media.png" alt="Imagen miniatura"/>
                                         </button>
-                                        <button class="carousel-item">
-                                            <img src="images\Portada\portada.png" />
+
+                                        <button class="carousel-item active" 
+                                        id="thumb-3" role="tab" aria-selected="false" tabindex="-1" 
+                                        aria-controls="cover-principal" aria-label="Miniatura 3 de 4">
+                                            <img src="images/Portada/portada.png" alt="Imagen miniatura"/>
                                         </button>
-                                        <button class="carousel-item">
-                                            <img src="images\Portada\portada.png" />
+
+                                        <button class="carousel-item active" 
+                                        id="thumb-4" role="tab" aria-selected="false" tabindex="-1" 
+                                        aria-controls="cover-principal" aria-label="Miniatura 4 de 4">
+                                            <img src="images/Portada/portada.png" alt="Imagen miniatura"/>
                                         </button>
                                     </div>
-
                                 </div>
                                 
-                                <button class="next"><i class="bi bi-arrow-right"></i></button>
+                                <button class="next" aria-label="Siguiente">
+                                    <i aria-hidden="true" class="bi bi-chevron-right"></i>                                    
+                                </button>
                             </div>
                         </div>
 
-
-
                         <div class="informacion">
-                            <h6 class="categoria">Categoría del libro</h6>
-
-                            <h3 class="titulo">Titulo del libro</h3>
-
-                            <hr class="hr-accent"/>
-                            
-                            <h6 class="autor 
-                            text-lg ">Autor del libro</h6>
+                            <h3 class="categoria">Categoría del libro</h3>
+                            <h1 class="titulo">Titulo del libro</h1>
+                            <hr class="hr-accent"/>                            
+                            <h2 class="autor text-lg">Autor del libro</h2>
 
                             <div class="puntuacion">
 
-                                <div class="estrellas">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-half"></i>
-                                    <i class="bi bi-star"></i>
+                                <div class="estrellas" aria-label="Valoración de tres estrellas y media sobre cinco">
+                                    <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                    <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                    <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                    <i aria-hidden="true" class="bi bi-star-half"></i>
+                                    <i aria-hidden="true" class="bi bi-star"></i>
                                 </div>
 
-                                <p class="text-sm">(1 opinión)</p>
+                                <p>(1 opinión)</p>
                             </div>
                                                         
                             <div class="detalle">
                                 <div class="paginas">
-                                    <i class="bi bi-book"></i>
+                                    <i aria-hidden="true" class="bi bi-book"></i>
                                     <div>
-                                        <h6 class="titulo text-md">Páginas</h6>
-                                        <p class="text-sm">512</p>
+                                        <h4 class="titulo text-md">Páginas</h4>
+                                        <p>512</p>
                                     </div>
                                 </div>
 
                                 <div class="idioma">
-                                    <i class="bi bi-translate"></i>
+                                    <i aria-hidden="true" class="bi bi-translate"></i>
                                     <div>
-                                        <h6 class="titulo text-md">Idioma</h6>
-                                        <p class="text-sm">Español</p>
+                                        <h4 class="titulo text-md">Idioma</h4>
+                                        <p>Español</p>
                                     </div>
                                 </div>
                                 <div class="publicacion">
-                                    <i class="bi bi-calendar4"></i>
+                                    <i aria-hidden="true" class="bi bi-calendar4"></i>
                                     <div>
-                                        <h6 class="titulo text-md">Publicación</h6>
-                                        <p class="text-sm">Diciembre 2024</p>
+                                        <h4 class="titulo text-md">Publicación</h4>
+                                        <p>Diciembre 2024</p>
                                     </div>
                                 </div>
                                 <div class="isbn">
-                                    <i class="bi bi-upc-scan"></i>
+                                    <i aria-hidden="true" class="bi bi-upc-scan"></i>
                                     <div>
-                                        <h6 class="titulo text-md">ISBN</h6>
-                                        <p class="text-sm">000-00-000000-0-0</p>
+                                        <h4 class="titulo text-md">ISBN</h4>
+                                        <p>000-00-000000-0-0</p>
                                     </div>
                                 </div>    
                             
@@ -244,39 +299,53 @@
 
                     </section>
 
-
-                    <section class="contenidos">
+                    <section class="mas-contenidos">
                         <!-- navigatorbar -->
-                        <nav>
-                            <div class="descripcion navbar"><h6>Descripción</h6></div>
-                            <div class="comentarios navbar"><h6>Comentarios (1)</h6></div>
+                        <nav role="tablist" aria-label="Resumen y comentarios">
+
+                            
+                            <button role="tab" aria-selected="true" aria-controls="contentDescripcion" id="tabDescripcion"
+                            class="descripcion navbar font-extra-bold">
+                                Descripción
+                            </button>
+
+                            <button role="tab" aria-selected="false" aria-controls="contentComentarios" id="tabComentarios"
+                            class="comentarios navbar font-extra-bold">
+                                Comentarios (1)
+                            </button>
                         </nav>
 
                         <!-- contenidos -->
-                        <div class="descripcion contenido">
-                            <p>
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque 
-                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi 
-                                architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas 
-                                sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
-                                voluptatem sequi nesciunt.
-                            </p> 
-                            <p>
-                                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, 
-                                consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et 
-                                dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem 
-                                ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum 
-                                iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui 
-                                dolorem eum fugiat quo voluptas nulla pariatur?
-                            </p>
+                        <div class="descripcion contenido" 
+                        role="tabpanel" id="contentDescripcion" tabindex="0" aria-labelledby="tabDescripcion" 
+                        aria-label="Resumen del libro" aria-hidden="false">
+                            <div>
+                                <p>
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque 
+                                    laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi 
+                                    architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas 
+                                    sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
+                                    voluptatem sequi nesciunt.
+                                </p> 
+                                <p>
+                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, 
+                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et 
+                                    dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem 
+                                    ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum 
+                                    iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui 
+                                    dolorem eum fugiat quo voluptas nulla pariatur?
+                                </p>
+                            </div>
                         </div>
 
 
 
-                        <div class="comentarios contenido">
+                        <div class="comentarios contenido"
+                        role="tabpanel" id="contentComentarios" tabindex="0" aria-labelledby="tabComentarios" 
+                        aria-label="Comentarios sobre el libro" aria-hidden="true">
                             <div class="comentario">
 
-                                <i class="bi bi-quote"></i>
+                                <i aria-hidden="true" class="bi bi-quote"></i>
 
                                 <div class="opinion">
                                     <div class="cuerpo">
@@ -287,14 +356,14 @@
                                         </p>
                                     </div>
 
-                                    <div class="autor text-sm"><p>— Autor del comentario</p></div>
+                                    <div class="autor"><p>— Autor del comentario</p></div>
                                     
                                     <div class="estrellas">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>                                        
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>                                        
                                     </div>
                                 </div>
 
@@ -302,7 +371,7 @@
 
                             <div class="comentario">
 
-                                <i class="bi bi-quote"></i>
+                                <i aria-hidden="true"class="bi bi-quote"></i>
 
                                 <div class="opinion">
                                     <div class="cuerpo">
@@ -313,14 +382,14 @@
                                         </p>
                                     </div>
 
-                                    <div class="autor text-sm"><p>— Autor del comentario</p></div>
+                                    <div class="autor"><p>— Autor del comentario</p></div>
                                     
                                     <div class="estrellas">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>                                        
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>
+                                        <i aria-hidden="true" class="bi bi-star-fill"></i>                                        
                                     </div>
                                 </div>
 
@@ -332,25 +401,25 @@
                     </section>
                 </div>
 
-                <div class="precio">
+                <aside class="precio">
                     <div class="articulo">
                         <div class="detalle">
-                            <h6 class="info-tapa">Tipo de tapa</h6>
-                            <h4 class="info-precio">24,60€</h4>
+                            <p class="info-tapa text-md font-extra-bold">Tipo de tapa</p>
+                            <p class="info-precio text-xl font-extra-bold">24,60€</p>
                             <p class="info-stock stock disponible 
                             font-semibold">En stock</p>                            
                         </div>
                         
                         <div class="botones">
-                            <div class="btn-carrito">
-                                <i class="bi bi-cart2"></i>
-                                <h6>Añadir al carrito</h6>
-                            </div>
+                            <button class="btn-carrito text-md font-bold">
+                                <i aria-hidden="true" class="bi bi-cart2"></i>
+                                Añadir al carrito
+                            </button>
 
-                            <div class="btn-favorito">
-                                <i class="bi bi-heart"></i>
-                                <h6>Añadir a favoritos</h6>
-                            </div>
+                            <button class="btn-favorito text-md font-bold">
+                                <i aria-hidden="true" class="bi bi-heart"></i>
+                                Añadir a favoritos
+                            </button>
                         </div>
                     </div>
 
@@ -358,22 +427,22 @@
 
                     <div class="envios">
                         <div>
-                            <i class="bi bi-truck"></i>
+                            <i aria-hidden="true" class="bi bi-truck"></i>
                             <p class="text-sm">Envío gratis a partir de 30€</p>
                         </div>
                         
                         <div>
-                            <i class="bi bi-clock-history"></i>
+                            <i aria-hidden="true" class="bi bi-clock-history"></i>
                             <p class="text-sm">Devoluciones en 30 días</p>
                         </div>
 
                         <div>
-                            <i class="bi bi-shield-check"></i>
+                            <i aria-hidden="true" class="bi bi-shield-check"></i>
                             <p class="text-sm">Pago 100% seguro</p>                            
                         </div>
                     </div>
 
-                </div>
+                </aside>
 
             </main>     
 
@@ -381,20 +450,24 @@
 
 
         <!-------- FOOTER -------->
-        <!-------- FOOTER -------->
         <footer> 
             <div class="footer-top">
                 <div class="more-info">
-                    <a href="index.html"><img src="images\logo\logo-claro.svg" alt="logo"/></a>
-                    <p class="title text-xl font-semibold">Librería Al-Ándalus</h5>
+                    <a href="index.html" >
+                        <img src="images/logo/logo-claro.svg" loading="lazy" alt="Logo librería al-andalus"/>
+                    </a>
+
+                    <p class="text-xl font-semibold">Librería Al-Ándalus</p>
+                    
                     <div>
-                        <p class="font-light" tabindex="0">Calle de los libros, 123</p>
-                        <p class="font-light" tabindex="0">Almería, España</p>
+                        <p class="font-light">Calle de los libros, 123</p>
+                        <p class="font-light">Almería, España</p>
                     </div>
+
                     <div>
-                        <p class="font-light" tabindex="0">Teléfono: +34 000 00 00 00</p>
-                        <p class="font-light" tabindex="0">Correo: correo@gmail.com</p>
-                    </div>  
+                        <p class="font-light">Teléfono: +34 000 00 00 00</p>
+                        <p class="font-light">Correo: correo@gmail.com</p>
+                    </div>
                 </div>
 
                 <div class="fast-link">
@@ -408,17 +481,26 @@
 
                 <div class="socialmedia">
                     <p class="title text-lg font-semibold">Síguenos</p>
-                    <a href="#" class="font-light"><i class="bi bi-instagram"></i> Al-Ándalus</a>
-                    <a href="#" class="font-light"><i class="bi bi-youtube"></i> Al-Ándalus</a>
-                    <a href="#" class="font-light"><i class="bi bi-facebook"></i> Al-Ándalus</a>                        
+                    <a href="#" class="font-light" aria-label="Cuenta de instagram">
+                        <i class="bi bi-instagram" aria-hidden="true"></i> 
+                        @Al-Ándalus
+                    </a>
+                    <a href="#" class="font-light" aria-label="Canal de youtube">
+                        <i aria-hidden="true" class="bi bi-youtube"></i> 
+                        @Al-Ándalus
+                    </a>
+                    <a href="#" class="font-light" aria-label="Cuenta de facebook">
+                        <i aria-hidden="true" class="bi bi-facebook"></i> 
+                        @Al-Ándalus
+                    </a>
                 </div>
 
             </div>
-
+            
             <hr/>
 
             <div class="footer-bottom">
-                <span class="font-light text-sm" tabindex="0">© 2026 · Desirée Rueda Torres</span>
+                <span class="font-light text-sm">© 2026 · Desirée Rueda Torres</span>
             </div>
         </footer>
         
