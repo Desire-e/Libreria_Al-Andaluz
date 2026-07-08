@@ -186,7 +186,7 @@
 
                     <div class="container-articulos">
 
-                        <p class="no-articles">No hay artículos en su cesta</p>
+                        <p tabindex="0" class="no-articles">No hay artículos en su cesta</p>
 
                         <div class="articulo">
                             <div class="cover-wrapper">
@@ -204,9 +204,16 @@
                                 <p class="text-md font-semibold">10,00 €</p>
                                 
                                 <div class="cantidad">
-                                    <button class="article-minus-btn"><i aria-hidden="false" class="bi bi-dash"></i></button>
-                                    <input name="article-amount-input" class="article-amount" type="text" value="1"/>
-                                    <button class="article-plus-btn"><i aria-hidden="false" class="bi bi-plus"></i></button>
+                                    <button class="article-minus-btn" aria-label="Disminuir cantidad">
+                                        <i aria-hidden="true" class="bi bi-dash"></i>
+                                    </button>
+                                    
+                                    <input name="article-amount-input" class="article-amount" type="number" value="1"
+                                    aria-label="Cantidad del artículo" />
+
+                                    <button class="article-plus-btn" aria-label="Aumentar cantidad">
+                                        <i aria-hidden="true" class="bi bi-plus"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -227,9 +234,16 @@
                                 </div>
                                 <p class="text-lg font-semibold">10,00 €</p>
                                 <div class="cantidad">
-                                    <button class="article-minus-btn"><i aria-hidden="false" class="bi bi-dash"></i></button>
-                                    <input name="article-amount-input" class="article-amount" type="text" value="1"/>
-                                    <button class="article-plus-btn"><i aria-hidden="false" class="bi bi-plus"></i></button>
+                                    <button class="article-minus-btn" aria-label="Disminuir cantidad">
+                                        <i aria-hidden="true" class="bi bi-dash"></i>
+                                    </button>
+                                    
+                                    <input name="article-amount-input" class="article-amount" type="number" value="1"
+                                    aria-label="Cantidad del artículo" />
+
+                                    <button class="article-plus-btn" aria-label="Aumentar cantidad">
+                                        <i aria-hidden="true" class="bi bi-plus"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -251,9 +265,16 @@
                                 </div>
                                 <p class="text-lg font-semibold">10,00 €</p>
                                 <div class="cantidad">
-                                    <button class="article-minus-btn"><i aria-hidden="false" class="bi bi-dash"></i></button>
-                                    <input name="article-amount-input" class="article-amount" type="text" value="1"/>
-                                    <button class="article-plus-btn"><i aria-hidden="false" class="bi bi-plus"></i></button>
+                                    <button class="article-minus-btn" aria-label="Disminuir cantidad">
+                                        <i aria-hidden="true" class="bi bi-dash"></i>
+                                    </button>
+                                    
+                                    <input name="article-amount-input" class="article-amount" type="number" value="1"
+                                    aria-label="Cantidad del artículo" />
+
+                                    <button class="article-plus-btn" aria-label="Aumentar cantidad">
+                                        <i aria-hidden="true" class="bi bi-plus"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -268,8 +289,8 @@
                         
                         <div class="ticket">
                             
-                            <div class="desglose" aria-label="Desglose de precio">
-                                <table>
+                            <div class="desglose">
+                                <table aria-label="Desglose de precio">
                                     <tbody>
                                         <tr>
                                             <td scope="row" class="concepto">Productos</td>
@@ -296,23 +317,23 @@
                             
                             
                             <form class="code-promo">
-                                <label for="code-promo-input">Código promocional</label>
+                                <label for="code-promo-input-desk">Código promocional</label>
                                 
                                 <div class="code-wrapper">
-                                    <input id="code-promo-input" name="code-promo-input"
-                                    type="text" placeholder="XX0000">
+                                    <input id="code-promo-input-desk" name="code-promo-input-desk"
+                                    class="code-promo-input" type="text" placeholder="XX0000">
                                     <button type="submit" id="apply-btn" class="text-sm">Aplicar</button>   
                                 </div>
-                                <!-- <p class="form-error text-sm"></p> -->
+                                <!-- <p class="form-error text-sm" id="code-promo-error"></p> -->
                             </form>
                             
 
                             <hr/>
 
 
-                            <div class="payment" aria-label="Precio total">
+                            <div class="payment">
                                 <form>
-                                    <table class="total text-lg">
+                                    <table aria-label="Precio total" class="total text-lg">
                                         <tbody>
                                             <tr>
                                                 <td scope="row" class="concepto">Total</td> 
@@ -330,18 +351,19 @@
 
 
                     <div class="container-resumen-mobile">
-                        <form class="code-promo">
+                        <form class="code-promo mobile">
                             <label for="code-promo-input-mobile">Código promocional</label>
                             
                             <div class="code-wrapper">
-                                <input id="code-promo-input-mobile" class="code-promo-input" name="code-promo-input" 
-                                type="text" placeholder="XX0000">
+                                <input id="code-promo-input-mobile" name="code-promo-input-mobile" 
+                                class="code-promo-input" type="text" placeholder="XX0000">
                                 <button type="submit" id="apply-btn-mobile" class="text-sm">Aplicar</button>    
                             </div>
+                            <!-- <p class="form-error text-sm" id="code-promo-error-mobile"></p> -->
                         </form>
 
                         <form>
-                            <button class="pay-btn">Tramitar pedido (24,50 €)</button>
+                            <button class="pay-btn" type="submit">Tramitar pedido (24,50 €)</button>
                         </form>
                     </div>
                     

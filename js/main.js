@@ -11,7 +11,29 @@ window.addEventListener('load', function(event) {
     // showBestSeller();
 });
 
-/** BOTON BUSCAR */
+
+/*******************************************
+ * FOCUS-VISIBLE ACTIVADO EN INPUTS
+ * EN NAVEGACIÓN CON TAB
+ *******************************************/
+
+// Detecta si el usuario está navegando con teclado o con ratón/táctil
+// Con modo-teclado, :focus-visible tendrá outline en todos los inputs 
+document.addEventListener('keydown', e => {
+    if (e.key === 'Tab') {
+        document.body.classList.add('modo-teclado');
+    }
+});
+
+document.addEventListener('mousedown', () => {
+    document.body.classList.remove('modo-teclado');
+});
+
+
+/*******************************************
+ * BOTON BUSCAR
+ *******************************************/
+
 const searchBtn = document.querySelector(".search-button");
 
 searchBtn.addEventListener("click", (e) => {

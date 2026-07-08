@@ -480,16 +480,44 @@ footer hr {
 
 :focus-visible{
   outline:2px solid var(--color-link-hover);
-  outline-offset:3px;
+  outline-offset:2px;
 }
 
 input[type="text"]:focus-visible,
 input[type="search"]:focus-visible,
 input[type="email"]:focus-visible,
+input[type="number"]:focus-visible,
 textarea:focus-visible {
     outline: none;
 }
 
+body.modo-teclado input[type="text"]:focus-visible,
+body.modo-teclado input[type="search"]:focus-visible,
+body.modo-teclado input[type="email"]:focus-visible,
+body.modo-teclado input[type="number"]:focus-visible,
+body.modo-teclado textarea:focus-visible {
+  outline:2px solid var(--color-link-hover);
+  outline-offset:2px;
+}
+
+/* 
+WCAG 2.2.2 (Pause, Stop, Hide): cualquier contenido que se mueva, 
+parpadee o se desplace automáticamente durante más de 5 segundos necesita un control 
+para el usuario. 
+
+Es molesto para personas con trastornos de atención, y puede provocar mareo o malestar 
+en personas con sensibilidad vestibular.
+
+media query prefers-reduced-motion Es una buena práctica (no siempre obligatoria por WCAG 
+salvo casos concretos) respetar esa preferencia del sistema operativo
+*/
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 
 
 /* =========================
