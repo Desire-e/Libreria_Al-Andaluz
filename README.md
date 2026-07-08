@@ -20,4 +20,4 @@ El proyecto está orientado al diseño y desarrollo de interfaces web, prestando
 - JavaScript
 
 ## Visualizar proyecto
-Puedes encontrarlo publicado desde [GitHub Pages](https://desire-e.github.io/Libreria_Al-Andaluz/)
+Puedes encontrarlo publicado en [GitHub Pages](https://desire-e.github.io/Libreria_Al-Andaluz/)
