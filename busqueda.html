@@ -186,7 +186,7 @@
                 <aside class="filtros" aria-label="Filtros">
                     
                     <div class="filtros-header">
-                        <p class="text-md font-extra-bold">Filtros</p>
+                        <p class="text-md font-extra-bold" >Filtros</p>
 
                         <div class="btn-clean-wrapper">
                             <button class="btn-clean">
@@ -263,17 +263,17 @@
                             <div class="accordion-content" id="precio-panel" aria-labelledby="precio-button">
                                 <div class="range-container">
 
-                                    <span id="minValue">1 €</span>
+                                    <span id="minValue" class="minValue">1 €</span>
 
                                     <div class="slider-wrapper">
-                                        <input type="range" id="minRange"
+                                        <input type="range" id="minRange" class="minRange" aria-label="Precio mínimo"
                                         min="1" max="100" value="1" />
 
-                                        <input type="range" id="maxRange"
+                                        <input type="range" id="maxRange" class="maxRange" aria-label="Precio máximo"
                                         min="1" max="100" value="100" />
                                     </div>
 
-                                    <span id="maxValue">100 €</span>
+                                    <span id="maxValue" class="maxValue">100 €</span>
 
                                 </div>
                             </div>
@@ -349,10 +349,10 @@
                 <!-- CONTENEDOR DE FILTROS PARA BUSQUEDAS -->
                 <!-- VERSIÓN MODAL (MOBILE) -->
                 <!-- ------------------------------------- -->
-                <dialog id="filtros">
+                <dialog id="filtros" aria-label="Filtros">
                     
                     <div class="filtros-header">
-                        <p class="text-lg font-extra-bold">Filtros</p>
+                        <p id="filtros-modal-title" class="text-lg font-extra-bold">Filtros</p>
 
                         <div class="btn-clean-wrapper text-sm">
                             <button class="btn-clean text-sm">
@@ -375,41 +375,41 @@
                         <div class="categorias accordion-item active">
                             
                             <button class="accordion-header"
-                            aria-expanded="false" aria-controls="categoria-panel" id="categorias-button">
+                            aria-expanded="false" aria-controls="categoria-panel-mobile" id="categorias-button-mobile">
                                 <p class="font-semibold text-md">Categorías</p>
                                 <i aria-hidden="true" class="bi bi-chevron-down"></i>
                             </button>
 
                             <div class="accordion-content" 
-                            id="categoria-panel" aria-labelledby="categorias-button">
+                            id="categoria-panel-mobile" aria-labelledby="categorias-button-mobile">
                                 <div>
-                                    <input type="checkbox" name="cb-categoria" value="novela-historica" id="novela-historica" />
-                                    <label for="novela-historica">Novela histórica (24)</label>
+                                    <input type="checkbox" name="cb-categoria" value="novela-historica" id="novela-historica-mobile" />
+                                    <label for="novela-historica-mobile">Novela histórica (24)</label>
                                 </div>
                                 
                                 <div>
-                                    <input type="checkbox" name="cb-categoria" value="fantasia" id="fantasia" />
-                                    <label for="fantasia">Fantasía (18)</label>
+                                    <input type="checkbox" name="cb-categoria" value="fantasia" id="fantasia-mobile" />
+                                    <label for="fantasia-mobile">Fantasía (18)</label>
                                 </div>
 
                                 <div>
-                                    <input type="checkbox" name="cb-categoria" value="scific" id="scific" />
-                                    <label for="scific">Ciencia ficción (9)</label>
+                                    <input type="checkbox" name="cb-categoria" value="scific" id="scific-mobile" />
+                                    <label for="scific-mobile">Ciencia ficción (9)</label>
                                 </div>
 
                                 <div>
-                                    <input type="checkbox" name="cb-categoria" value="ensayo" id="ensayo" />
-                                    <label for="ensayo">Ensayo (14)</label>
+                                    <input type="checkbox" name="cb-categoria" value="ensayo" id="ensayo-mobile" />
+                                    <label for="ensayo-mobile">Ensayo (14)</label>
                                 </div>
 
                                 <div>
-                                    <input type="checkbox" name="cb-categoria" value="poesia" id="poesia" />
-                                    <label for="poesia">Poesía (6)</label>
+                                    <input type="checkbox" name="cb-categoria" value="poesia" id="poesia-mobile" />
+                                    <label for="poesia-mobile">Poesía (6)</label>
                                 </div>
 
                                 <div>
-                                    <input type="checkbox" name="cb-categoria" value="infantojuvenil" id="infantojuvenil" />
-                                    <label for="infantojuvenil">Infantil y juvenil (7)</label>
+                                    <input type="checkbox" name="cb-categoria" value="infantojuvenil" id="infantojuvenil-mobile" />
+                                    <label for="infantojuvenil-mobile">Infantil y juvenil (7)</label>
                                 </div>
                             </div>
 
@@ -421,25 +421,25 @@
                         <div class="precio accordion-item active">
 
                             <button class="accordion-header"
-                            aria-expanded="false" aria-controls="precio-panel" id="precio-button">
+                            aria-expanded="false" aria-controls="precio-panel-mobile" id="precio-button-mobile">
                                 <p class="font-semibold text-md">Precio</p>
                                 <i aria-hidden="true" class="bi bi-chevron-down"></i>
                             </button>
 
-                            <div class="accordion-content" id="precio-panel" aria-labelledby="precio-button">
+                            <div class="accordion-content" id="precio-panel-mobile" aria-labelledby="precio-button-mobile">
                                 <div class="range-container">
 
-                                    <span id="minValue">1 €</span>
+                                    <span id="minValue-mobile" class="minValue" aria-label="Precio mínimo">1 €</span>
 
                                     <div class="slider-wrapper">
-                                        <input type="range" id="minRange"
+                                        <input type="range" class="minRange" id="minRange-mobile"
                                         min="1" max="100" value="1" />
 
-                                        <input type="range" id="maxRange"
+                                        <input type="range" class="maxRange" id="maxRange-mobile"
                                         min="1" max="100" value="100" />
                                     </div>
 
-                                    <span id="maxValue">100 €</span>
+                                    <span id="maxValue-mobile" class="maxValue" aria-label="Precio máximo">100 €</span>
 
                                 </div>
                             </div>
@@ -451,15 +451,15 @@
                         <div class="disponibilidad accordion-item active">
 
                             <button class="accordion-header"
-                            aria-expanded="false" aria-controls="disponibilidad-panel" id="disponibilidad-button">
+                            aria-expanded="false" aria-controls="disponibilidad-panel-mobile" id="disponibilidad-button-mobile">
                                 <p class="font-semibold text-md">Disponibilidad</p>
                                 <i aria-hidden="true" class="bi bi-chevron-down"></i>
                             </button>
 
-                            <div class="accordion-content" id="disponibilidad-panel" aria-labelledby="disponibilidad-button">
+                            <div class="accordion-content" id="disponibilidad-panel-mobile" aria-labelledby="disponibilidad-button-mobile">
                                 <div>
-                                    <input type="checkbox" name="cb-disponible" value="stock" id="stock" />
-                                    <label for="stock">En stock</label>
+                                    <input type="checkbox" name="cb-disponible" value="stock" id="stock-mobile" />
+                                    <label for="stock-mobile">En stock</label>
                                 </div>
                             </div>
                         
@@ -471,35 +471,35 @@
                         <div class="formatos accordion-item active">
 
                             <button class="accordion-header"
-                            aria-expanded="false" aria-controls="formato-panel" id="formato-button">
+                            aria-expanded="false" aria-controls="formato-panel-mobile" id="formato-button-mobile">
                                 <p class="font-semibold text-md">Formatos</p>
                                 <i aria-hidden="true" class="bi bi-chevron-down"></i>
                             </button>
 
-                            <div class="accordion-content" id="formato-panel" aria-labelledby="formato-button">
+                            <div class="accordion-content" id="formato-panel-mobile" aria-labelledby="formato-button-mobile">
                                 <div>
-                                    <input type="checkbox" name="cb-formato" value="rustica" id="rustica" />
-                                    <label for="rustica">Rústica (1.192)</label>
+                                    <input type="checkbox" name="cb-formato" value="rustica" id="rustica-mobile" />
+                                    <label for="rustica-mobile">Rústica (1.192)</label>
                                 </div>
                                 <div>
-                                    <input type="checkbox" name="cb-formato" value="tela" id="tela" />
-                                    <label for="tela">Tela (323)</label>
+                                    <input type="checkbox" name="cb-formato" value="tela" id="tela-mobile" />
+                                    <label for="tela-mobile">Tela (323)</label>
                                 </div>
                                 <div>
-                                    <input type="checkbox" name="cb-formato" value="pasta-dura" id="pasta-dura" />
-                                    <label for="pasta-dura">Pasta dura (80)</label>
+                                    <input type="checkbox" name="cb-formato" value="pasta-dura" id="pasta-dura-mobile" />
+                                    <label for="pasta-dura-mobile">Pasta dura (80)</label>
                                 </div>
                                 <div>
-                                    <input type="checkbox" name="cb-formato" value="bolsillo" id="bolsillo" />
-                                    <label for="bolsillo">Bolsillo (2)</label>
+                                    <input type="checkbox" name="cb-formato" value="bolsillo" id="bolsillo-mobile" />
+                                    <label for="bolsillo-mobile">Bolsillo (2)</label>
                                 </div>
                                 <div>
-                                    <input type="checkbox" name="cb-formato" value="ebook" id="ebook" />
-                                    <label for="ebook">Ebook (1)</label>
+                                    <input type="checkbox" name="cb-formato" value="ebook" id="ebook-mobile" />
+                                    <label for="ebook-mobile">Ebook (1)</label>
                                 </div>
                                 <div>
-                                    <input type="checkbox" name="cb-formato" value="otros" id="otros" />
-                                    <label for="otros">Otros (40)</label>
+                                    <input type="checkbox" name="cb-formato" value="otros" id="otros-mobile" />
+                                    <label for="otros-mobile">Otros (40)</label>
                                 </div>
                             </div>
 
@@ -540,7 +540,7 @@
 
                             <!-- SELECT -->
                             <button class="select" data-selected=""
-                            role="combobox" id="select" aria-label="Orden de resultados"
+                            id="select" aria-label="Orden de resultados"
                             aria-haspopup="listbox" aria-expanded="false" aria-controls="orden-options">
                             <!-- aria-haspopup="listbox" indica que al activar un elemento se desplegará un listbox 
                             para que el usuario seleccione opciones. -->
@@ -557,20 +557,23 @@
 
                             <!-- OPTIONS -->
                             <div class="options"
-                            id="orden-options" role="listbox" >
+                            id="orden-options" role="listbox">
                             <!-- role="listbox" para identificar un contenedor que permite seleccionar uno o más elementos 
                             estáticos de una lista, similar al <select> nativa pero con la capacidad de incluir imágenes 
                             y ofrecer un control personalizado sobre la interacción y el estilo. -->
 
-                                <div class="option" data-value="relevancia" role="option">
+                                <div class="option" tabindex="0" data-value="relevancia" 
+                                role="option" aria-selected="false">
                                     <p class="font-light">Relevancia</p>
                                 </div>
 
-                                <div class="option" role="option" data-value="precio-asc" role="option">
+                                <div class="option" tabindex="0" data-value="precio-asc" 
+                                role="option" aria-selected="false">
                                     <p class="font-light">Más barato</p>
                                 </div>
 
-                                <div class="option" role="option" data-value="precio-des" role="option">
+                                <div class="option" tabindex="0" data-value="precio-des" 
+                                role="option" aria-selected="false">
                                     <p class="font-light">Más caro</p>
                                 </div>
                             </div>

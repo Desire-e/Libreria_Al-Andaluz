@@ -168,13 +168,13 @@ section.resultados .filtros-btn {
 
 /* líneas slider */
 /* solo el primer slider pinta la línea */
-#minRange::-webkit-slider-runnable-track{
+.minRange::-webkit-slider-runnable-track{
   height:3px;
   background: var(--color-bg-primary);
   border-radius:20px;
 }
 /* el segundo no pinta línea */
-#maxRange::-webkit-slider-runnable-track{
+.maxRange::-webkit-slider-runnable-track{
   height:4px;
   background:transparent;
 }

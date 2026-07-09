@@ -13,19 +13,32 @@ window.addEventListener('load', function(event) {
  * BOTON LIMPIAR FILTROS
  *******************************************/
 
-const btnCleanFilters = document.querySelector(".btn-clean");
+const btnCleanFilters = document.querySelectorAll(".btn-clean");
+
 const cbsFilters = document.querySelectorAll('.filtros-body input[type="checkbox"]');
             
-btnCleanFilters.addEventListener("click", (e) => { cleanFilters(e); });
+
+btnCleanFilters.forEach( btn => {
+    btn.addEventListener("click", cleanFilters);
+});
+
 
 function cleanFilters(e) {
     // Limpiar checkboxes
     cbsFilters.forEach( cb => { cb.checked = false; });
 
-    // Limpiar input range (precio)
-    minRange.value = 1;
-    maxRange.value = 100;
-    update();               
+    // Limpia input range (precio) de mobile (dialog) y desktop (aside)
+    document.querySelectorAll(".range-container").forEach(container => {
+
+        const minRange = container.querySelector(".minRange");
+        const maxRange = container.querySelector(".maxRange");
+
+        minRange.value = 1;
+        maxRange.value = 100;
+
+        container.querySelector(".minValue").textContent = "1 €";
+        container.querySelector(".maxValue").textContent = "100 €";
+    });
 }
 
 
@@ -38,6 +51,7 @@ const accordions = document.querySelectorAll(".accordion-item");
 
 // Recorre acordeones
 accordions.forEach( (accordion, index) => {
+    
     // Obtiene header (boton) de un accordion 
     const header = accordion.querySelector(".accordion-header");
 
@@ -129,9 +143,9 @@ headers.forEach((header, index) => {
             if(index > 0){
                 headers[index - 1].focus();
             }
-            // si llegó al inicio, foco en btn-clean
+            // si llegó al inicio, foco en el btn-clean correspondiente (aside o dialog)
             else {
-                btnCleanFilters.focus();
+                header.closest('aside, dialog').querySelector('.btn-clean').focus();
             }
         }
     });    
@@ -144,17 +158,30 @@ headers.forEach((header, index) => {
  * RANGO INPUT DOBLE (filtro precio)
  *******************************************/
 
-const minRange = document.getElementById("minRange");
-const maxRange = document.getElementById("maxRange");
+let minRanges =  document.querySelectorAll(".minRange");
+let maxRanges = document.querySelectorAll(".maxRange");
 
-const minValue = document.getElementById("minValue");
-const maxValue = document.getElementById("maxValue");
 
-// EVENTOS
-minRange.addEventListener("input", update);
-maxRange.addEventListener("input", update);
+minRanges.forEach(range => {
+    range.addEventListener("input", update);
+});
+maxRanges.forEach(range => {
+    range.addEventListener("input", update);
+});
 
-function update() {
+
+function update(e = null) {
+    // Detecta si está en mobile (dialog) o desktop (aside)
+
+    // obtener los elementos relativos al container del slider pulsado
+    const container = e.currentTarget.closest(".range-container");
+
+    const minRange = container.querySelector(".minRange");
+    const maxRange = container.querySelector(".maxRange");
+
+    const minValue = container.querySelector(".minValue");
+    const maxValue = container.querySelector(".maxValue");
+
 
     let min = parseInt(minRange.value);
     let max = parseInt(maxRange.value);
@@ -167,10 +194,6 @@ function update() {
     minValue.textContent = min + " €";
     maxValue.textContent = max + " €";
 }
-
-// ya en evento load implicito con clean...()
-// update();
-
 
 
 /*******************************************
@@ -243,6 +266,7 @@ selectContainer.addEventListener('focusout', (e) => {
 
 
 options.forEach((opt, i) => {
+
     // Seleccionar option    
     opt.addEventListener('click', ()=>{ newSelectedOption(opt) }); 
 
@@ -295,13 +319,23 @@ function initSelectOrden(){
     arrowOpen.style.display = 'none';
 
     // Option seleccionada por defecto (primer option)
-    let defaultOpt = document.querySelector('.options .option:first-child');
+    const defaultOpt = document.querySelector('.options .option:first-child');
         
+    
     // cambiar texto del seleccionado
     // selectedOptText.textContent = defaultOpt.querySelector('p').textContent.trim();
     selectedOptText.textContent = defaultOpt.textContent.trim();
+    
     // actualizar valor
     select.dataset.selected = defaultOpt.dataset.value;
+
+    options.forEach(opt => {
+        // actualiza aria-selected="true"
+        opt.setAttribute('aria-selected', opt === defaultOpt ? 'true' : 'false');
+    
+        // roving tabindex para solo navegar con flechas
+        opt.setAttribute('tabindex', opt === defaultOpt ? '0' : '-1');
+    });
 }
 
 function openCloseSelect(){
@@ -314,6 +348,7 @@ function openCloseSelect(){
 
     select.setAttribute("aria-expanded", isOpen);
 }
+
 function closeSelect() {
     selectContainer.classList.remove('open');
 
@@ -331,6 +366,14 @@ function newSelectedOption(option) {
 
     // actualizar valor
     select.dataset.selected = option.dataset.value;
+
+    options.forEach(opt => {
+        // actualiza aria-selected="true"    
+        opt.setAttribute('aria-selected', opt === option ? 'true' : 'false');
+        
+        // roving tabindex para solo navegar con flechas
+        opt.setAttribute('tabindex', opt === defaultOpt ? '0' : '-1');
+    });
 
     // cerrar
     closeSelect();
