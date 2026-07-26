@@ -40,5 +40,10 @@ Y abrir `index.html` directamente en el navegador, o servir la carpeta con una e
 
 
 ## Autor
- 
+
 **Desire-e** — [GitHub](https://github.com/Desire-e)
+
+ 
+## Licencia
+ 
+Este proyecto se comparte con fines educativos y de portfolio.
