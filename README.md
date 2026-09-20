@@ -11,13 +11,18 @@ El proyecto está orientado al diseño y desarrollo de interfaces web, prestando
 
 Puedes encontrarlo publicado en [GitHub Pages](https://desire-e.github.io/Libreria_Al-Andaluz/)
 
-También puedes ejecutarlo en local, ya que al ser una web estática no requiere instalación de dependencias:
+
+## Probar en entorno local:
+
+También puedes ejecutarlo en local. Al ser una web estática, no requiere instalación de dependencias:
 
 ```bash
 git clone https://github.com/Desire-e/Libreria_Al-Andaluz.git
 ```
 
-Y abrir `index.html` directamente en el navegador, o servir la carpeta con una extensión como Live Server (VS Code) para evitar problemas de rutas relativas.
+Y abrir `index.html` directamente en el navegador.
+
+> Consejo: Utilizar una extensión como Live Server evitará problemas de rutas relativas.
 
 
 ## Características principales
@@ -42,8 +47,3 @@ Y abrir `index.html` directamente en el navegador, o servir la carpeta con una e
 ## Autor
 
 **Desire-e** — [GitHub](https://github.com/Desire-e)
-
- 
-## Licencia
- 
-Este proyecto se comparte con fines educativos y de portfolio.
